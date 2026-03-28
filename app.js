@@ -217,7 +217,7 @@ const CATEGORIES = [
         name: 'Faturas da Zebra Curiosa',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
         gdPath: GD_PATHS.faturasZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 4, 4: 1, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 9, 3: 4, 4: 1, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [ // Março
@@ -228,7 +228,8 @@ const CATEGORIES = [
             { name: 'Aviso Débito VW Beetle Seguro.pdf', label: 'Tranquilidade — Aviso Débito VW New Beetle 76-44-NJ (Mar 2026)', type: 'pdf', date: '2026-03-04', link: 'https://drive.google.com/file/d/1V43lIT3TO8If8XYdPQAKq-Gt8EQYPnrD/view' },
             { name: 'Aviso de Débito Fidelidade Hyundai Ioniq 2026.pdf', label: 'Fidelidade — Aviso Débito Hyundai Ioniq 5 (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/17mhqkjeqnzow4xrXYLbx5sVS7ClCtu6y/view' },
             { name: 'Endesa Fatura Eletricidade Zebra Curiosa Março 2026.pdf', label: 'Endesa — Fatura Eletricidade Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', link: 'https://drive.google.com/file/d/1kcPQ6gxyWrWeiv8BKmyl96U6Q7LRBBJ9/view' },
-            { name: 'Jani-King — Serviço de Limpeza Zebra Curiosa Mar 2026.pdf', label: 'Jani-King — Serviço de Limpeza Extra Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-18', link: gdLink(GD_PATHS.faturasZebra, 3) }
+            { name: 'Jani-King — Serviço de Limpeza Zebra Curiosa Mar 2026.pdf', label: 'Jani-King — Serviço de Limpeza Extra Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-18', link: gdLink(GD_PATHS.faturasZebra, 3) },
+            { name: 'Ageas Seguro de Vida Março 2026.pdf', label: 'Ageas — Seguro de Vida Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1N0yoZDMyXs2G9vBiIyTmtQK3tfTc0_DF/view' }
           ],
           4: [ // Maio
             { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Aviso Débito RC Profissional/Exploração ZC (Mai 2026)', type: 'pdf', date: '2026-05-15', link: 'https://drive.google.com/file/d/1zI4h92C6WWzoYMwuh8c8146r4ZbvhW9V/view' }
