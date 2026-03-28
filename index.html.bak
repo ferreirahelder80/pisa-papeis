@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt" data-theme="light">
+<head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Pisa-Papéis">
+<meta name="theme-color" content="#c8e6c0">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Pisa-Papéis — Gestão de Documentos</title>
+
+<!-- Fonts -->
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-label="Pisa-Papéis" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="var(--color-primary)"/>
+        <rect x="8" y="9" width="16" height="2" rx="1" fill="white"/>
+        <rect x="8" y="13" width="12" height="2" rx="1" fill="white"/>
+        <rect x="8" y="17" width="14" height="2" rx="1" fill="white"/>
+        <rect x="6" y="21" width="20" height="3" rx="1.5" fill="white" opacity="0.7"/>
+      </svg>
+      <span class="logo-text">Pisa-Papéis</span>
+    </div>
+
+    <div class="header-actions">
+      <span class="year-badge">2026</span>
+      <button data-theme-toggle aria-label="Alternar tema" class="theme-toggle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Main -->
+<main class="main">
+
+  <!-- Stats bar -->
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-value" id="total-docs">—</span>
+      <span class="stat-label">Documentos</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-value" id="total-folders">6</span>
+      <span class="stat-label">Categorias</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-value" id="active-month">—</span>
+      <span class="stat-label">Mês ativo</span>
+    </div>
+  </div>
+
+  <!-- Month filter -->
+  <div class="month-filter">
+    <span class="filter-label">Mês:</span>
+    <div class="month-pills" id="month-pills">
+      <button class="pill active" data-month="0">Todos</button>
+      <button class="pill" data-month="1">Jan</button>
+      <button class="pill" data-month="2">Fev</button>
+      <button class="pill" data-month="3">Mar</button>
+      <button class="pill" data-month="4">Abr</button>
+      <button class="pill" data-month="5">Mai</button>
+      <button class="pill" data-month="6">Jun</button>
+      <button class="pill" data-month="7">Jul</button>
+      <button class="pill" data-month="8">Ago</button>
+      <button class="pill" data-month="9">Set</button>
+      <button class="pill" data-month="10">Out</button>
+      <button class="pill" data-month="11">Nov</button>
+      <button class="pill" data-month="12">Dez</button>
+    </div>
+  </div>
+
+  <!-- Category grid -->
+  <div class="categories-grid" id="categories-grid">
+    <!-- Rendered by JS -->
+  </div>
+
+</main>
+
+<!-- Document drawer -->
+<div class="drawer-overlay" id="drawer-overlay"></div>
+<aside class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-header">
+    <div class="drawer-title-group">
+      <div class="drawer-icon" id="drawer-icon"></div>
+      <div>
+        <h2 class="drawer-title" id="drawer-title">—</h2>
+        <p class="drawer-subtitle" id="drawer-subtitle">—</p>
+      </div>
+    </div>
+    <button class="drawer-close" id="drawer-close" aria-label="Fechar">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="drawer-content" id="drawer-content">
+    <!-- Rendered by JS -->
+  </div>
+</aside>
+
+<script src="app.js"></script>
+<script>
+// ---- SYNC BUTTON ----
+(function() {
+  const btn = document.getElementById('sync-btn');
+  const icon = document.getElementById('sync-icon');
+  const label = document.getElementById('sync-label');
+  const LAST_UPDATE = '28 Mar 2026, 12:55';
+  const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
+
+  // Estado inicial
+  let state = 'ok'; // 'ok' | 'syncing'
+  label.textContent = LAST_UPDATE;
+  btn.title = 'Dados actualizados em ' + LAST_UPDATE;
+
+  btn.addEventListener('click', function() {
+    if (state === 'syncing') return;
+    state = 'syncing';
+    // Mostrar animação
+    label.textContent = 'A verificar...';
+    icon.style.animation = 'spin 1s linear infinite';
+    btn.style.opacity = '0.7';
+    // Após 1.5s mostrar confirmação e abrir Perplexity
+    setTimeout(function() {
+      icon.style.animation = '';
+      label.textContent = '\u2705 ' + LAST_UPDATE;
+      btn.style.opacity = '1';
+      btn.title = 'Actualizado em ' + LAST_UPDATE + ' — clica para pedir nova actualiza\u00e7\u00e3o';
+      state = 'ok';
+      // Abre nova conversa na Perplexity com pedido de actualização
+      window.open(PERPLEXITY_URL + '?q=Actualizar+Pisa-Pap%C3%A9is', '_blank');
+    }, 1500);
+  });
+})();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>

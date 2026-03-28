@@ -1,0 +1,718 @@
+/* =====================================================
+   PISA-PAPÉIS — App Data & Logic
+   ===================================================== */
+
+const MONTHS = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+const MONTHS_FULL = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+// ---- GOOGLE DRIVE — Links directos para pastas Fabric Link ----
+const GD = 'https://drive.google.com/drive/folders/';
+const GDF = 'https://drive.google.com/file/d/'; // prefixo para links directos de ficheiro
+
+// Raiz
+const GD_ROOT              = GD + '15WbhNxJMvEiex5Cf8PZAsJ0cOJJE_7vA'; // Fabric Link (raiz)
+
+// Apólices
+const GD_APOLICES_ZEBRA    = GD + '1uzfbgui69A_Sz9ogSWGa2Q3TCR1iJrv-'; // Apólices Zebra Curiosa
+const GD_APOLICES_PESSOAIS = GD + '1VobvjDLHx0G_uTqBdLrC6x1uEFdA4Etq'; // Apólices Pessoais
+
+// Subpastas Apólices Zebra — sem IDs individuais, apontam para a pasta pai
+const GD_ZC_AUTOMOVEIS     = GD_APOLICES_ZEBRA;
+const GD_ZC_COLABORADORAS  = GD_APOLICES_ZEBRA;
+const GD_ZC_CPC            = GD_APOLICES_ZEBRA;
+const GD_ZC_PPR            = GD_APOLICES_ZEBRA;
+const GD_ZC_SAUDE          = GD_APOLICES_ZEBRA;
+
+// Subpastas Apólices Pessoais — apontam para pasta pai
+const GD_PE_EQUIPAMENTOS   = GD_APOLICES_PESSOAIS;
+const GD_PE_CASA_MAIA      = GD_APOLICES_PESSOAIS;
+const GD_PE_CASA_VISEU     = GD_APOLICES_PESSOAIS;
+
+// Pastas mensais de Março
+const GD_FATURAS_ZC_MAR    = GD + '1sPj9XDJQk9B0EAM70cCxhTwoUFexBFpw';
+const GD_SUBSCRICOES_ZC_MAR= GD + '1kUTi0LZRHlK40Rd6FNEA6y8On4sCfiEf';
+const GD_PESSOAIS_MAR      = GD + '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt';
+const GD_ACORDO_MAR        = GD + '1qJ5KD0HTqn6Ko3P4qlp5kvT5jlj38UAv';
+const GD_ESCALAS_HLPV_MAR  = GD + '1qeybxMLmnRyuMB-5SFxKyAnT3U2qFGOz';
+const GD_RECIBOS_CPC_MAR   = GD + '1qTEiuCnbbD8TVFynwrP-5mBgmaU9HJGk';
+const GD_RECIBOS_HLPV_MAR  = GD_ROOT; // pasta HLPV Março ainda sem ID — aponta para raiz
+
+// Pastas mensais de Abril — IDs ainda não obtidos, usar pasta pai como fallback
+const GD_FATURAS_ZC_ABR    = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN'; // pai ZC (fallback)
+const GD_PESSOAIS_ABR      = GD + '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt'; // pai Pessoais (fallback)
+const GD_ESCALAS_HLPV_ABR  = GD + '1Bp6uhibm0PuoBF7malWVYITgQovWb3CE'; // Escalas HLPV / Abril
+
+// Pastas pai das categorias (fallback para meses sem ID específico)
+const GD_FATURAS_ZC        = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN'; // Pagamentos Zebra Curiosa
+const GD_SUBSCRICOES_ZC    = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN';
+const GD_PESSOAIS          = GD + '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt';
+const GD_ACORDO            = GD + '1qJ5KD0HTqn6Ko3P4qlp5kvT5jlj38UAv';
+const GD_ESCALAS_HLPV      = GD + '17jHAKMjp6kQnBqM4rGC3bmsrgMfX1IYd';
+const GD_RECIBOS_CPC       = GD + '1pCi6RLorqNtRGL_Emtah7CLTamEx8aYd';
+const GD_VENCIMENTOS       = GD + '1xS8FksH_HsA1x2gLTBjvg4PuH9kxJXmE'; // Recibos Vencimento HLPV (pasta pai)
+const GD_RECIBOS_HLPV_FEV  = GD + '1Me4VuKKp13K3h9t0DIOGaHfqCC4DBReJ'; // Recibos HLPV / 2 (Fevereiro)
+
+// Mapeamento de chaves de categoria para constantes GD mensais
+// Uso: gdLink('faturasZebra', 3)  →  link da pasta Faturas ZC de Março
+const GD_PATHS = {
+  faturasZebra:      'faturasZebra',
+  subscricoesZebra:  'subscricoesZebra',
+  acordoParental:    'acordoParental',
+  pagamentosPessoais:'pagamentosPessoais',
+  escalasHLPV:       'escalasHLPV',
+  recibosVencCPC:    'recibosVencCPC',
+  recibosVencHLPV:   'recibosVencHLPV',
+};
+
+// gdLink — devolve o link da pasta mensal correcta do Google Drive
+// monthNum: 1=Jan ... 12=Dez
+function gdLink(category, monthNum) {
+  if (monthNum === 2) {
+    const map = {
+      recibosVencHLPV:    GD_RECIBOS_HLPV_FEV,
+    };
+    if (map[category]) return map[category];
+  }
+  if (monthNum === 3) {
+    const map = {
+      faturasZebra:       GD_FATURAS_ZC_MAR,
+      subscricoesZebra:   GD_SUBSCRICOES_ZC_MAR,
+      pagamentosPessoais: GD_PESSOAIS_MAR,
+      acordoParental:     GD_ACORDO_MAR,
+      escalasHLPV:        GD_ESCALAS_HLPV_MAR,
+      recibosVencCPC:     GD_RECIBOS_CPC_MAR,
+      recibosVencHLPV:    GD_RECIBOS_HLPV_MAR,
+    };
+    return map[category] || GD_ROOT;
+  }
+  if (monthNum === 4) {
+    const map = {
+      faturasZebra:       GD_FATURAS_ZC_ABR,
+      subscricoesZebra:   GD_SUBSCRICOES_ZC,
+      pagamentosPessoais: GD_PESSOAIS_ABR,
+      acordoParental:     GD_ACORDO,
+      escalasHLPV:        GD_ESCALAS_HLPV_ABR,
+      recibosVencCPC:     GD_RECIBOS_CPC,
+      recibosVencHLPV:    GD_VENCIMENTOS,
+    };
+    return map[category] || GD_ROOT;
+  }
+  // Para outros meses, abre a pasta pai da categoria
+  const parentMap = {
+    faturasZebra:       GD_FATURAS_ZC,
+    subscricoesZebra:   GD_SUBSCRICOES_ZC,
+    pagamentosPessoais: GD_PESSOAIS,
+    acordoParental:     GD_ACORDO,
+    escalasHLPV:        GD_ESCALAS_HLPV,
+    recibosVencCPC:     GD_RECIBOS_CPC,
+    recibosVencHLPV:    GD_VENCIMENTOS,
+  };
+  return parentMap[category] || GD_ROOT;
+}
+
+// ---- DATA STRUCTURE ----
+const CATEGORIES = [
+  {
+    id: 'apolices-zebra',
+    title: 'Apólices Zebra Curiosa',
+    description: 'Seguros da clínica e colaboradoras',
+    color: '--color-cat-1',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.35C17.25 23.15 21 18.25 21 13V7L12 2z"/><path d="M9 12l2 2 4-4"/></svg>`,
+    folderLink: GD_APOLICES_ZEBRA,
+    subfolders: [
+      {
+        name: 'Automóveis',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h5l2 3v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>`,
+        folderLink: GD_ZC_AUTOMOVEIS,
+        files: [
+          { name: 'Fidelidade Hyundai Ioniq 2026.pdf', label: 'Fidelidade — Apólice Hyundai Ioniq 2026', type: 'pdf', date: '2026-03-08', link: GD_APOLICES_ZEBRA },
+          { name: 'Ata_Automovel_0007258664_20260224.pdf', label: 'Tranquilidade — Ata VW New Beetle 76-44-NJ (Fev 2026)', type: 'pdf', date: '2026-03-04', link: GD_APOLICES_ZEBRA }
+        ]
+      },
+      {
+        name: 'Colaboradoras',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+        folderLink: GD_ZC_COLABORADORAS,
+        files: []
+      },
+      {
+        name: 'CPC — Acidentes de Trabalho',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L3 7v6c0 5.25 3.75 10.15 9 11.35C17.25 23.15 21 18.25 21 13V7z"/></svg>`,
+        folderLink: GD_ZC_CPC,
+        files: [
+          { name: 'Condições Gerais 2026.pdf', type: 'pdf', date: '2026-03-05', link: GD_ZC_CPC },
+          { name: 'CP 2026.pdf', type: 'pdf', date: '2026-03-05', link: GD_ZC_CPC }
+        ]
+      },
+      {
+        name: 'PPR & Vida',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>`,
+        folderLink: GD_ZC_PPR,
+        files: [
+          { name: 'Ageas Multiplic Simão Ferreira.pdf', label: 'Ageas — Poupança Multiplic Simão Ferreira', type: 'pdf', date: '2026-03-07', link: GD_APOLICES_ZEBRA },
+          { name: 'Ageas Seguro de Vida A.pdf', label: 'Ageas Seguro Vida A', type: 'pdf', date: '2026-03-10', link: GD_APOLICES_ZEBRA },
+          { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas Seguro Vida B', type: 'pdf', date: '2026-03-10', link: GD_APOLICES_ZEBRA },
+          { name: 'Lusitânia PPR.pdf', label: 'Lusitânia — PPR', type: 'pdf', date: '2026-03-04', link: GD_ZC_PPR },
+          { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Apólice RC Profissional/Exploração ZC (Aviso Débito Mai 2026)', type: 'pdf', date: '2026-05-15', link: 'https://drive.google.com/file/d/1zI4h92C6WWzoYMwuh8c8146r4ZbvhW9V/view' }
+        ]
+      },
+      {
+        name: 'Saúde',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`,
+        folderLink: GD_ZC_SAUDE,
+        files: [
+          { name: 'Ageas Saúde 2026.pdf', label: 'Ageas — Apólice Saúde 2026', type: 'pdf', date: '2025-12-04', link: GD_APOLICES_ZEBRA }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'apolices-pessoais',
+    title: 'Apólices Pessoais',
+    description: 'Seguros pessoais de habitação e equipamentos',
+    color: '--color-cat-2',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>`,
+    folderLink: GD_APOLICES_PESSOAIS,
+    subfolders: [
+      {
+        name: 'Equipamentos',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+        folderLink: GD_PE_EQUIPAMENTOS,
+        files: [
+          { name: 'Apólice PcCare AIG — Seguro PcComponentes (Tomador Hélder Ferreira).pdf', label: 'AIG PcCare — Apólice Equipamentos Electrónicos', type: 'pdf', date: '2025-12-08', link: GD_PE_EQUIPAMENTOS },
+          { name: 'Apólice PcCare AIG - Condições e Tomador (Hélder Ferreira).pdf', label: 'AIG PcCare — Condições e Tomador', type: 'pdf', date: '2026-03-04', link: GD_PE_EQUIPAMENTOS },
+          { name: 'Nota informativa do mediador — Weecover.pdf', label: 'Weecover — Nota Informativa Mediador', type: 'pdf', date: '2026-03-04', link: GD_PE_EQUIPAMENTOS },
+          { name: 'Nota informativa do mediador Weecover (corretora).pdf', label: 'Weecover — Nota Informativa Corretora', type: 'pdf', date: '2026-03-04', link: GD_PE_EQUIPAMENTOS },
+          { name: 'Resumo seguro eletrónicos — danos acidentais e furto.pdf', label: 'Resumo — Seguro Electrónicos (Danos e Furto)', type: 'pdf', date: '2026-03-04', link: GD_PE_EQUIPAMENTOS },
+          { name: 'Seguro PcComponentes AIG - Apólice Equipamentos Electrónicos (Resumo).pdf', label: 'AIG PcCare — Resumo Apólice Equipamentos', type: 'pdf', date: '2026-03-04', link: GD_PE_EQUIPAMENTOS }
+        ]
+      },
+      {
+        name: 'Casa da Maia',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`,
+        folderLink: GD_PE_CASA_MAIA,
+        files: [
+          { name: 'Fidelidade Casa Mais MR66144021 - Condições Gerais.pdf', label: 'Fidelidade Casa Maia — Condições Gerais', type: 'pdf', date: '2026-03-05', link: GD_PE_CASA_MAIA },
+          { name: 'Fidelidade Casa Mais MR66144021 - Condições Particulares 2026.pdf', label: 'Fidelidade Casa Maia — Condições Particulares 2026', type: 'pdf', date: '2026-02-19', link: GD_PE_CASA_MAIA }
+        ]
+      },
+      {
+        name: 'Casa de Viseu',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>`,
+        folderLink: GD_PE_CASA_VISEU,
+        files: [
+          { name: 'Allianz Viseu.pdf', label: 'Allianz — Apólice Casa de Viseu', type: 'pdf', date: '2026-03-04', link: GD_PE_CASA_VISEU }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pagamentos-zebra',
+    title: 'Pagamentos Zebra Curiosa',
+    description: 'Faturas e subscrições mensais da clínica',
+    color: '--color-cat-3',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>`,
+    subfolders: [
+      {
+        name: 'Faturas da Zebra Curiosa',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
+        gdPath: GD_PATHS.faturasZebra,
+        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 4, 4: 1, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        hasMonthFolders: true,
+        knownFiles: {
+          2: [ // Março
+            { name: 'Gassu Março 2026.PDF', type: 'pdf', date: '2026-03-02', link: GD_FATURAS_ZC_MAR },
+            { name: 'Condomínio Solar Carta Cobrança Março 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Mar 2026)', type: 'pdf', date: '2026-03-09', link: 'https://drive.google.com/file/d/1jRzdEzQ87ENCRVY7G2y-jDlckQlHX40U/view' },
+            { name: 'Vodafone Março 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-05', link: 'https://drive.google.com/file/d/14LFznC2hQFnIybLKiqjxl1pqyByhiVfc/view' },
+            { name: 'Indaqua Fatura Água Zebra Curiosa Março 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-12', link: gdLink(GD_PATHS.faturasZebra, 3) },
+            { name: 'Aviso Débito VW Beetle Seguro.pdf', label: 'Tranquilidade — Aviso Débito VW New Beetle 76-44-NJ (Mar 2026)', type: 'pdf', date: '2026-03-04', link: 'https://drive.google.com/file/d/1V43lIT3TO8If8XYdPQAKq-Gt8EQYPnrD/view' },
+            { name: 'Aviso de Débito Fidelidade Hyundai Ioniq 2026.pdf', label: 'Fidelidade — Aviso Débito Hyundai Ioniq 5 (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/17mhqkjeqnzow4xrXYLbx5sVS7ClCtu6y/view' },
+            { name: 'Endesa Fatura Eletricidade Zebra Curiosa Março 2026.pdf', label: 'Endesa — Fatura Eletricidade Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', link: 'https://drive.google.com/file/d/1kcPQ6gxyWrWeiv8BKmyl96U6Q7LRBBJ9/view' },
+            { name: 'Jani-King — Serviço de Limpeza Zebra Curiosa Mar 2026.pdf', label: 'Jani-King — Serviço de Limpeza Extra Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-18', link: gdLink(GD_PATHS.faturasZebra, 3) }
+          ],
+          4: [ // Maio
+            { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Aviso Débito RC Profissional/Exploração ZC (Mai 2026)', type: 'pdf', date: '2026-05-15', link: 'https://drive.google.com/file/d/1zI4h92C6WWzoYMwuh8c8146r4ZbvhW9V/view' }
+          ],
+          3: [ // Abril
+            { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas — Aviso Débito Seguro Vida B ZC (Abr 2026)', type: 'pdf', date: '2026-04-20', link: 'https://drive.google.com/file/d/1_C3C1oBsEXQmyC-8Yx313NAvc8BHV5g4/view' },
+            { name: 'Águas do Norte — Fatura Água Zebra Curiosa Abril 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-16', link: 'https://drive.google.com/file/d/17qLSSkQx0VamaWaH-U57z7-ZYicV1d6f/view' },
+            { name: 'EDP — Fatura Eletricidade Zebra Curiosa Abr 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-08', link: 'https://drive.google.com/file/d/1GacqaQtyJOR4vJ-wrMplzp60_cKaPq_y/view' },
+            { name: 'Ageas Poupança Multiplic Simão Abril 2026.PDF', label: 'Ageas — Aviso Débito Poupança Multiplic Simão (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1UuNZv8suq9OyxbY6OkIxUjDLgMvbAe9J/view' }
+          ],
+          1: [ // Fevereiro
+            { name: '077.DP.26020770408298299.PDF', label: 'Prio — Fatura Combustível Zebra Curiosa (Fev 2026)', type: 'pdf', date: '2026-02', link: gdLink(GD_PATHS.faturasZebra, 2) },
+            { name: 'Via Verde Fevereiro 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Fev 2026)', type: 'pdf', date: '2026-02', link: gdLink(GD_PATHS.faturasZebra, 2) }
+          ],
+          0: []  // Janeiro
+        }
+      },
+      {
+        name: 'Subscrições Mensais',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>`,
+        gdPath: GD_PATHS.subscricoesZebra,
+        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        hasMonthFolders: true,
+        knownFiles: {
+          2: [
+            { name: 'Manus Pro Subscrição Zebra Curiosa Março 2026.pdf', label: 'Manus Pro — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-02', amount: 600.00, link: 'https://drive.google.com/file/d/1OOdCsfrL36Fb_KEakus5m_P294UAVsyi/view' },
+            { name: 'Perplexity Março 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-09', amount: 84.70, link: 'https://drive.google.com/file/d/1m3LLfLXPZmbaeYpOMRSMV2Q2piB6fAcG/view' },
+            { name: 'Perplexity-Plus.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (13 Mar 2026)', type: 'pdf', date: '2026-03-13', amount: 107.74, link: 'https://drive.google.com/file/d/1XbqnoJMTRiaVaCdoA2nFJv9vnD7b-A6J/view' },
+            { name: 'Perplexity-Plus-2.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (14 Mar 2026)', type: 'pdf', date: '2026-03-14', amount: 107.26, link: 'https://drive.google.com/file/d/145qG-TntRSshkVwRSLBF04jhAVY2l0E8/view' },
+            { name: 'Claude Pro Março 2026.pdf', label: 'Claude Pro — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', amount: 22.00, link: 'https://drive.google.com/file/d/1KQ1NtvQBb-LilhhZqGYr1hH5e-sqSAZr/view' },
+            { name: 'Perplexity Auto Topup Zebra Curiosa 18 Mar 2026.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (18 Mar 2026)', type: 'pdf', date: '2026-03-18', amount: 65.90, link: gdLink(GD_PATHS.subscricoesZebra, 3) },
+            { name: 'Spotify Premium Familia ZC Marco 2026.pdf', label: 'Spotify — Premium Família ZC (Mar 2026)', type: 'pdf', date: '2026-03-23', amount: 16.99, link: 'https://drive.google.com/file/d/1WHVnj1Rou_kLJQdD-ypbi55HeNoaO_Nj/view' },
+            { name: 'Fabric Pro Plan ZC Marco 2026.pdf', label: 'Fabric Pro Plan — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-28', amount: 13.03, link: 'https://drive.google.com/file/d/1PGG59SnEMHOJQgjFrIq3btFTYhmG3JoS/view' }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    id: 'pagamentos-pessoais',
+    title: 'Pagamentos Pessoais',
+    description: 'Pagamentos pessoais de Hélder Ferreira',
+    color: '--color-cat-5',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
+    hasMonthFolders: true,
+    gdPath: GD_PATHS.pagamentosPessoais,
+    monthlyDocs: { 0: 0, 1: 0, 2: 6, 3: 3, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    knownFiles: {
+      1: [], // Fevereiro
+      2: [ // Março
+        { name: 'G9 Viseu Gás Março 2026.pdf', label: 'G9 Viseu — Gás (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1W9dcnAm2P_CwCMjnLK23kjy5y12vaEpD/view' },
+        { name: 'Roblox Março 2026.pdf', label: 'Roblox — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', link: gdLink(GD_PATHS.pagamentosPessoais, 3) },
+        { name: 'Roblox Slap Battles Março 2026.pdf', label: 'Roblox Slap Battles — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', link: gdLink(GD_PATHS.pagamentosPessoais, 3) },
+        { name: 'Seguro Responsabilidade Civil 2026.PDF', label: 'Seguro Responsabilidade Civil 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1lFg-hHBI-1yXRwdtt-Od9BVBAf8Vvx4A/view' },
+        { name: 'YouTube Premium Pagamento Pessoal Março 2026.pdf', label: 'YouTube Premium — Subscrição Mensal (Mar 2026)', type: 'pdf', date: '2026-03-10', link: gdLink(GD_PATHS.pagamentosPessoais, 3) },
+        { name: 'Quotas Semestrais Ordem dos Medicos Mar 2026.pdf', label: 'Ordem dos Médicos — Quotas Semestrais Jan-Jun 2026 (Mar 2026)', type: 'pdf', date: '2026-03-25', amount: 97.80, link: 'https://drive.google.com/file/d/1n68mUOdwfstIuGeIRRih8vqoozPI6SQo/view' }
+      ],
+      3: [ // Abril
+        { name: 'Aviso Débito Allianz Casa Viseu Abril 2026.pdf', label: 'Allianz — Aviso Débito Casa Viseu (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1I2HsGce7bZLlLopUe9xUKzpkGvtJcArH/view' },
+        { name: 'SU Eletricidade — Fatura Casa Viseu Abr 2026.pdf', label: 'SU Eletricidade — Fatura Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/13_wRF1O1SmPvN-hk7a7UTFxYxSJRffFY/view' },
+        { name: 'SMAS Viseu Fatura Agua Abr 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 11.47, link: 'https://drive.google.com/file/d/1urV-5Vusel671RG-45mb7hXNWL71cOUk/view' }
+      ]
+    }
+  },
+  {
+    id: 'acordo-parental',
+    title: 'Acordo de Regulação Parental',
+    description: 'Pagamentos mensais do acordo parental',
+    color: '--color-cat-4',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
+    hasMonthFolders: true,
+    gdPath: GD_PATHS.acordoParental,
+    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    knownFiles: {
+      0: [], // Janeiro
+      1: [], // Fevereiro
+      2: [ // Março
+        { name: 'Fatura Farmácia Março.pdf', label: 'Farmácia — Recibo €46,19 (Mar 2026)', type: 'pdf', date: '2026-03-02', amount: 46.19, link: 'https://drive.google.com/file/d/1WA3IqGtbDvtyxYQ6dxt9ivvxvuyIYoPo/view' },
+        { name: 'Mensalidade Março ESJ.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mar 2026)', type: 'pdf', date: '2026-03', amount: 533.60, link: 'https://drive.google.com/file/d/1W3BRG-aJeKCwVPqcD4WjPG7cGEazmRWg/view' },
+        { name: 'Externato Santa Joana Matrícula 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Matrícula 2026/2027 Simão €260,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 260.00, link: 'https://drive.google.com/file/d/1vis2Tnayj7wQT75-KbioHHgGuinxiMB9/view' },
+        { name: 'Externato Santa Joana Escola Virtual 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Escola Virtual 2026/2027 Simão €39,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 39.00, link: 'https://drive.google.com/file/d/1QnCCnIGr6XO6M7WEvCSiO4zrRRVWXfoK/view' },
+        { name: 'Sapatilhas Simão Acordo Parental Março 2026.pdf', label: 'Sapatilhas Predator Club — Simão €39,99 (Mar 2026)', type: 'pdf', date: '2026-03-26', amount: 39.99, link: 'https://drive.google.com/file/d/1Vw4E8_QDI5WIHegOtPVZLg5p2rmtEQwE/view' }
+      ]
+    }
+  },
+  {
+    id: 'vencimentos',
+    title: 'Vencimentos & Escalas',
+    description: 'Recibos CPC, HLPV e escalas médicas',
+    color: '--color-cat-6',
+    icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+    subfolders: [
+      {
+        name: 'Escalas Médicas HLPV',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
+        gdPath: GD_PATHS.escalasHLPV,
+        monthlyDocs: { 0: 0, 1: 0, 2: 2, 3: 1, 4: 0, 5: 0, 6: 1, 7: 2, 8: 0, 9: 2, 10: 5, 11: 2 },
+        hasMonthFolders: true,
+        knownFiles: {
+          0: [], // Janeiro
+          2: [ // Março
+            { name: 'escala março 2026.docx', label: 'Escala HLPV — Março 2026', type: 'docx', date: '2026-03', link: gdLink(GD_PATHS.escalasHLPV, 3) },
+            { name: 'escala partos março 2026.docx', label: 'Escala Partos HLPV — Março 2026', type: 'docx', date: '2026-03', link: gdLink(GD_PATHS.escalasHLPV, 3) }
+          ],
+          3: [ // Abril
+            { name: 'Escala HLPV Abril 2026.docx', label: 'Escala HLPV — Abril 2026', type: 'docx', date: '2026-04', link: 'https://docs.google.com/document/d/1uSAbzzrD-6R3iHTGxzZ59ZBmoJNOugrY/edit' }
+          ],
+          6: [ // Julho
+            { name: 'Escalas HLPV Julho 2025.pdf', label: 'Escalas HLPV — Julho 2025', type: 'pdf', date: '2025-07', link: GD_ROOT }
+          ],
+          7: [ // Agosto
+            { name: 'HLPV Escala Partos Agosto 2025.docx', label: 'Escala Partos HLPV — Agosto 2025', type: 'docx', date: '2025-08', link: GD_ROOT },
+            { name: 'HLPV 2025 Agosto Escala de AU.docx', label: 'Escala AU HLPV — Agosto 2025', type: 'docx', date: '2025-08', link: GD_ROOT }
+          ],
+          9: [ // Outubro
+            { name: 'HLPV Escala Partos Outubro 2025.docx', label: 'Escala Partos HLPV — Outubro 2025', type: 'docx', date: '2025-09-25', link: GD_ESCALAS_HLPV }
+          ],
+          10: [ // Novembro
+            { name: 'HLPV Escala Partos Novembro 2025.docx', label: 'Escala Partos HLPV — Novembro 2025', type: 'docx', date: '2025-10-25', link: GD_ESCALAS_HLPV },
+            { name: 'HLPV Escala Partos Novembro 2025 (2).docx', label: 'Escala Partos HLPV — Novembro 2025 (rev.2)', type: 'docx', date: '2025-11-03', link: GD_ESCALAS_HLPV }
+          ]
+        }
+      },
+      {
+        name: 'Recibos Vencimento CPC',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+        gdPath: GD_PATHS.recibosVencCPC,
+        monthlyDocs: { 0: 0, 1: 0, 2: 1, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        hasMonthFolders: true,
+        knownFiles: {
+          2: [ // Março
+            { name: '514199920_RC_2026_M02P1_F.PDF', label: 'Recibo Vencimento CPC — Março 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1YWqZBqnXDyKOZu4rLK7Hqb9aXbXuczJv/view' }
+          ]
+        }
+      },
+      {
+        name: 'Recibos Vencimento HLPV',
+        icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="12" y1="17" x2="8" y2="17"/></svg>`,
+        gdPath: GD_PATHS.recibosVencHLPV,
+        monthlyDocs: { 0: 0, 1: 1, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        hasMonthFolders: true,
+        knownFiles: {
+          1: [ // Fevereiro
+            { name: 'HLPV Vencimento Fevereiro 2026.pdf', label: 'Recibo Vencimento HLPV — Fevereiro 2026', type: 'pdf', date: '2026-02', link: 'https://drive.google.com/file/d/1rhnG5LS-M2QOb6rup76qIgzYJ-gPkDdu/view' }
+          ],
+          // Nota: gdLink('recibosVencHLPV', 2) → GD_RECIBOS_HLPV_FEV (pasta 2 do Fabric Link)
+        }
+      }
+    ]
+  }
+];
+
+// ---- STATE ----
+// Mês activo por defeito = mês actual (1=Jan ... 12=Dez)
+let activeMonth = new Date().getMonth() + 1;
+let drawerCategory = null;
+
+// ---- HELPERS ----
+// Retorna o folderLink correcto: se há gdPath e mês activo, abre a pasta do mês
+function getEffectiveFolderLink(obj, monthOverride) {
+  const m = monthOverride !== undefined ? monthOverride : activeMonth;
+  if (obj.gdPath) {
+    if (m > 0) return gdLink(obj.gdPath, m);
+    return gdLink(obj.gdPath);
+  }
+  return obj.folderLink || GD_ROOT;
+}
+
+function getSubfolderCount(sf, monthIdx) {
+  if (sf.monthlyDocs) return sf.monthlyDocs[monthIdx] || 0;
+  if (sf.files) return sf.files.length;
+  return 0;
+}
+
+function totalDocsInCategory(cat, month) {
+  if (month === 0) return totalAllMonths(cat);
+  const mIdx = month - 1;
+  if (cat.hasMonthFolders && cat.monthlyDocs) return cat.monthlyDocs[mIdx] || 0;
+  if (cat.subfolders) {
+    return cat.subfolders.reduce((sum, sf) => sum + getSubfolderCount(sf, mIdx), 0);
+  }
+  return 0;
+}
+
+function totalAllMonths(cat) {
+  if (cat.hasMonthFolders && cat.monthlyDocs) return Object.values(cat.monthlyDocs).reduce((a,b)=>a+b,0);
+  if (cat.subfolders) {
+    return cat.subfolders.reduce((sum, sf) => {
+      if (sf.monthlyDocs) return sum + Object.values(sf.monthlyDocs).reduce((a,b)=>a+b,0);
+      return sum + (sf.files ? sf.files.length : 0);
+    }, 0);
+  }
+  return 0;
+}
+
+function grandTotal(month) {
+  return CATEGORIES.reduce((sum, cat) => sum + totalDocsInCategory(cat, month), 0);
+}
+
+// ---- STATS ----
+function updateStats() {
+  document.getElementById('total-docs').textContent = grandTotal(activeMonth);
+  document.getElementById('active-month').textContent = activeMonth === 0 ? 'Todos' : MONTHS_FULL[activeMonth - 1];
+}
+
+// ---- RENDER CATEGORIES ----
+function renderCategories() {
+  const grid = document.getElementById('categories-grid');
+  grid.innerHTML = '';
+  CATEGORIES.forEach(cat => {
+    const total = totalDocsInCategory(cat, activeMonth);
+    const card = document.createElement('div');
+    card.className = 'category-card';
+    card.dataset.catId = cat.id;
+    const colorVal = `var(${cat.color})`;
+
+    let bodyHTML = '';
+    if (cat.subfolders) {
+      const items = cat.subfolders.map(sf => {
+        const count = activeMonth === 0
+          ? (sf.monthlyDocs ? Object.values(sf.monthlyDocs).reduce((a,b)=>a+b,0) : (sf.files ? sf.files.length : 0))
+          : getSubfolderCount(sf, activeMonth - 1);
+        return `<li class="subfolder-item">
+          <span class="subfolder-name">${sf.icon || ''}${sf.name}</span>
+          <span class="subfolder-badge ${count > 0 ? 'has-docs' : ''}">${count}</span>
+        </li>`;
+      }).join('');
+      bodyHTML = `<div class="card-body"><ul class="subfolder-list" role="list">${items}</ul></div>`;
+    } else if (cat.hasMonthFolders && cat.monthlyDocs) {
+      const cells = MONTHS.map((m, i) => {
+        const count = cat.monthlyDocs[i] || 0;
+        const active = activeMonth === 0 || activeMonth === i + 1;
+        return `<div class="month-cell ${count > 0 && active ? 'has-docs' : ''}">
+          <span class="month-name">${m}</span>
+          <span class="month-count">${count}</span>
+        </div>`;
+      }).join('');
+      bodyHTML = `<div class="month-grid">${cells}</div>`;
+    }
+
+    card.innerHTML = `
+      <div class="card-header">
+        <div class="card-icon" style="background:#fff;color:${colorVal};border:2px solid ${colorVal}">${cat.icon}</div>
+        <div class="card-title-group">
+          <h3 class="card-title">${cat.title}</h3>
+          <span class="card-count">${total} documento${total !== 1 ? 's' : ''}</span>
+        </div>
+        <svg class="card-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
+      </div>
+      ${bodyHTML}
+    `;
+    card.addEventListener('click', () => openDrawer(cat));
+    grid.appendChild(card);
+  });
+}
+
+// ---- DRAWER ----
+function openDrawer(cat) {
+  drawerCategory = cat;
+  const drawer = document.getElementById('drawer');
+  const overlay = document.getElementById('drawer-overlay');
+  const colorVal = `var(${cat.color})`;
+
+  document.getElementById('drawer-icon').innerHTML = cat.icon;
+  document.getElementById('drawer-icon').style.cssText = `background:color-mix(in srgb,${colorVal} 15%,transparent);color:${colorVal};`;
+  document.getElementById('drawer-title').textContent = cat.title;
+  const total = totalDocsInCategory(cat, activeMonth);
+  const monthLabel = activeMonth === 0 ? 'todos os meses' : MONTHS_FULL[activeMonth - 1];
+  document.getElementById('drawer-subtitle').textContent = `${total} documento${total !== 1 ? 's' : ''} · ${monthLabel}`;
+
+  const content = document.getElementById('drawer-content');
+  content.innerHTML = '';
+
+  // Botão principal: abre a pasta da categoria (ou a pasta do mês se mês ativo)
+  const mainFolderLink = getEffectiveFolderLink(cat);
+  const openBtn = document.createElement('a');
+  openBtn.href = mainFolderLink;
+  openBtn.target = '_blank';
+  openBtn.rel = 'noopener noreferrer';
+  openBtn.className = 'open-folder-btn';
+  const btnLabel = activeMonth > 0
+    ? `Abrir ${MONTHS_FULL[activeMonth-1]} no Google Drive`
+    : 'Abrir pasta no Google Drive';
+  openBtn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>${btnLabel}`;
+  content.appendChild(openBtn);
+
+  if (cat.subfolders) {
+    cat.subfolders.forEach(sf => {
+      const section = document.createElement('div');
+      section.className = 'drawer-section';
+      // Calcular total do mês ativo se há ficheiros com amount
+      let sfTitleExtra = '';
+      if (activeMonth > 0 && sf.knownFiles) {
+        const mIdx = activeMonth - 1;
+        const sfFiles = (sf.knownFiles || {})[mIdx] || [];
+        const sfTotal = sfFiles.reduce((sum, f) => sum + (f.amount || 0), 0);
+        if (sfTotal > 0) {
+          sfTitleExtra = ` &nbsp;·&nbsp; <span style="font-weight:700;color:var(--color-cat-3)">€${sfTotal.toLocaleString('pt-PT', {minimumFractionDigits:2, maximumFractionDigits:2})}</span>`;
+        }
+      } else if (!sf.hasMonthFolders && sf.files) {
+        const sfTotal = sf.files.reduce((sum, f) => sum + (f.amount || 0), 0);
+        if (sfTotal > 0) {
+          sfTitleExtra = ` &nbsp;·&nbsp; <span style="font-weight:700;color:var(--color-cat-3)">€${sfTotal.toLocaleString('pt-PT', {minimumFractionDigits:2, maximumFractionDigits:2})}</span>`;
+        }
+      }
+      section.innerHTML = `<h3 class="drawer-section-title">${sf.icon || ''}${sf.name}${sfTitleExtra}</h3>`;
+
+      if (sf.hasMonthFolders && sf.monthlyDocs) {
+        const grid = buildMonthGrid(sf.monthlyDocs, sf.knownFiles || {}, sf);
+        section.appendChild(grid);
+      } else if (sf.files && sf.files.length > 0) {
+        section.appendChild(buildFileList(sf.files));
+      } else {
+        section.innerHTML += `<div class="empty-state">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          <p>Sem documentos</p>
+        </div>`;
+      }
+
+      // Botão da subfolder: abre o mês certo se mês ativo, senão a raiz da subfolder
+      const sfLink = getEffectiveFolderLink(sf);
+      const sfBtn = document.createElement('a');
+      sfBtn.href = sfLink;
+      sfBtn.target = '_blank';
+      sfBtn.rel = 'noopener noreferrer';
+      sfBtn.className = 'open-folder-btn small';
+      const sfBtnLabel = activeMonth > 0
+        ? `Abrir ${MONTHS_FULL[activeMonth-1]} no Google Drive`
+        : 'Abrir no Google Drive';
+      sfBtn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>${sfBtnLabel}`;
+      section.appendChild(sfBtn);
+
+      content.appendChild(section);
+    });
+  } else if (cat.hasMonthFolders && cat.monthlyDocs) {
+    const section = document.createElement('div');
+    section.className = 'drawer-section';
+
+    // Para o Acordo Parental com mês ativo: calcular soma das faturas conhecidas
+    let sectionTitle = 'Documentos por mês';
+    if (cat.id === 'acordo-parental' && activeMonth > 0) {
+      const mIdx = activeMonth - 1;
+      const files = (cat.knownFiles || {})[mIdx] || [];
+      const total = files.reduce((sum, f) => sum + (f.amount || 0), 0);
+      if (total > 0) {
+        sectionTitle = `Documentos por mês &nbsp;·&nbsp; <span style="color:var(--color-cat-4);font-weight:700">€${total.toLocaleString('pt-PT', {minimumFractionDigits:2, maximumFractionDigits:2})}</span>`;
+      }
+    }
+    section.innerHTML = `<h3 class="drawer-section-title">${sectionTitle}</h3>`;
+    section.appendChild(buildMonthGrid(cat.monthlyDocs, cat.knownFiles || {}, cat));
+    content.appendChild(section);
+  }
+
+  drawer.classList.add('open');
+  overlay.classList.add('open');
+  drawer.setAttribute('aria-hidden', 'false');
+}
+
+function buildMonthGrid(monthlyDocs, knownFiles, owner) {
+  const wrap = document.createElement('div');
+
+  // Se há mês ativo: mostrar diretamente os ficheiros desse mês (sem grade)
+  if (activeMonth > 0) {
+    const mIdx = activeMonth - 1;
+    const count = monthlyDocs[mIdx] || 0;
+    const files = knownFiles[mIdx];
+    if (files && files.length > 0) {
+      wrap.appendChild(buildFileList(files));
+    } else if (count > 0) {
+      // Há documentos mas sem lista detalhada: botão para abrir pasta do mês
+      const hint = document.createElement('p');
+      hint.style.cssText = 'font-size:var(--text-sm);color:var(--color-text-muted);margin-bottom:var(--space-3)';
+      hint.textContent = `${count} documento${count !== 1 ? 's' : ''} — abre a pasta para ver`;
+      wrap.appendChild(hint);
+    } else {
+      const empty = document.createElement('div');
+      empty.className = 'empty-state';
+      empty.innerHTML = `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg><p>Sem documentos em ${MONTHS_FULL[mIdx]}</p>`;
+      wrap.appendChild(empty);
+    }
+    return wrap;
+  }
+
+  // Sem mês ativo: mostrar grade anual completa
+  const grid = document.createElement('div');
+  grid.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2);margin-bottom:var(--space-4)';
+  MONTHS.forEach((m, i) => {
+    const count = monthlyDocs[i] || 0;
+    const cell = document.createElement('a');
+    cell.className = `month-cell ${count > 0 ? 'has-docs' : ''}`;
+    cell.href = getEffectiveFolderLink(owner, i + 1);
+    cell.target = '_blank';
+    cell.rel = 'noopener noreferrer';
+    cell.style.cssText = 'text-decoration:none;display:flex;flex-direction:column;align-items:center;cursor:pointer;';
+    cell.innerHTML = `<span class="month-name">${MONTHS_FULL[i]}</span><span class="month-count">${count} doc${count !== 1 ? 's' : ''}</span>`;
+    grid.appendChild(cell);
+  });
+  wrap.appendChild(grid);
+
+  return wrap;
+}
+
+function buildFileList(files) {
+  const list = document.createElement('div');
+  list.className = 'file-list';
+  files.forEach(f => {
+    const ext = (f.name.split('.').pop() || '').toLowerCase();
+    let typeClass = 'other';
+    if (ext === 'pdf') typeClass = 'pdf';
+    else if (['jpg','jpeg','png','gif'].includes(ext)) typeClass = 'img';
+    else if (['docx','doc'].includes(ext)) typeClass = 'docx';
+
+    const iconSVG = {
+      pdf: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
+      img: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>`,
+      docx: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="12" y1="17" x2="8" y2="17"/></svg>`,
+      other: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`
+    }[typeClass];
+
+    const displayName = f.label || f.name;
+    const item = document.createElement('a');
+    item.className = 'file-item';
+    item.href = f.link || GD_ROOT;
+    item.target = '_blank';
+    item.rel = 'noopener noreferrer';
+    item.title = f.name; // nome original no tooltip
+    item.innerHTML = `
+      <div class="file-item-icon ${typeClass}">${iconSVG}</div>
+      <div class="file-item-info">
+        <div class="file-item-name">${displayName}</div>
+        ${f.date ? `<div class="file-item-meta">${f.date}</div>` : ''}
+      </div>
+      <svg class="file-item-link" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15,3 21,3 21,9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+    `;
+    list.appendChild(item);
+  });
+  return list;
+}
+
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.getElementById('drawer').setAttribute('aria-hidden', 'true');
+  drawerCategory = null;
+}
+
+// ---- MONTH FILTER ----
+document.getElementById('month-pills').addEventListener('click', e => {
+  const pill = e.target.closest('.pill');
+  if (!pill) return;
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  pill.classList.add('active');
+  activeMonth = parseInt(pill.dataset.month);
+  updateStats();
+  renderCategories();
+  if (drawerCategory) openDrawer(drawerCategory);
+});
+
+// ---- THEME ----
+(function(){
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  root.setAttribute('data-theme', dark ? 'dark' : 'light');
+  setIcon(toggle, dark);
+  toggle.addEventListener('click', () => { dark = !dark; root.setAttribute('data-theme', dark ? 'dark' : 'light'); setIcon(toggle, dark); });
+  function setIcon(btn, isDark) {
+    btn.innerHTML = isDark
+      ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`
+      : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  }
+})();
+
+// ---- CLOSE DRAWER ----
+document.getElementById('drawer-close').addEventListener('click', closeDrawer);
+document.getElementById('drawer-overlay').addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+
+// ---- INIT ----
+// Activar o pill do mês actual
+(function() {
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+  const currentPill = document.querySelector(`.pill[data-month="${activeMonth}"]`);
+  if (currentPill) currentPill.classList.add('active');
+})();
+updateStats();
+renderCategories();
