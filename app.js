@@ -217,7 +217,7 @@ const CATEGORIES = [
         name: 'Faturas da Zebra Curiosa',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
         gdPath: GD_PATHS.faturasZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 9, 3: 4, 4: 1, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 9, 3: 7, 4: 1, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [ // Março
@@ -238,7 +238,9 @@ const CATEGORIES = [
             { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas — Aviso Débito Seguro Vida B ZC (Abr 2026)', type: 'pdf', date: '2026-04-20', link: 'https://drive.google.com/file/d/1_C3C1oBsEXQmyC-8Yx313NAvc8BHV5g4/view' },
             { name: 'Águas do Norte — Fatura Água Zebra Curiosa Abril 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-16', link: 'https://drive.google.com/file/d/17qLSSkQx0VamaWaH-U57z7-ZYicV1d6f/view' },
             { name: 'EDP — Fatura Eletricidade Zebra Curiosa Abr 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-08', link: 'https://drive.google.com/file/d/1GacqaQtyJOR4vJ-wrMplzp60_cKaPq_y/view' },
-            { name: 'Ageas Poupança Multiplic Simão Abril 2026.PDF', label: 'Ageas — Aviso Débito Poupança Multiplic Simão (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1UuNZv8suq9OyxbY6OkIxUjDLgMvbAe9J/view' }
+            { name: 'Ageas Poupança Multiplic Simão Abril 2026.PDF', label: 'Ageas — Aviso Débito Poupança Multiplic Simão (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1UuNZv8suq9OyxbY6OkIxUjDLgMvbAe9J/view' },
+            { name: 'Condomínio Solar Abril 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Abr 2026)', type: 'pdf', date: '2026-04', amount: 24.99, link: 'https://drive.google.com/file/d/14kdi8ksSB8ldDS9N5nZF4Eo9zAPeQT6M/view' },
+            { name: 'Lusitania PPR Abril 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 250.00, link: 'https://drive.google.com/file/d/1VnUP33ACbDa7xoMWn-nancYVaetysYub/view' }
           ],
           1: [ // Fevereiro
             { name: '077.DP.26020770408298299.PDF', label: 'Prio — Fatura Combustível Zebra Curiosa (Fev 2026)', type: 'pdf', date: '2026-02', link: gdLink(GD_PATHS.faturasZebra, 2) },
@@ -251,7 +253,7 @@ const CATEGORIES = [
         name: 'Subscrições Mensais',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>`,
         gdPath: GD_PATHS.subscricoesZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 1, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [
@@ -263,6 +265,9 @@ const CATEGORIES = [
             { name: 'Perplexity Auto Topup Zebra Curiosa 18 Mar 2026.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (18 Mar 2026)', type: 'pdf', date: '2026-03-18', amount: 65.90, link: gdLink(GD_PATHS.subscricoesZebra, 3) },
             { name: 'Spotify Premium Familia ZC Marco 2026.pdf', label: 'Spotify — Premium Família ZC (Mar 2026)', type: 'pdf', date: '2026-03-23', amount: 16.99, link: 'https://drive.google.com/file/d/1WHVnj1Rou_kLJQdD-ypbi55HeNoaO_Nj/view' },
             { name: 'Fabric Pro Plan ZC Marco 2026.pdf', label: 'Fabric Pro Plan — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-28', amount: 13.03, link: 'https://drive.google.com/file/d/1PGG59SnEMHOJQgjFrIq3btFTYhmG3JoS/view' }
+          ],
+          3: [
+            { name: 'Manus AI Abril 2026.pdf', label: 'Manus AI — Subscrição Mensal Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 225.00, link: 'https://drive.google.com/file/d/1fUYNZ-Hs6HpxQ2B8LsYunnuUEOcYeZX_/view' }
           ]
         }
       }
@@ -276,7 +281,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.pagamentosPessoais,
-    monthlyDocs: { 0: 0, 1: 0, 2: 6, 3: 3, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 6, 3: 4, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       1: [], // Fevereiro
       2: [ // Março
@@ -288,9 +293,9 @@ const CATEGORIES = [
         { name: 'Quotas Semestrais Ordem dos Medicos Mar 2026.pdf', label: 'Ordem dos Médicos — Quotas Semestrais Jan-Jun 2026 (Mar 2026)', type: 'pdf', date: '2026-03-25', amount: 97.80, link: 'https://drive.google.com/file/d/1n68mUOdwfstIuGeIRRih8vqoozPI6SQo/view' }
       ],
       3: [ // Abril
-        { name: 'Aviso Débito Allianz Casa Viseu Abril 2026.pdf', label: 'Allianz — Aviso Débito Casa Viseu (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1I2HsGce7bZLlLopUe9xUKzpkGvtJcArH/view' },
         { name: 'SU Eletricidade — Fatura Casa Viseu Abr 2026.pdf', label: 'SU Eletricidade — Fatura Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/13_wRF1O1SmPvN-hk7a7UTFxYxSJRffFY/view' },
-        { name: 'SMAS Viseu Fatura Agua Abr 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 11.47, link: 'https://drive.google.com/file/d/1urV-5Vusel671RG-45mb7hXNWL71cOUk/view' }
+        { name: 'SMAS Viseu Fatura Agua Abr 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 11.47, link: 'https://drive.google.com/file/d/1urV-5Vusel671RG-45mb7hXNWL71cOUk/view' },
+        { name: 'Aviso Débito Allianz Casa Viseu Abril 2026.pdf', label: 'Allianz — Seguro Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04', amount: 250.00, link: 'https://drive.google.com/file/d/1I2HsGce7bZLlLopUe9xUKzpkGvtJcArH/view' }
       ]
     }
   },
@@ -302,7 +307,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.acordoParental,
-    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 1, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       0: [], // Janeiro
       1: [], // Fevereiro
@@ -312,6 +317,9 @@ const CATEGORIES = [
         { name: 'Externato Santa Joana Matrícula 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Matrícula 2026/2027 Simão €260,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 260.00, link: 'https://drive.google.com/file/d/1vis2Tnayj7wQT75-KbioHHgGuinxiMB9/view' },
         { name: 'Externato Santa Joana Escola Virtual 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Escola Virtual 2026/2027 Simão €39,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 39.00, link: 'https://drive.google.com/file/d/1QnCCnIGr6XO6M7WEvCSiO4zrRRVWXfoK/view' },
         { name: 'Sapatilhas Simão Acordo Parental Março 2026.pdf', label: 'Sapatilhas Predator Club — Simão €39,99 (Mar 2026)', type: 'pdf', date: '2026-03-26', amount: 39.99, link: 'https://drive.google.com/file/d/1w-_y7-CUvDHwzVxPGw-nY4ma7no4QLxE/view' }
+      ],
+      3: [ // Abril
+        { name: 'Mensalidade Externato SJ Abril 2026.pdf', label: 'Externato Santa Joana — Mensalidade Simão (Abr 2026)', type: 'pdf', date: '2026-04-01', amount: 498.50, link: 'https://drive.google.com/file/d/1FF7s5n1m9_iYXmsq474e6SM1MJCVEp5Z/view' }
       ]
     }
   },
@@ -357,12 +365,17 @@ const CATEGORIES = [
         name: 'Recibos Vencimento CPC',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
         gdPath: GD_PATHS.recibosVencCPC,
-        monthlyDocs: { 0: 0, 1: 0, 2: 2, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 2, 3: 3, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [ // Março
             { name: '514199920_RC_2026_M02P1_F.PDF', label: 'Recibo Vencimento CPC — Março 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1YWqZBqnXDyKOZu4rLK7Hqb9aXbXuczJv/view' },
             { name: 'Recibo Março 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1kkrio1bkJwOOAM5dqYa7wZydCV9HFQP7/view' }
+          ],
+          3: [ // Abril
+            { name: 'T. Ocupacional Março Abril 2026.pdf', label: 'Susana Ferreira — Recibo Vencimento TO CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 637.50, link: 'https://drive.google.com/file/d/1AQylcyLvJzxpqbuFOZuBA6Hp8Q79nsP1/view' },
+            { name: 'Psicologia Março Abril 2026.pdf', label: 'Rute Ferreira — Recibo Vencimento Psicologia CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 3997.77, link: 'https://drive.google.com/file/d/1TtpHjxPtP56t-AtB-QZjw7KdLkxZXfVN/view' },
+            { name: 'TF Bianca Sousa Março Abril 2026.pdf', label: 'Bianca Sousa — Recibo Vencimento TF CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 742.50, link: 'https://drive.google.com/file/d/1359PBtIqfxSqzQ_-tRXr6pS3GHBqwDVF/view' }
           ]
         }
       },
