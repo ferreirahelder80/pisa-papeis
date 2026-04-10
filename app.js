@@ -16,44 +16,131 @@ const GD_ROOT              = GD + '15WbhNxJMvEiex5Cf8PZAsJ0cOJJE_7vA'; // Fabric
 const GD_APOLICES_ZEBRA    = GD + '1uzfbgui69A_Sz9ogSWGa2Q3TCR1iJrv-'; // Apólices Zebra Curiosa
 const GD_APOLICES_PESSOAIS = GD + '1VobvjDLHx0G_uTqBdLrC6x1uEFdA4Etq'; // Apólices Pessoais
 
-// Subpastas Apólices Zebra — sem IDs individuais, apontam para a pasta pai
-const GD_ZC_AUTOMOVEIS     = GD_APOLICES_ZEBRA;
+// Subpastas Apólices Zebra
+const GD_ZC_AUTOMOVEIS     = GD + '1hf_I4ujOMthj2dCzBvdProQhGyjcYdUL';
 const GD_ZC_COLABORADORAS  = GD_APOLICES_ZEBRA;
-const GD_ZC_CPC            = GD_APOLICES_ZEBRA;
-const GD_ZC_PPR            = GD_APOLICES_ZEBRA;
-const GD_ZC_SAUDE          = GD_APOLICES_ZEBRA;
+const GD_ZC_CPC            = GD + '1yAwSm5c4XngOBPJ_FOH-JlvBpyncOoxz';
+const GD_ZC_PPR            = GD + '1FKgbBxFEuN00-FoZX5jeYYp6jyXyOY5T';
+const GD_ZC_SAUDE          = GD + '1Rb79-6Uzky7c186thTP9GlBu5acoCXV5';
 
-// Subpastas Apólices Pessoais — apontam para pasta pai
-const GD_PE_EQUIPAMENTOS   = GD_APOLICES_PESSOAIS;
-const GD_PE_CASA_MAIA      = GD_APOLICES_PESSOAIS;
-const GD_PE_CASA_VISEU     = GD_APOLICES_PESSOAIS;
+// Subpastas Apólices Pessoais
+const GD_PE_EQUIPAMENTOS   = GD + '1CkEBRQ5MtukyvjqhN7B-l1n9p-HfQ6SG';
+const GD_PE_CASA_MAIA      = GD + '1H-3ep-q-0fVewDp70lljRTHpy5-yXlU0';
+const GD_PE_CASA_VISEU     = GD + '1bFiPKLozf3y5ZRzcjFzHm6-YqNeEXuKw';
 
-// Pastas mensais de Março
-const GD_FATURAS_ZC_MAR    = GD + '1sPj9XDJQk9B0EAM70cCxhTwoUFexBFpw';
-const GD_SUBSCRICOES_ZC_MAR= GD + '1kUTi0LZRHlK40Rd6FNEA6y8On4sCfiEf';
-const GD_PESSOAIS_MAR      = GD + '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt';
-const GD_ACORDO_MAR        = GD + '1qJ5KD0HTqn6Ko3P4qlp5kvT5jlj38UAv';
-const GD_ESCALAS_HLPV_MAR  = GD + '1qeybxMLmnRyuMB-5SFxKyAnT3U2qFGOz';
-const GD_RECIBOS_CPC_MAR   = GD + '1qTEiuCnbbD8TVFynwrP-5mBgmaU9HJGk';
-const GD_RECIBOS_HLPV_MAR  = GD_ROOT; // pasta HLPV Março ainda sem ID — aponta para raiz
+// Pastas pai das categorias
+const GD_FATURAS_ZC        = GD + '1_k6Us2W6OFwmEenTY7zbudz0UkpiBVIY'; // Faturas da Zebra Curiosa
+const GD_SUBSCRICOES_ZC    = GD + '11Deb03nH8gRe3L5T1XQAm5nP2eqfA8P6'; // Subscrições Mensais ZC
+const GD_PESSOAIS          = GD + '1DeeBgrnAqGhEy-wQnVyiM6N7wvIqIrVw'; // Pagamentos Pessoais
+const GD_ACORDO            = GD + '10KCKRpUffwE4ev-GtFopOrQEoKhz89WQ'; // Acordo Parental
+const GD_ESCALAS_HLPV      = GD + '17jHAKMjp6kQnBqM4rGC3bmsrgMfX1IYd'; // Escalas HLPV
+const GD_RECIBOS_CPC       = GD + '1pCi6RLorqNtRGL_Emtah7CLTamEx8aYd'; // Recibos CPC
+const GD_VENCIMENTOS       = GD + '1xS8FksH_HsA1x2gLTBjvg4PuH9kxJXmE'; // Recibos HLPV
+const GD_PAGAMENTOS_ZC     = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN'; // Pagamentos Zebra Curiosa (pai)
 
-// Pastas mensais de Abril — IDs ainda não obtidos, usar pasta pai como fallback
-const GD_FATURAS_ZC_ABR    = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN'; // pai ZC (fallback)
-const GD_PESSOAIS_ABR      = GD + '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt'; // pai Pessoais (fallback)
-const GD_ESCALAS_HLPV_ABR  = GD + '1Bp6uhibm0PuoBF7malWVYITgQovWb3CE'; // Escalas HLPV / Abril
+// IDs completos das subpastas mensais (1=Jan ... 12=Dez)
+const GD_MONTH_IDS = {
+  faturasZebra: {
+    1:  '1ZnONUPer5NmAL-vrRb7Eq1jlHgD98SMH',
+    2:  '1GHLIHq-58NdsC2p4MDMNoJMO2pEUYVZW',
+    3:  '1sPj9XDJQk9B0EAM70cCxhTwoUFexBFpw',
+    4:  '1R7-Sg_F6XPOkbo9J2ip4h7ojd17EbdOw',
+    5:  '1JOBC-Le5d51T8qlWUjiZYWWcNoyS-iQw',
+    6:  '18PgAJpaXLQYwyxQkXaHUT9ZcKbqa1IZR',
+    7:  '1qbDOLf76mQkP9BRfNUgOih68ATO_Xsks',
+    8:  '1axQbusi-GvMGph4Z50bT58xm-OPsVte1',
+    9:  '1x6iBvgbj5pe-LHrxsB-doig4084wV_yR',
+    10: '1zSDK1YuwK-WWWgDWZ5Xdv1oebn1zQCkI',
+    11: '1GnHwYUbb-Gs6Xtky-hKaxjOTxwA1BVst',
+    12: '13EZzt0eD5a1nDVjq-t42RL6NrksN0fQW',
+  },
+  subscricoesZebra: {
+    1:  '1bNmrfNrZnu4TpJ7ZtHlpMeg8VD4jPcti',
+    2:  '1ICEvyEloLxlK4ajMQht4KP178J4J7oKj',
+    3:  '1kUTi0LZRHlK40Rd6FNEA6y8On4sCfiEf',
+    4:  '1PQmNNkZrK_UqXjZjuEys6bJvEllCVpPt',
+    5:  '1N0zpiWVgqryX6BUhq0L61RvHldPnQGgi',
+    6:  '1hNDi4m88DclQPtPJUX4_Tg4VLfF6ok3v',
+    7:  '1leLoaKbJihwSthkpH_g3xai8XxWk3Bku',
+    8:  '1u1FMwFw5i34oKoAhZZ8mw4UHvuqiLL6U',
+    9:  '1kpRI5iqrmS3qeVjgwVaOm2vHfoIGEUHf',
+    10: '1pTy2wuZVqTg-ClQcHpZIQ0smTtGOx7Yr',
+    11: '1bjRtyfkVVtqtMvJf-aELHXGmEw5MsRxP',
+    12: '13Q5ouVlEjfWyFrSCcHtw-5gt29h1cwvt',
+  },
+  pagamentosPessoais: {
+    1:  '144oe3tv1loRFcNPLwrz00XRL3oh9GfcT',
+    2:  '1erX_ojYUwiCuYoTaKHV6ehH68RpRMYZf',
+    3:  '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt',
+    4:  '1guPZt4Ma-bBSTwM9rW0fOf_W82qMt5HN',
+    5:  '1rS2ns6FJB_umBZLWHTRpPXh3geKuYmGZ',
+    6:  '1xGM_-SqRfKYIjlkQKqmaqBw5PIbwrOTd',
+    7:  '1S4JKl0tn_HXL2Z_ynMq5IsEPwzDem1F2',
+    8:  '1gUKPXpVwDwa_4tqBwUIuUhlNNk9_hbgu',
+    9:  '1xxuK3sBvG3PQ5-w7pG4Suv0OCxqJ-w27',
+    10: '1X4wNrg1P67RUf1734BlxdOMmC_hc9vTO',
+    11: '1mRqwNBDlgFbOU42NCXlLpq82EL1sz3lb',
+    12: '1CyCH8Q4pX7n_sv6rgteCoLmOicKhni0F',
+  },
+  acordoParental: {
+    1:  '1DZ1NyMYLA_bST_mmbOR7fpkLSflZDQwP',
+    2:  '1TBQjS-dtnhRWzBefO8LXiEKNJe2_BxFo',
+    3:  '1qJ5KD0HTqn6Ko3P4qlp5kvT5jlj38UAv',
+    4:  '1PsSA8y8duru-v3Lcjv3P8raDYOxz5RyO',
+    5:  '1xF5MDV7vKrMEmx5oophwwHtmQJ7up94e',
+    6:  '13NulPx9TJuBDJj-rDyHTCS1l6mr8dvel',
+    7:  '1CyEpde9ItvyK3aE4ZgERqQhWPu_CjIDB',
+    8:  '1QG15zohNYGxT3I1SqptPy5R0np5qHm7I',
+    9:  '1YLqnF5IKbFzARfBHNLx69eQ1p5Xc2mpe',
+    10: '14_i4dCxY4VFci2qrqZDhxpFjN7UPbNPv',
+    11: '1FuHNxoKZC5AOKVBlO5IK0OeX82JIRRNV',
+    12: '1Hp70YKW5EOIc47-_6B9sCCzkEcx-HBSI',
+  },
+  escalasHLPV: {
+    1:  '1K5cbtI6GSMfD9m57yfs9rMiQmXP0O3IM',
+    2:  '1nvlRdbbLZxVabkS9F6cBV26v-zNIQtLq',
+    3:  '1qeybxMLmnRyuMB-5SFxKyAnT3U2qFGOz',
+    4:  '1Bp6uhibm0PuoBF7malWVYITgQovWb3CE',
+    5:  '17YxMttmLMUnOUQHuOsLnK9eshG33RhgA',
+    6:  '1KpaGm5SiNWFFRrcjPgMV8s8ZLxwkFHGD',
+    7:  '1PGIrbMsISVmYHyHm8vvBmj2NBUaxzXtr',
+    8:  '1ipAonG091Pgkvo4KrqsY-VfiDMcmrEjH',
+    9:  '1HdqYx4C85QKMy3Uy_dBikGNWMfS9iuIW',
+    10: '1Dyz2F-eryIhjRjmcW61CgydkP92zmqGS',
+    11: '12HI76_bOhzvM4AAvyY4xSbDgi4ua9Vd3',
+    12: '1dZpU-82n4h3Ftp2nQu7zuyhsBxZjufPf',
+  },
+  recibosVencCPC: {
+    1:  '1hiUj-QlIck0QmCokeR8pclcjNrHnMiCL',
+    2:  '1nKFsMHl7vak0T4gEjXEDJcibzZgnHjHS',
+    3:  '1qTEiuCnbbD8TVFynwrP-5mBgmaU9HJGk',
+    4:  '1pUinCWKFPPtJ6nCQlV3hNdpl1prE4SGv',
+    5:  '1MdgMue0dWMnY11LySlS38s19-wAyukQM',
+    6:  '1Yi_ppIrijgdzlSC0iLGqBxywGQJyo9n1',
+    7:  '1M2uM3bGNcEucXorg5Ka3wtWAJ2YIOkI3',
+    8:  '1yVl40DVYmYVwe3NtkTw1aIzLLkmqKH4R',
+    9:  '18dJdb57AvCra0ixIK9vxzGTjr6PfFOIo',
+    10: '1mUN9US2nI0-te_4wRgaTVxbN5nndZJbX',
+    11: '1BiC057RamLovNZB9aYbHq1RXgX7QqD45',
+    12: '1736Vj6kEgmfiLa8MaqFgfDAHF5uw78ge',
+  },
+  recibosVencHLPV: {
+    1:  '1D0AWlqf0z8eSN7Nxsq6VuGopvnILtLfp',
+    2:  '1Me4VuKKp13K3h9t0DIOGaHfqCC4DBReJ',
+    3:  '1okYa2YQrfk6VvkFhIeJwv4meSpQOi3sE',
+    4:  '1LW61PCqC0STBFKh_NWI9nH9rmOYm5Pj3',
+    5:  '1ndlphcGrPJUALdK___nZsQ4iFYcdWvaX',
+    6:  '1CpHotsuNe6CYiykRHpikWZN2mAM-aD9E',
+    7:  '1QNNONlrZyaqAQcOad65AyJ6oJzSJOJ3p',
+    8:  '1KzOnPBN1bAkdpcopIjhszDDAKWrjgmjr',
+    9:  '1ZJds--HHdP1oQ5yODyoiNYK17tBkeoUT',
+    10: '1cmGXA0n22AtDA9M-AhbcMl8j-F5L-KTE',
+    11: '16x6w0pHFhsctmjII0L9jrjtuWtFf7xuj',
+    12: '1p7Js1wR91zEZfxosD3t9-Ewzwaa3zJK_',
+  },
+};
 
-// Pastas pai das categorias (fallback para meses sem ID específico)
-const GD_FATURAS_ZC        = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN'; // Pagamentos Zebra Curiosa
-const GD_SUBSCRICOES_ZC    = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN';
-const GD_PESSOAIS          = GD + '1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt';
-const GD_ACORDO            = GD + '1qJ5KD0HTqn6Ko3P4qlp5kvT5jlj38UAv';
-const GD_ESCALAS_HLPV      = GD + '17jHAKMjp6kQnBqM4rGC3bmsrgMfX1IYd';
-const GD_RECIBOS_CPC       = GD + '1pCi6RLorqNtRGL_Emtah7CLTamEx8aYd';
-const GD_VENCIMENTOS       = GD + '1xS8FksH_HsA1x2gLTBjvg4PuH9kxJXmE'; // Recibos Vencimento HLPV (pasta pai)
-const GD_RECIBOS_HLPV_FEV  = GD + '1Me4VuKKp13K3h9t0DIOGaHfqCC4DBReJ'; // Recibos HLPV / 2 (Fevereiro)
-
-// Mapeamento de chaves de categoria para constantes GD mensais
-// Uso: gdLink('faturasZebra', 3)  →  link da pasta Faturas ZC de Março
+// Mapeamento de chaves de categoria
 const GD_PATHS = {
   faturasZebra:      'faturasZebra',
   subscricoesZebra:  'subscricoesZebra',
@@ -64,50 +151,25 @@ const GD_PATHS = {
   recibosVencHLPV:   'recibosVencHLPV',
 };
 
+// Pastas pai por categoria (fallback)
+const GD_PARENT = {
+  faturasZebra:       GD_FATURAS_ZC,
+  subscricoesZebra:   GD_SUBSCRICOES_ZC,
+  pagamentosPessoais: GD_PESSOAIS,
+  acordoParental:     GD_ACORDO,
+  escalasHLPV:        GD_ESCALAS_HLPV,
+  recibosVencCPC:     GD_RECIBOS_CPC,
+  recibosVencHLPV:    GD_VENCIMENTOS,
+};
+
 // gdLink — devolve o link da pasta mensal correcta do Google Drive
 // monthNum: 1=Jan ... 12=Dez
 function gdLink(category, monthNum) {
-  if (monthNum === 2) {
-    const map = {
-      recibosVencHLPV:    GD_RECIBOS_HLPV_FEV,
-    };
-    if (map[category]) return map[category];
+  const catMap = GD_MONTH_IDS[category];
+  if (catMap && monthNum && catMap[monthNum]) {
+    return GD + catMap[monthNum];
   }
-  if (monthNum === 3) {
-    const map = {
-      faturasZebra:       GD_FATURAS_ZC_MAR,
-      subscricoesZebra:   GD_SUBSCRICOES_ZC_MAR,
-      pagamentosPessoais: GD_PESSOAIS_MAR,
-      acordoParental:     GD_ACORDO_MAR,
-      escalasHLPV:        GD_ESCALAS_HLPV_MAR,
-      recibosVencCPC:     GD_RECIBOS_CPC_MAR,
-      recibosVencHLPV:    GD_RECIBOS_HLPV_MAR,
-    };
-    return map[category] || GD_ROOT;
-  }
-  if (monthNum === 4) {
-    const map = {
-      faturasZebra:       GD_FATURAS_ZC_ABR,
-      subscricoesZebra:   GD_SUBSCRICOES_ZC,
-      pagamentosPessoais: GD_PESSOAIS_ABR,
-      acordoParental:     GD_ACORDO,
-      escalasHLPV:        GD_ESCALAS_HLPV_ABR,
-      recibosVencCPC:     GD_RECIBOS_CPC,
-      recibosVencHLPV:    GD_VENCIMENTOS,
-    };
-    return map[category] || GD_ROOT;
-  }
-  // Para outros meses, abre a pasta pai da categoria
-  const parentMap = {
-    faturasZebra:       GD_FATURAS_ZC,
-    subscricoesZebra:   GD_SUBSCRICOES_ZC,
-    pagamentosPessoais: GD_PESSOAIS,
-    acordoParental:     GD_ACORDO,
-    escalasHLPV:        GD_ESCALAS_HLPV,
-    recibosVencCPC:     GD_RECIBOS_CPC,
-    recibosVencHLPV:    GD_VENCIMENTOS,
-  };
-  return parentMap[category] || GD_ROOT;
+  return GD_PARENT[category] || GD_ROOT;
 }
 
 // ---- DATA STRUCTURE ----
@@ -221,7 +283,7 @@ const CATEGORIES = [
         hasMonthFolders: true,
         knownFiles: {
           2: [ // Março
-            { name: 'Gassu Março 2026.PDF', type: 'pdf', date: '2026-03-02', link: GD_FATURAS_ZC_MAR },
+            { name: 'Gassu Março 2026.PDF', type: 'pdf', date: '2026-03-02', link: gdLink('faturasZebra', 3) },
             { name: 'Condomínio Solar Carta Cobrança Março 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Mar 2026)', type: 'pdf', date: '2026-03-09', link: 'https://drive.google.com/file/d/1jRzdEzQ87ENCRVY7G2y-jDlckQlHX40U/view' },
             { name: 'Vodafone Março 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-05', link: 'https://drive.google.com/file/d/14LFznC2hQFnIybLKiqjxl1pqyByhiVfc/view' },
             { name: 'Indaqua Fatura Água Zebra Curiosa Março 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-12', link: 'https://drive.google.com/file/d/1--ZTVSEtYXxCGfgxtsHyAya-VOzd7O49/view' },
