@@ -1520,8 +1520,18 @@ renderCategories();
 </script>
 <script>
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    window.addEventListener('load', async () => {
+      // Limpar caches antigos e forçar actualização do SW
+      const keys = await caches.keys();
+      await Promise.all(keys.map(k => caches.delete(k)));
+      const reg = await navigator.serviceWorker.register('./sw.js');
+      if (reg.waiting) reg.waiting.postMessage({ type: 'SKIP_WAITING' });
+      reg.addEventListener('updatefound', () => {
+        const nw = reg.installing;
+        nw.addEventListener('statechange', () => {
+          if (nw.state === 'activated') location.reload();
+        });
+      });
     });
   }
 </script>

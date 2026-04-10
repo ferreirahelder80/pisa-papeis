@@ -1,5 +1,5 @@
 // Service Worker — Pisa-Papéis
-const CACHE = 'pisa-papeis-v2';
+const CACHE = 'pisa-papeis-v3';
 const ASSETS = ['./index.html', './style.css', './app.js', './manifest.json'];
 
 self.addEventListener('install', e => {
@@ -15,15 +15,14 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Navegação — sempre busca a rede primeiro, fallback para cache
-  if (e.request.mode === 'navigate') {
-    e.respondWith(
-      fetch(e.request).catch(() => caches.match('./index.html'))
-    );
-    return;
-  }
-  // Outros recursos — cache first
+  // Network-first para TODOS os recursos — sempre busca a versão mais recente
   e.respondWith(
-    caches.match(e.request).then(cached => cached || fetch(e.request))
+    fetch(e.request)
+      .then(response => {
+        const clone = response.clone();
+        caches.open(CACHE).then(c => c.put(e.request, clone));
+        return response;
+      })
+      .catch(() => caches.match(e.request))
   );
 });
