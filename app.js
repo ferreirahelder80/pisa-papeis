@@ -287,7 +287,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.pagamentosPessoais,
-    monthlyDocs: { 0: 0, 1: 0, 2: 6, 3: 4, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 6, 3: 3, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       1: [], // Fevereiro
       2: [ // Março
