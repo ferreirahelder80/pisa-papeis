@@ -1,5 +1,5 @@
 // Service Worker — Pisa-Papéis
-const CACHE = 'pisa-papeis-v17';
+const CACHE = 'pisa-papeis-v18';
 const ASSETS = ['./index.html', './style.css', './app.js', './manifest.json'];
 
 self.addEventListener('install', e => {
