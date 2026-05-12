@@ -1089,7 +1089,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.acordoParental,
-    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 5, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 5, 4: 2, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       0: [], // Janeiro
       1: [], // Fevereiro
@@ -1106,6 +1106,10 @@ const CATEGORIES = [
         { name: 'Curso Happy Code.pdf', label: 'Happy Code — Curso Simão (Abr 2026)', type: 'pdf', date: '2026-04-07', amount: 130.00, link: 'https://drive.google.com/file/d/1JrTQrvofY-Mzf39hwGRgCtcODt6IftoY/view' },
         { name: 'ESJ Uniformes Simão Abril 2026.pdf', label: 'Externato Santa Joana — Uniformes Simão €38,00 (Abr 2026)', type: 'pdf', date: '2026-04-17', amount: 38.00, link: 'https://drive.google.com/file/d/1SAmb0un1a84NLf1fWEKe-xcB641_iLIT/view' },
         { name: 'Creme Effaclar Duo Simao Acordo Parental Abril 2026.pdf', label: 'Farmácia Moreira Barros — Creme Effaclar Duo Simão €21,50 (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 21.50, link: 'https://drive.google.com/file/d/13xkfOjeOGuJSBk3pOqacTSHCrzzZbZ0D/view' }
+      ],
+      4: [ // Maio
+        { name: 'ESJ Mensalidade Maio.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mai 2026)', type: 'pdf', date: '2026-05-04', amount: 533.60, link: 'https://drive.google.com/file/d/1Qq4bp12cZX3AAHsfj4g300YgqxjLHVoH/view' },
+        { name: 'Farmacia Elvanse Maio 2026.pdf', label: 'Farmácia — Elvanse Simão (Mai 2026)', type: 'pdf', date: '2026-05-06', link: 'https://drive.google.com/file/d/1DCwkbnpON2tZIY7Qo3Ie4e7U8Cd2YD0x/view' }
       ]
     }
   },
@@ -1547,7 +1551,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '12 Mai 2026, 00:55';
+  const LAST_UPDATE = '12 Mai 2026, 01:20';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
 
   // Estado inicial
