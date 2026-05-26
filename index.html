@@ -958,7 +958,7 @@ const CATEGORIES = [
         name: 'Faturas da Zebra Curiosa',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
         gdPath: GD_PATHS.faturasZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 18, 4: 11, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 18, 4: 20, 5: 1, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [ // Março
@@ -973,6 +973,9 @@ const CATEGORIES = [
             { name: 'Ageas Seguro de Vida Março 2026.pdf', label: 'Ageas — Seguro de Vida Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1N0yoZDMyXs2G9vBiIyTmtQK3tfTc0_DF/view' },
             { name: 'Pagamento Antecipado Ticket Educação 2026.pdf', label: 'Ticket Educação — Pagamento Antecipado ZC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 4942.80, link: 'https://drive.google.com/file/d/1WuQZ_1AJIh3ubvcus1oSxydWmbrBLKTm/view' }
           ],
+          5: [ // Junho
+            { name: 'INDAQUA Zebra Curiosa Junho 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa K2026FA/10122119 (Jun 2026)', type: 'pdf', date: '2026-06-01', amount: 59.09, link: 'https://drive.google.com/file/d/1iWbHViCYJKWmKOCvvYa8L1agZEISO3yR/view' }
+          ],
           4: [ // Maio
             { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Aviso Débito RC Profissional/Exploração ZC (Mai 2026)', type: 'pdf', date: '2026-05-15', link: 'https://drive.google.com/file/d/1zI4h92C6WWzoYMwuh8c8146r4ZbvhW9V/view' },
             { name: 'EDP Fatura Eletricidade ZC Maio 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 109.01, link: 'https://drive.google.com/file/d/1IE1e_3XxkzL1qQh1Hr_N0jV1sW5JsmNq/view' },
@@ -984,7 +987,16 @@ const CATEGORIES = [
             { name: 'Tranquilidade_AvisoDebito_AcidTrab_Mai2026.pdf', label: 'Tranquilidade — Aviso Débito Acidentes Trabalho ZC 0009029101 (Mai 2026)', type: 'pdf', date: '2026-05-24', amount: 364.44, link: 'https://drive.google.com/file/d/1lSnyRdQxdQXtWPohpDPYRgTZ6lagKhe-/view' },
             { name: 'Vodafone Maio 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-03', amount: 221.44, link: 'https://drive.google.com/file/d/1gMSsl2QbOz3KMCZdA7eT-n9yqm_TFn2r/view' },
             { name: 'Jani King Maio 2026 1a.pdf', label: 'Jani-King — Limpeza Extra 05/05 FA.2026/8295 (Mai 2026)', type: 'pdf', date: '2026-05-06', amount: 101.93, link: 'https://drive.google.com/file/d/1YhUeKAdYZNIyeGO-cWS__o7XyzTS0TvT/view' },
-            { name: 'Via Verde Maio 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1uA-mvEF-DTWN3anO_NDceYd0q7mTgQBv/view' }
+            { name: 'Via Verde Maio 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1uA-mvEF-DTWN3anO_NDceYd0q7mTgQBv/view' },
+            { name: 'Endesa Documento Pagamento ZC Maio 2026.pdf', label: 'Endesa — Documento Pagamento Eletricidade ZC (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1xEyeISD0iwihLpKpcJ77M9-TJeAuYJg1/view' },
+            { name: 'Ageas Multiplic Maio 2026.pdf', label: 'Ageas — Poupança Multiplic Simão Ferreira (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1tX-Bhfw8E0LSp027g5tplQSTQYwBbvy9/view' },
+            { name: 'Condominio CPC Maio 2026.pdf', label: 'Condomínio CPC — Carta de Cobrança (Mai 2026)', type: 'pdf', date: '2026-05', amount: 24.99, link: 'https://drive.google.com/file/d/1YzNvpW34qvHel9UmjlB_14uW2NZIn3GV/view' },
+            { name: 'Acidentes Trabalho Anual Maio 2026.pdf', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1gEfoEc7LogEc0T7DuUHAWXkbFzBkiENJ/view' },
+            { name: 'Lusitania PPR Maio 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.00, link: 'https://drive.google.com/file/d/1lTw1V_slfTupWXCqfP2KZ7Z_u_Enidp7/view' },
+            { name: 'Jani-King Fatura Maio 2026.pdf', label: 'Jani-King — Fatura Serviço Limpeza ZC (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1Vx5_LEL2JqamIWIlsNkfxP7-2gMK--oC/view' },
+            { name: 'Jani-King Limpeza Extra 2 Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 2 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 101.93, link: 'https://drive.google.com/file/d/1BDMxMO-pwAVHjtVEz1NayJTqZrZdvMOl/view' },
+            { name: 'Jani-King Limpeza Extra 4 Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 4 (Mai 2026)', type: 'pdf', date: '2026-05-26', amount: 101.93, link: 'https://drive.google.com/file/d/1EcSQ__F42cmvuH7T2e1fn7qmq2Dikcaw/view' },
+            { name: 'iMed Anuidade Maio 2026.pdf', label: 'iMed — Anuidade Plataforma Médica ZC (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1SG_u_KAWtGSWMqkesG5RlgSMgxzJ4BbR/view' }
           ],
           3: [ // Abril
             { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas — Aviso Débito Seguro Vida B ZC (Abr 2026)', type: 'pdf', date: '2026-04-20', link: 'https://drive.google.com/file/d/1_C3C1oBsEXQmyC-8Yx313NAvc8BHV5g4/view' },
@@ -1016,7 +1028,7 @@ const CATEGORIES = [
         name: 'Subscrições Mensais',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>`,
         gdPath: GD_PATHS.subscricoesZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 6, 4: 1, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 8, 3: 6, 4: 4, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [
@@ -1038,7 +1050,10 @@ const CATEGORIES = [
             { name: 'Spotify Premium Familia ZC Abril 2026.pdf', label: 'Spotify — Premium Família ZC (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 16.99, link: 'https://drive.google.com/file/d/1bImTv8PfREci2wumI71SUYqZmgruR4LY/view' }
           ],
           4: [ // Maio
-            { name: 'Perplexity Maio 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1vKpZbxp0odVjLGYW4Le0sGK8wx1tdtQc/view' }
+            { name: 'Perplexity Maio 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1vKpZbxp0odVjLGYW4Le0sGK8wx1tdtQc/view' },
+            { name: 'Perplexity Auto Topup 2 Maio 2026.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/10SljImfPq2NQqotGL7ObxP9mOLhCtZYY/view' },
+            { name: 'Manus AI Maio 2026.pdf', label: 'Manus AI — Subscrição Mensal Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1uLw_PVZYson5ocsyS-lH0kvs9nkezgeB/view' },
+            { name: 'Spotify Premium Familia ZC Maio 2026.pdf', label: 'Spotify — Premium Família ZC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 16.99, link: 'https://drive.google.com/file/d/1nh09u2qzjqRijyOFvJ7ifhu-Yv9ysa3N/view' }
           ]
         }
       }
@@ -1089,7 +1104,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.acordoParental,
-    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 5, 4: 2, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 5, 4: 4, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       0: [], // Janeiro
       1: [], // Fevereiro
@@ -1109,7 +1124,9 @@ const CATEGORIES = [
       ],
       4: [ // Maio
         { name: 'ESJ Mensalidade Maio.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mai 2026)', type: 'pdf', date: '2026-05-04', amount: 533.60, link: 'https://drive.google.com/file/d/1Qq4bp12cZX3AAHsfj4g300YgqxjLHVoH/view' },
-        { name: 'Farmacia Elvanse Maio 2026.pdf', label: 'Farmácia — Elvanse Simão (Mai 2026)', type: 'pdf', date: '2026-05-06', link: 'https://drive.google.com/file/d/1DCwkbnpON2tZIY7Qo3Ie4e7U8Cd2YD0x/view' }
+        { name: 'Farmacia Elvanse Maio 2026.pdf', label: 'Farmácia — Elvanse Simão (Mai 2026)', type: 'pdf', date: '2026-05-06', link: 'https://drive.google.com/file/d/1DCwkbnpON2tZIY7Qo3Ie4e7U8Cd2YD0x/view' },
+        { name: 'Pagamento Torneio Karate Simao Maio 2026.pdf', label: 'Karaté — Torneio Simão (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1DMgTHs05s5k33lPa8ZBBorxcnFEuivEe/view' },
+        { name: 'Pagamento Exame Karate Simao Maio 2026.pdf', label: 'Karaté — Exame Simão (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1k8jDuYImPVP6s5K3rmvn19ScSxHzJ1LD/view' }
       ]
     }
   },
@@ -1551,7 +1568,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '12 Mai 2026, 01:20';
+  const LAST_UPDATE = '26 Mai 2026, 22:00';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
 
   // Estado inicial
