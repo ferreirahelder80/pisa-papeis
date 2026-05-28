@@ -958,7 +958,7 @@ const CATEGORIES = [
         name: 'Faturas da Zebra Curiosa',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
         gdPath: GD_PATHS.faturasZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 18, 4: 19, 5: 1, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 18, 4: 21, 5: 2, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           2: [ // Março
@@ -974,7 +974,8 @@ const CATEGORIES = [
             { name: 'Pagamento Antecipado Ticket Educação 2026.pdf', label: 'Ticket Educação — Pagamento Antecipado ZC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 4942.80, link: 'https://drive.google.com/file/d/1WuQZ_1AJIh3ubvcus1oSxydWmbrBLKTm/view' }
           ],
           5: [ // Junho
-            { name: 'INDAQUA Zebra Curiosa Junho 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa K2026FA/10122119 (Jun 2026)', type: 'pdf', date: '2026-06-01', amount: 59.09, link: 'https://drive.google.com/file/d/1iWbHViCYJKWmKOCvvYa8L1agZEISO3yR/view' }
+            { name: 'INDAQUA Zebra Curiosa Junho 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa K2026FA/10122119 (Jun 2026)', type: 'pdf', date: '2026-06-01', amount: 59.09, link: 'https://drive.google.com/file/d/1iWbHViCYJKWmKOCvvYa8L1agZEISO3yR/view' },
+            { name: 'EDP Gas SU Credito Maio 2026.pdf', label: 'EDP Gás SU — Crédito (acerto) ZC €-102,65 (Jun 2026)', type: 'pdf', date: '2026-05-18', amount: -102.65, link: 'https://drive.google.com/file/d/11V6tjlC67So8168f301R9-yoD-EkQV2F/view' }
           ],
           4: [ // Maio
             { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Aviso Débito RC Profissional/Exploração ZC (Mai 2026)', type: 'pdf', date: '2026-05-15', link: 'https://drive.google.com/file/d/1zI4h92C6WWzoYMwuh8c8146r4ZbvhW9V/view' },
@@ -995,7 +996,9 @@ const CATEGORIES = [
             { name: 'Jani-King Fatura Maio 2026.pdf', label: 'Jani-King — Fatura Serviço Limpeza ZC (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1Vx5_LEL2JqamIWIlsNkfxP7-2gMK--oC/view' },
             { name: 'Jani-King Limpeza Extra 2 Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 2 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 101.93, link: 'https://drive.google.com/file/d/1BDMxMO-pwAVHjtVEz1NayJTqZrZdvMOl/view' },
             { name: 'Jani-King Limpeza Extra 4 Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 4 (Mai 2026)', type: 'pdf', date: '2026-05-26', amount: 101.93, link: 'https://drive.google.com/file/d/1EcSQ__F42cmvuH7T2e1fn7qmq2Dikcaw/view' },
-            { name: 'iMed Anuidade Maio 2026.pdf', label: 'iMed — Anuidade Plataforma Médica ZC (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1SG_u_KAWtGSWMqkesG5RlgSMgxzJ4BbR/view' }
+            { name: 'iMed Anuidade Maio 2026.pdf', label: 'iMed — Anuidade Plataforma Médica ZC (Mai 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1SG_u_KAWtGSWMqkesG5RlgSMgxzJ4BbR/view' },
+            { name: 'Jani-King Fatura 8601 Mai 2026.pdf', label: 'Jani-King — Fatura 8601 Limpezas Extra 19/05 + 26/05 €203,86 (Mai 2026)', type: 'pdf', date: '2026-05-26', amount: 203.86, link: 'https://drive.google.com/file/d/1lgnpvjyXvz-YDfxWuh0cah8X6wht9O-7/view' },
+            { name: 'Ageas RC Cobertura Temporaria ZC Maio 2026.pdf', label: 'Ageas — RC Cobertura Temporária Anual ZC FSCD2026/100000951132 €330,00 (Mai 2026)', type: 'pdf', date: '2026-05-20', amount: 330.00, link: 'https://drive.google.com/file/d/15yp44fShSXvRJLs-4gvMPpB5P-ZF1xKU/view' }
           ],
           3: [ // Abril
             { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas — Aviso Débito Seguro Vida B ZC (Abr 2026)', type: 'pdf', date: '2026-04-20', link: 'https://drive.google.com/file/d/1_C3C1oBsEXQmyC-8Yx313NAvc8BHV5g4/view' },
@@ -1569,7 +1572,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '26 Mai 2026, 22:30';
+  const LAST_UPDATE = '28 Mai 2026, 08:30';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
 
   // Estado inicial
