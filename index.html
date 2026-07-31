@@ -1199,7 +1199,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.acordoParental,
-    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 6, 4: 6, 5: 2, 6: 7, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 6, 4: 6, 5: 2, 6: 5, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       0: [],  // Janeiro
       1: [],  // Fevereiro
@@ -1232,12 +1232,10 @@ const CATEGORIES = [
       ],
       6: [ // Julho
         { name: 'Barbeiro - 15 euros do Simão.pdf', label: 'Barbeiro — Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 15.00, link: 'https://drive.google.com/file/d/1Lpffav0t2CQsqcLZMHniXXd1s93Xcsgn/view' },
-        { name: 'Comprovativo.pdf', label: 'Comprovativo Bancário (Jul 2026)', type: 'pdf', date: '2026-07', amount: 217.55, link: 'https://drive.google.com/file/d/1BxT19COKVIRZuNMpCq8hrvC16v90fCyY/view' },
-        { name: 'Farmácia Julho 2026.pdf', label: 'Farmácia — Recibo Elvanse Simão (Jul 2026)', type: 'pdf', date: '2026-07-13', link: 'https://drive.google.com/file/d/17UTL_vdino_UoLH_Nue220UTNDFHFC_p/view' },
+        { name: 'Farmácia Julho 2026.pdf', label: 'Farmácia — Elvanse 50mg Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 46.85, link: 'https://drive.google.com/file/d/17UTL_vdino_UoLH_Nue220UTNDFHFC_p/view' },
         { name: 'Fatura Ulisses 2026', label: 'FNAC — Livro Ulisses Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 10.98, link: 'https://drive.google.com/file/d/1bzGQqJHvh3poPgZjF6cLp0Ki0yzoAIYO/view' },
-        { name: 'Livro Gulliver 2026', label: 'Livraria — Material Escolar Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 9.99, link: 'https://drive.google.com/file/d/1YKPmSqjwfF0jO26kp1yo3peKu3S0XAbo/view' },
-        { name: 'Livros 6º Ano Julho 2026', label: 'Livros 6º Ano — Material Escolar Simão (Jul 2026)', type: 'pdf', date: '2026-07', link: 'https://drive.google.com/file/d/1Z0BC5mYWNXS_fd7v1ILeSALQbgXykL_P/view' },
-        { name: 'Olmar Livros 6ano Proforma Julho 2026.pdf', label: 'Olmar — Proforma Livros 6º Ano Simão €217,55 (Jul 2026)', type: 'pdf', date: '2026-07-16', amount: 217.55, link: 'https://drive.google.com/file/d/1vlcEQdHkQeuWUsEeYj_VfOsSmFBQLBNS/view' }
+        { name: 'Livro Gulliver 2026', label: 'FNAC — Livro Gulliver Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 9.99, link: 'https://drive.google.com/file/d/1YKPmSqjwfF0jO26kp1yo3peKu3S0XAbo/view' },
+        { name: 'Livros 6º Ano Julho 2026', label: 'Olmar — Manuais Escolares 6º Ano Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 116.31, link: 'https://drive.google.com/file/d/1Z0BC5mYWNXS_fd7v1ILeSALQbgXykL_P/view' }
       ],
       7: [],  // Agosto
       8: [],  // Setembro
@@ -1700,7 +1698,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '28 Jul 2026, 21:00';
+  const LAST_UPDATE = '31 Jul 2026, 04:00';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
 
   // Estado inicial
