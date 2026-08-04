@@ -741,82 +741,82 @@ a, button { transition: color var(--transition), background var(--transition), b
 const MONTHS = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 const MONTHS_FULL = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
 
-// ---- GOOGLE DRIVE — Links directos para pastas Fabric Link ----
+// ---- GOOGLE DRIVE — Links directos para pastas em 03 Financeiro / Faturas & Apólices (arquitetura CPC 2026-08) ----
 const GD = 'https://drive.google.com/drive/folders/';
 const GDF = 'https://drive.google.com/file/d/'; // prefixo para links directos de ficheiro
 
-// Raiz
-const GD_ROOT              = GD + '15WbhNxJMvEiex5Cf8PZAsJ0cOJJE_7vA'; // Fabric Link (raiz)
+// Raiz (nova arquitetura CPC @clinicapediatricacoronado.com)
+const GD_ROOT              = GD + '1KW97UHyxVwezu0dv-gVHe4w6Qey7Y9nC'; // 03 Financeiro / Faturas & Apólices
 
 // Apólices
-const GD_APOLICES_ZEBRA    = GD + '1uzfbgui69A_Sz9ogSWGa2Q3TCR1iJrv-'; // Apólices Zebra Curiosa
-const GD_APOLICES_PESSOAIS = GD + '1VobvjDLHx0G_uTqBdLrC6x1uEFdA4Etq'; // Apólices Pessoais
+const GD_APOLICES_ZEBRA    = GD + '1XR0w0c6dk2-G9ivodWotcFmv6mZsy7pp'; // Apólices Zebra Curiosa
+const GD_APOLICES_PESSOAIS = GD + '1RqzB8LubIjNG5uNui1TkjvMo-nLU76jC'; // Apólices Pessoais
 
 // Subpastas Apólices Zebra
-const GD_ZC_AUTOMOVEIS     = GD + '1hf_I4ujOMthj2dCzBvdProQhGyjcYdUL';
+const GD_ZC_AUTOMOVEIS     = GD + '1xR6APamNH6rR_Vo0UhLfUw2PHYnnPKe7';
 const GD_ZC_COLABORADORAS  = GD_APOLICES_ZEBRA;
-const GD_ZC_CPC            = GD + '1yAwSm5c4XngOBPJ_FOH-JlvBpyncOoxz';
-const GD_ZC_PPR            = GD + '1FKgbBxFEuN00-FoZX5jeYYp6jyXyOY5T';
-const GD_ZC_SAUDE          = GD + '1Rb79-6Uzky7c186thTP9GlBu5acoCXV5';
+const GD_ZC_CPC            = GD + '1sr2yNTjiz6ezL9liyLe84pqJ6YRY9Q9m';
+const GD_ZC_PPR            = GD + '15TAvEz-B4NJDeL_gVnWowj8uk4T-o2G3';
+const GD_ZC_SAUDE          = GD + '1rMoTjWX782v1clLpovDxE_iT71Q3HlR5';
 
 // Subpastas Apólices Pessoais
-const GD_PE_EQUIPAMENTOS   = GD + '1CkEBRQ5MtukyvjqhN7B-l1n9p-HfQ6SG';
-const GD_PE_CASA_MAIA      = GD + '1H-3ep-q-0fVewDp70lljRTHpy5-yXlU0';
-const GD_PE_CASA_VISEU     = GD + '1bFiPKLozf3y5ZRzcjFzHm6-YqNeEXuKw';
+const GD_PE_EQUIPAMENTOS   = GD + '1XjVpbtYXp6eltVisvc32_MYaM0F3X-zK';
+const GD_PE_CASA_MAIA      = GD + '1zPgKqDanpsOXfXeH4B3fOiOzub7OweHU';
+const GD_PE_CASA_VISEU     = GD + '1zPgKqDanpsOXfXeH4B3fOiOzub7OweHU';
 
-// Pastas pai das categorias
-const GD_FATURAS_ZC        = GD + '1_k6Us2W6OFwmEenTY7zbudz0UkpiBVIY';
-const GD_SUBSCRICOES_ZC    = GD + '11Deb03nH8gRe3L5T1XQAm5nP2eqfA8P6';
-const GD_PESSOAIS          = GD + '1DeeBgrnAqGhEy-wQnVyiM6N7wvIqIrVw';
-const GD_ACORDO            = GD + '10KCKRpUffwE4ev-GtFopOrQEoKhz89WQ';
-const GD_ESCALAS_HLPV      = GD + '17jHAKMjp6kQnBqM4rGC3bmsrgMfX1IYd';
-const GD_RECIBOS_CPC       = GD + '1pCi6RLorqNtRGL_Emtah7CLTamEx8aYd';
-const GD_VENCIMENTOS       = GD + '1xS8FksH_HsA1x2gLTBjvg4PuH9kxJXmE';
-const GD_PAGAMENTOS_ZC     = GD + '10LwK8iJLs2meUZFO7lF7mV-UQPbUccIN';
+// Pastas pai das categorias (nova arquitetura 2026-08)
+const GD_FATURAS_ZC        = GD + '1-NolYEXMFqzfE6XYLyAjJ52zoWnzkQaX';
+const GD_SUBSCRICOES_ZC    = GD + '149ybGNfYQkAlcOCg1Vo0l-_SZRAk49-D';
+const GD_PESSOAIS          = GD + '1pzwHV10fHVtGeTatUF5AnEhS7wik3RMm';
+const GD_ACORDO            = GD + '1sNDKdX6RLgyEQKLIl_06Z9vFxnOTtoJi';
+const GD_ESCALAS_HLPV      = GD + '1CSJK-uaEBJ3ei4MINVR7TAqXhBgoPaQN';
+const GD_RECIBOS_CPC       = GD + '1dptd42ijBtn7_UBEZopfd_q5lJaW3EXI';
+const GD_VENCIMENTOS       = GD + '1f9dZZvV4IP-AnO9k40DA5ZzAaS9smHaT';
+const GD_PAGAMENTOS_ZC     = GD + '1H0673pFen6dhi-XJ4GxttkzGWcp93KiV';
 
-// IDs completos das subpastas mensais (1=Jan ... 12=Dez)
+// IDs completos das subpastas mensais (1=Jan ... 12=Dez) — nova arquitetura 2026-08
 const GD_MONTH_IDS = {
   faturasZebra: {
-    1:'1ZnONUPer5NmAL-vrRb7Eq1jlHgD98SMH',2:'1GHLIHq-58NdsC2p4MDMNoJMO2pEUYVZW',3:'1sPj9XDJQk9B0EAM70cCxhTwoUFexBFpw',
-    4:'1R7-Sg_F6XPOkbo9J2ip4h7ojd17EbdOw',5:'1JOBC-Le5d51T8qlWUjiZYWWcNoyS-iQw',6:'18PgAJpaXLQYwyxQkXaHUT9ZcKbqa1IZR',
-    7:'1qbDOLf76mQkP9BRfNUgOih68ATO_Xsks',8:'1axQbusi-GvMGph4Z50bT58xm-OPsVte1',9:'1x6iBvgbj5pe-LHrxsB-doig4084wV_yR',
-    10:'1zSDK1YuwK-WWWgDWZ5Xdv1oebn1zQCkI',11:'1GnHwYUbb-Gs6Xtky-hKaxjOTxwA1BVst',12:'13EZzt0eD5a1nDVjq-t42RL6NrksN0fQW',
+    1:'15VIRku7DTwKA-WxObXKCN8TgcTv0zz_y',2:'1OUPvhKp7AvypCQYI5hPOl88nfijmERU9',3:'16Dcom8GLcJKDHO4QvhlJbzuxlJ1XddHB',
+    4:'1ZDWqsXOBTkKJzHPszow_AiCPi-VBvR13',5:'1QcT2gmosleXTjhVG0-h2Qb4FJTzXLlMe',6:'1m8fjVmgZIhNQKOa8rz8pt1uKKf7_d9Yw',
+    7:'1U2dZdgxUVO-y0ZeZ94WIi2b1C8qU3x6a',8:'17sERYJnWotQK58vkNYVVU0wNjxtKy8mr',9:'1DkdYxZParlfuJ7fVxekrB4IK67W1A5i0',
+    10:'1VdcYAO-1hq6qtvSc4KxH2deoSrXyGp37',11:'11R2zX88iVELYwezjk29RcVQTdD7vRC3k',12:'1N-iUCK7TAHcpZfO7LXG2rXCRWfVtb1G6',
   },
   subscricoesZebra: {
-    1:'1bNmrfNrZnu4TpJ7ZtHlpMeg8VD4jPcti',2:'1ICEvyEloLxlK4ajMQht4KP178J4J7oKj',3:'1kUTi0LZRHlK40Rd6FNEA6y8On4sCfiEf',
-    4:'1PQmNNkZrK_UqXjZjuEys6bJvEllCVpPt',5:'1N0zpiWVgqryX6BUhq0L61RvHldPnQGgi',6:'1hNDi4m88DclQPtPJUX4_Tg4VLfF6ok3v',
-    7:'1leLoaKbJihwSthkpH_g3xai8XxWk3Bku',8:'1u1FMwFw5i34oKoAhZZ8mw4UHvuqiLL6U',9:'1kpRI5iqrmS3qeVjgwVaOm2vHfoIGEUHf',
-    10:'1pTy2wuZVqTg-ClQcHpZIQ0smTtGOx7Yr',11:'1bjRtyfkVVtqtMvJf-aELHXGmEw5MsRxP',12:'13Q5ouVlEjfWyFrSCcHtw-5gt29h1cwvt',
+    1:'1CqzeKkFGIv2kQWT3OUVMC7pNswq3ZOxH',2:'1fl3rsKLySIjmPxUtZCZ17u1ZFv27Ivpk',3:'1p99YUlAOHA2qJtllwFcPxktJARr0dsRY',
+    4:'1lYJ-bDzof8K0ez2G8WKfJe_zfkHDtr4o',5:'1YxgjNZTRncFGZooLZwZDDu1SDKg86p1O',6:'1g3ViOEhsecPxJRLqOCOFGc4zsbxYE42K',
+    7:'1rXxhsHh5KcKCG6inAB2G2RSQRIoMB_rm',8:'1b0iPW4s8Ip0Fx5FsBLWMQW_F8wgzD_SD',9:'1vT2E7_OMgl_p-gqXW0GdmUIbX9JPBERm',
+    10:'1XRG0DHHikicyAHGVu9fIvLlPbBQFS3a_',11:'1ZuRspkcp08--hp-I5FkcR3zIAUGhTBi_',12:'15RPAthjFy_LE9KkYhVE9UuLFoCyi8T0S',
   },
   pagamentosPessoais: {
-    1:'144oe3tv1loRFcNPLwrz00XRL3oh9GfcT',2:'1erX_ojYUwiCuYoTaKHV6ehH68RpRMYZf',3:'1fF2tE3Q-S_ytu0ajcKKT-KclKEeVUxmt',
-    4:'1guPZt4Ma-bBSTwM9rW0fOf_W82qMt5HN',5:'1rS2ns6FJB_umBZLWHTRpPXh3geKuYmGZ',6:'1xGM_-SqRfKYIjlkQKqmaqBw5PIbwrOTd',
-    7:'1S4JKl0tn_HXL2Z_ynMq5IsEPwzDem1F2',8:'1gUKPXpVwDwa_4tqBwUIuUhlNNk9_hbgu',9:'1xxuK3sBvG3PQ5-w7pG4Suv0OCxqJ-w27',
-    10:'1X4wNrg1P67RUf1734BlxdOMmC_hc9vTO',11:'1mRqwNBDlgFbOU42NCXlLpq82EL1sz3lb',12:'1CyCH8Q4pX7n_sv6rgteCoLmOicKhni0F',
+    1:'1mNs5gBTqS6Xr2HJF3xlYNrkmfQICLaSK',2:'1QiVHFTyUNHr8j2ks8s8_uBNGjmGqoWxg',3:'1eGPdBeUtz8bbIkpU_SOcNleKrCW3gYf5',
+    4:'1Ml0FJBhX65NoJN3eldDoSVRPmY-cyoQj',5:'10OW66ZFzP7A_ap9f8C-Ky2HUsNa-2L2p',6:'10zwJ0JkvTEx-SAxWbhqLTDkxtnKsbPyb',
+    7:'1hajIhFaU-VjkRMO6peez4XGoYM2pQQJN',8:'1rK8SL0dwwmxV53QVxay7UiIztYXUn_9C',9:'1bSN5aFzAmGsf07u7cleewCCGkSBsgeao',
+    10:'1K4KnGG_2EKdjw1V5ix-FGjaEZpzyP_BQ',11:'1LdZW6IBOdWEHL8DaZbmuPWpV8pSmB3aJ',12:'1cE4cdjGJz2uO6B0LMsKg5E9vDF3O6GJR',
   },
   acordoParental: {
-    1:'1DZ1NyMYLA_bST_mmbOR7fpkLSflZDQwP',2:'1TBQjS-dtnhRWzBefO8LXiEKNJe2_BxFo',3:'1qJ5KD0HTqn6Ko3P4qlp5kvT5jlj38UAv',
-    4:'1PsSA8y8duru-v3Lcjv3P8raDYOxz5RyO',5:'1xF5MDV7vKrMEmx5oophwwHtmQJ7up94e',6:'13NulPx9TJuBDJj-rDyHTCS1l6mr8dvel',
-    7:'1CyEpde9ItvyK3aE4ZgERqQhWPu_CjIDB',8:'1QG15zohNYGxT3I1SqptPy5R0np5qHm7I',9:'1YLqnF5IKbFzARfBHNLx69eQ1p5Xc2mpe',
-    10:'14_i4dCxY4VFci2qrqZDhxpFjN7UPbNPv',11:'1FuHNxoKZC5AOKVBlO5IK0OeX82JIRRNV',12:'1Hp70YKW5EOIc47-_6B9sCCzkEcx-HBSI',
+    1:'1geCqnbEHWLNDw--y6jUKPimKYYR5zR_D',2:'1uok1_8aw0eXFPEcas3fYtQuCYBeHdfjW',3:'1sJWtjJtFGqk5Mca0Zf6zkBi_EI8w8DIP',
+    4:'1rw6ZkMhgyFuaYL-ZDCAG3QZMnIXY5_vM',5:'1LgKA8g_Tybf2PGTlA_rrJHdLPXbP0FYS',6:'1HGJ8NhUOZmlD77usbzN-e8sNCwvB6IyP',
+    7:'1jO2LuFh7fiUjvnWLfxWl6l0zSRwkSurs',8:'16_BKgi1W3Ea6O-rPp7sla_c9dZYpTmpw',9:'122NtCiFmHLKY3UQaqxiBdBSp--zsaa9u',
+    10:'1LHF3NqeGOZzzebH5VPlwmZMW97w4mIyA',11:'1Ry0tINQoNNh2eKhL-b-WaO-p_ml7HH4F',12:'12UZzFRQ5OTwr_7OR4-v5xi5VM0VU1dtA',
   },
   escalasHLPV: {
-    1:'1K5cbtI6GSMfD9m57yfs9rMiQmXP0O3IM',2:'1nvlRdbbLZxVabkS9F6cBV26v-zNIQtLq',3:'1qeybxMLmnRyuMB-5SFxKyAnT3U2qFGOz',
-    4:'1Bp6uhibm0PuoBF7malWVYITgQovWb3CE',5:'17YxMttmLMUnOUQHuOsLnK9eshG33RhgA',6:'1KpaGm5SiNWFFRrcjPgMV8s8ZLxwkFHGD',
-    7:'1PGIrbMsISVmYHyHm8vvBmj2NBUaxzXtr',8:'1ipAonG091Pgkvo4KrqsY-VfiDMcmrEjH',9:'1HdqYx4C85QKMy3Uy_dBikGNWMfS9iuIW',
-    10:'1Dyz2F-eryIhjRjmcW61CgydkP92zmqGS',11:'12HI76_bOhzvM4AAvyY4xSbDgi4ua9Vd3',12:'1dZpU-82n4h3Ftp2nQu7zuyhsBxZjufPf',
+    1:'1Rj7x96uV6HAak1xRlUHlaA4UKFWNdXWn',2:'1sGRtop6n_PpD2xFx8yCwxsJ6G1fFiK2y',3:'1uzl3oixYwtf7Hv8dBOw8nJd0HDeBOw4m',
+    4:'1rHPrfumjnADJpt7wZCbX6JL9qlKUOsDO',5:'1y9HiCIdRZIfuCk7Lj6zdG12guzNeH9bg',6:'1rd-OxyI3PsXjrCA-lkqHIufIOLkL1Xiq',
+    7:'1AoLvZ_4B2_kjWlrzrbxdfPgcZ4PRGAOD',8:'1Uy1XoGcHqe9eaza1XeXbBuwq05h8DzKy',9:'1ZMME0oS8xLrffZy55aBZ3sBkVi-iREzF',
+    10:'1kTkpxqAREz2Q7PpFDaCeXI79pJUmXgU7',11:'1wG7qiwsD0m800jAq9PT9r1nPH799VeEa',12:'1qFZD-jzvuaBAtJgxDRtKDc37dydH3Nsj',
   },
   recibosVencCPC: {
-    1:'1hiUj-QlIck0QmCokeR8pclcjNrHnMiCL',2:'1nKFsMHl7vak0T4gEjXEDJcibzZgnHjHS',3:'1qTEiuCnbbD8TVFynwrP-5mBgmaU9HJGk',
-    4:'1pUinCWKFPPtJ6nCQlV3hNdpl1prE4SGv',5:'1MdgMue0dWMnY11LySlS38s19-wAyukQM',6:'1Yi_ppIrijgdzlSC0iLGqBxywGQJyo9n1',
-    7:'1M2uM3bGNcEucXorg5Ka3wtWAJ2YIOkI3',8:'1yVl40DVYmYVwe3NtkTw1aIzLLkmqKH4R',9:'18dJdb57AvCra0ixIK9vxzGTjr6PfFOIo',
-    10:'1mUN9US2nI0-te_4wRgaTVxbN5nndZJbX',11:'1BiC057RamLovNZB9aYbHq1RXgX7QqD45',12:'1736Vj6kEgmfiLa8MaqFgfDAHF5uw78ge',
+    1:'1Nal_1t1-VfN98giYzNu8Gc8UTHOnC4_E',2:'1gWB3VTA5UKC-c6Dh-lJf76xveXDyZmSj',3:'1EQx7Lv6qeLkvPWvI-jlxTDZ6sLSj5a1w',
+    4:'1yxgxBsnOrzZ3icBSs7BwgQKWD4lzySnf',5:'1g93yfEexjrrlYNAx2r3VhNAaomi-RTHT',6:'1gTx4Ub3ixW0MQKLY5zuAAOsEqwzQMSTS',
+    7:'1ycX_X4_vgnAJ6SrA9gMV5vV-X_9qC42J',8:'1yJxt-B1sRfzztZmMufVNZ0-qeZU4TpU0',9:'1uW7Q_SUlfNUabO7lnQXVVN4gJPFW-Zt3',
+    10:'1KXlz6OYtMmckuXLPOZCmGmg0zR-NNZEv',11:'1Gg0mN7bO8Q-XdTL7g_OJLbnDFjnx87W9',12:'1DPL_V6_jdhB0AERsDPDwFiZNX7z6GnvO',
   },
   recibosVencHLPV: {
-    1:'1D0AWlqf0z8eSN7Nxsq6VuGopvnILtLfp',2:'1Me4VuKKp13K3h9t0DIOGaHfqCC4DBReJ',3:'1okYa2YQrfk6VvkFhIeJwv4meSpQOi3sE',
-    4:'1LW61PCqC0STBFKh_NWI9nH9rmOYm5Pj3',5:'1ndlphcGrPJUALdK___nZsQ4iFYcdWvaX',6:'1CpHotsuNe6CYiykRHpikWZN2mAM-aD9E',
-    7:'1QNNONlrZyaqAQcOad65AyJ6oJzSJOJ3p',8:'1KzOnPBN1bAkdpcopIjhszDDAKWrjgmjr',9:'1ZJds--HHdP1oQ5yODyoiNYK17tBkeoUT',
-    10:'1cmGXA0n22AtDA9M-AhbcMl8j-F5L-KTE',11:'16x6w0pHFhsctmjII0L9jrjtuWtFf7xuj',12:'1p7Js1wR91zEZfxosD3t9-Ewzwaa3zJK_',
+    1:'1xn6R3TDxe9p1yuaF-TcZQC43_Qupkdym',2:'1vdebs4GjwVZPkxyAgX2PiAYYQHbm-UqY',3:'1p4Ktpi1sjwy2urkw5khQcJNxSAR9bQUA',
+    4:'1aXiWk2ELIiDBNuxPnvPhg1JpVMnDUrFW',5:'1hDIPymhwnVGFfJtVHdQoXuymD7qb2JHf',6:'1kuhwxOO0i5N9mwTqxO6U9w6woIqMN4BL',
+    7:'11_1sWA1AS8mK5e4CMhQieAk74g0GD2E4',8:'19rJUCMPwnQBgCjvx4EV1CqxMt79ohRYX',9:'1KEDnKDXS02IUjGYmJRADyFJiserDQ1DN',
+    10:'1MfzEGmSBnlmQzy8xboISXFmY9BlltlMG',11:'1GLGMFHb99cXlHSfMCepNjLvQHCLZCGPu',12:'1MA4XrMXP2C8iZM64lL2-MFILA4NSyoHA',
   },
 };
 
@@ -1698,7 +1698,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '31 Jul 2026, 04:05';
+  const LAST_UPDATE = '04 Ago 2026, 14:45';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
 
   // Estado inicial
