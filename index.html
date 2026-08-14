@@ -958,176 +958,198 @@ const CATEGORIES = [
         name: 'Faturas da Zebra Curiosa',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
         gdPath: GD_PATHS.faturasZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 21, 4: 20, 5: 17, 6: 17, 7: 3, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 21, 4: 20, 5: 17, 6: 17, 7: 9, 8: 2, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
-      0: [],  // Janeiro
-      1: [],  // Fevereiro
-      2: [ // Março
-        { name: 'Ageas Seguro de Vida Março 2026.pdf', label: 'Ageas — Seguro de Vida Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1N0yoZDMyXs2G9vBiIyTmtQK3tfTc0_DF/view' },
-        { name: 'Aviso de Débito Fidelidade Hyundai Ioniq 2026.pdf', label: 'Fidelidade — Aviso Débito Hyundai Ioniq 5 (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/17mhqkjeqnzow4xrXYLbx5sVS7ClCtu6y/view' },
-        { name: 'Aviso Débito VW Beetle Seguro.pdf', label: 'Tranquilidade — Aviso Débito VW New Beetle 76-44-NJ (Mar 2026)', type: 'pdf', date: '2026-03-04', link: 'https://drive.google.com/file/d/1V43lIT3TO8If8XYdPQAKq-Gt8EQYPnrD/view' },
-        { name: 'Condomínio Solar Carta Cobrança Março 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Mar 2026)', type: 'pdf', date: '2026-03-09', link: 'https://drive.google.com/file/d/1jRzdEzQ87ENCRVY7G2y-jDlckQlHX40U/view' },
-        { name: 'Endesa Fatura Eletricidade Zebra Curiosa Março 2026.pdf', label: 'Endesa — Fatura Eletricidade Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', link: 'https://drive.google.com/file/d/1kcPQ6gxyWrWeiv8BKmyl96U6Q7LRBBJ9/view' },
-        { name: 'Gassu Março 2026.PDF', label: 'Gás SU — Fatura (Mar 2026)', type: 'pdf', date: '2026-03', amount: 304.63, link: 'https://drive.google.com/file/d/191PkMcuC_aXxG1ktvlXtBdpxOESHRFlP/view' },
-        { name: 'Indaqua.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-12', link: 'https://drive.google.com/file/d/1--ZTVSEtYXxCGfgxtsHyAya-VOzd7O49/view' },
-        { name: 'Jani-King — Serviço de Limpeza Zebra Curiosa Mar 2026.pdf', label: 'Jani-King — Limpeza (Mar 2026)', type: 'pdf', date: '2026-03', amount: 203.86, link: 'https://drive.google.com/file/d/1fFchWn1bJH7oTNK8LkCj35ymeJ9lZEOh/view' },
-        { name: 'Pagamento Antecipado Ticket Educação 2026.pdf', label: 'Ticket Educação — Pagamento Antecipado ZC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 4942.80, link: 'https://drive.google.com/file/d/1WuQZ_1AJIh3ubvcus1oSxydWmbrBLKTm/view' },
-        { name: 'Vodafone Março 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-05', link: 'https://drive.google.com/file/d/14LFznC2hQFnIybLKiqjxl1pqyByhiVfc/view' }
-      ],
-      3: [ // Abril
-        { name: 'Abreu Advogados.pdf', label: 'Abreu Advogados — Fatura (Abr 2026)', type: 'pdf', date: '2026-04', amount: 452.03, link: 'https://drive.google.com/file/d/1dZ6m3mnpsDjrnSceBAV3upi0vTpUCliA/view' },
-        { name: 'Ageas Poupança Multiplic Simão Abril 2026.PDF', label: 'Ageas — Aviso Débito Poupança Multiplic Simão (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1UuNZv8suq9OyxbY6OkIxUjDLgMvbAe9J/view' },
-        { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas — Aviso Débito Seguro Vida B ZC (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 121.92, link: 'https://drive.google.com/file/d/1wOhIR9dSfO_U6lkV4tkWgfaYoGrvFIuV/view' },
-        { name: 'AntonioVieira_FA_A26_22_Abr2026.pdf', label: 'António Vieira & Filhos — Fatura FA A26/22 Obras Gabinete Psicologia CPC (Abr 2026)', type: 'pdf', date: '2026-04-29', amount: 1383.75, link: 'https://drive.google.com/file/d/1Hi2e95-zqeHZggBB5OVtmTIAOUtYhy2I/view' },
-        { name: 'Anuidade Kaspersky Anti-Vírus 2026 Abril.pdf', label: 'Kaspersky — Premium 1 Dispositivo 1 Ano ZC (Abr 2026)', type: 'pdf', date: '2026-04-19', amount: 84.99, link: 'https://drive.google.com/file/d/1JAqRoIww6b53FPdCi1JVjzt28AolmLJk/view' },
-        { name: 'Condomínio Abril 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança 2 (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1JN5vcNhyUce5QjJGKNqUB64_2NQdIcg8/view' },
-        { name: 'Condomínio Solar Abril 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Abr 2026)', type: 'pdf', date: '2026-04', amount: 24.99, link: 'https://drive.google.com/file/d/14kdi8ksSB8ldDS9N5nZF4Eo9zAPeQT6M/view' },
-        { name: 'EDP — Fatura Eletricidade Zebra Curiosa Abr 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-08', link: 'https://drive.google.com/file/d/1GacqaQtyJOR4vJ-wrMplzp60_cKaPq_y/view' },
-        { name: 'GasSU Abril 2026.PDF', label: 'GasSU — Gás Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 5.50, link: 'https://drive.google.com/file/d/1Jda-4lGmaTVma_uy9F60TxkqjV6wGUvc/view' },
-        { name: 'Jani King Abril 2026 5.pdf', label: 'Jani-King — Limpeza Extra 29/04 ZC (Abr 2026)', type: 'pdf', date: '2026-04-30', amount: 101.93, link: 'https://drive.google.com/file/d/1UlkBEI2bh7JxEf5kW3pOSoQ_AEpbAtfM/view' },
-        { name: 'Jani-King Limpeza Extra 21-04 Abr 2026 (6768).pdf', label: 'Jani-King — Limpeza Extra 21/04 (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 101.93, link: 'https://drive.google.com/file/d/1ntS-Fda2siu4x4s_-1X8-MffhlJKwkv1/view' },
-        { name: 'Jani-King Limpeza Extra Abril 2026 (6685).pdf', label: 'Jani-King — Limpeza Extra 14/04 (Abr 2026)', type: 'pdf', date: '2026-04-16', amount: 101.93, link: 'https://drive.google.com/file/d/1h8AnksSqBvrEJtViBpdim88ya4EIuMRe/view' },
-        { name: 'Jani-King Limpeza Extra Mar-Abr 2026 (6595).pdf', label: 'Jani-King — Limpeza Extra 24/03, 31/03, 07/04 (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 305.79, link: 'https://drive.google.com/file/d/1PajEXAFh1igM2l73GRW_yGhIazrGNTmk/view' },
-        { name: 'JaniKing_6885_LD_Habitacao_Abr2026.pdf', label: 'Jani-King — Limpeza Extra 29/04 ZC (Abr 2026)', type: 'pdf', date: '2026-04-30', amount: 101.93, link: 'https://drive.google.com/file/d/1UeAP0l5pj9KncpemSb4UUs9-izAEEqj6/view' },
-        { name: 'Lusitania PPR Abril 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 250.00, link: 'https://drive.google.com/file/d/1VnUP33ACbDa7xoMWn-nancYVaetysYub/view' },
-        { name: 'My Hyundai Abril 2026', label: 'Hyundai — Serviço (Abr 2026)', type: 'pdf', date: '2026-04', amount: 99.00, link: 'https://drive.google.com/file/d/11QY-lz5H5vCKBRIPVRUsPDFBPKMupc_k/view' },
-        { name: 'Via Verde Abril 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 36.70, link: 'https://drive.google.com/file/d/1aKy7-eSXAXwRFl9r1OdQUxs-7NHLEp3R/view' },
-        { name: 'Vodafone Abril 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 221.26, link: 'https://drive.google.com/file/d/1kvP39sOMyJdHv4mH1srUeyxUxkWISrjp/view' },
-        { name: 'Workview Abril 2026', label: 'Workview — Fatura (Abr 2026)', type: 'pdf', date: '2026-04', amount: 80.00, link: 'https://drive.google.com/file/d/15_t_N0HWOcihGqSJUWoIJ7ODI632CS_A/view' },
-        { name: 'Workview Anual 2026 Janeiro.pdf', label: 'Workview — Fatura (Abr 2026)', type: 'pdf', date: '2026-04', amount: 166.10, link: 'https://drive.google.com/file/d/1iVdZNZjLkDunEA2kJfl7hn3RQBaTYln2/view' },
-        { name: 'Águas do Norte — Fatura Água Zebra Curiosa Abril 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-16', link: 'https://drive.google.com/file/d/17qLSSkQx0VamaWaH-U57z7-ZYicV1d6f/view' }
-      ],
-      4: [ // Maio
-        { name: 'Acidentes de Trabalho 2026 Maio Anual', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', amount: 364.44, link: 'https://drive.google.com/file/d/1gEfoEc7LogEc0T7DuUHAWXkbFzBkiENJ/view' },
-        { name: 'Ageas Multiplic Maio 2026.PDF', label: 'Ageas — Poupança Multiplic Simão Ferreira (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.94, link: 'https://drive.google.com/file/d/1tX-Bhfw8E0LSp027g5tplQSTQYwBbvy9/view' },
-        { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Aviso Débito RC Profissional/Exploração ZC Apólice 00841024520400000 €330,00 (Mai 2026)', type: 'pdf', date: '2026-05-15', amount: 330.00, link: 'https://drive.google.com/file/d/1_OoJgJ_4ApwWCDSXcBPG75ltTf5SfXXl/view' },
-        { name: 'Aguas do Norte - Fatura Agua Zebra Curiosa Mai 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-19', amount: 11.45, link: 'https://drive.google.com/file/d/1L15IseJFrewDCbjcrDgYoKwSZ5rl7aDk/view' },
-        { name: 'Condomínio CPC Maio 2026.pdf', label: 'Condomínio CPC — Carta de Cobrança (Mai 2026)', type: 'pdf', date: '2026-05', amount: 24.99, link: 'https://drive.google.com/file/d/1YzNvpW34qvHel9UmjlB_14uW2NZIn3GV/view' },
-        { name: 'EDP Fatura Eletricidade ZC Maio 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 109.01, link: 'https://drive.google.com/file/d/1IE1e_3XxkzL1qQh1Hr_N0jV1sW5JsmNq/view' },
-        { name: 'Endesa Fatura Eletricidade CPC Maio 2026.pdf', label: 'Endesa — Fatura Eletricidade CPC (Mai 2026)', type: 'pdf', date: '2026-05-04', amount: 39.13, link: 'https://drive.google.com/file/d/1Uj8ATJxXfsBarRS40AIXf8aDsrlBLukQ/view' },
-        { name: 'Gas SU - Fatura Gas Natural Zebra Curiosa Mai 2026.pdf', label: 'Gás SU — Fatura Gás Natural Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 389.37, link: 'https://drive.google.com/file/d/1o8qznXiQ6cK6FJMbqoxVzbV-ffdWrYuy/view' },
-        { name: 'iMed Anuidade Maio 2026.pdf', label: 'iMed — Anuidade Plataforma Médica ZC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 597.78, link: 'https://drive.google.com/file/d/1SG_u_KAWtGSWMqkesG5RlgSMgxzJ4BbR/view' },
-        { name: 'Indaqua Maio 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa K2026FA/10122119 (Jun 2026)', type: 'pdf', date: '2026-06-01', amount: 59.09, link: 'https://drive.google.com/file/d/1iWbHViCYJKWmKOCvvYa8L1agZEISO3yR/view' },
-        { name: 'Jani King 4 Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 4 (Mai 2026)', type: 'pdf', date: '2026-05-26', amount: 101.93, link: 'https://drive.google.com/file/d/1EcSQ__F42cmvuH7T2e1fn7qmq2Dikcaw/view' },
-        { name: 'Jani King Maio 2026 1ª.pdf', label: 'Jani-King — Limpeza Extra 05/05 FA.2026/8295 (Mai 2026)', type: 'pdf', date: '2026-05-06', amount: 101.93, link: 'https://drive.google.com/file/d/1YhUeKAdYZNIyeGO-cWS__o7XyzTS0TvT/view' },
-        { name: 'Jani King Maio 2026 2ª.pdf', label: 'Jani-King — Limpeza Extra 2 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 101.93, link: 'https://drive.google.com/file/d/1BDMxMO-pwAVHjtVEz1NayJTqZrZdvMOl/view' },
-        { name: 'Jani-King Fatura Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 2 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 101.93, link: 'https://drive.google.com/file/d/1Vx5_LEL2JqamIWIlsNkfxP7-2gMK--oC/view' },
-        { name: 'Lusitania PPR Maio 2026', label: 'Lusitania — PPR Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.00, link: 'https://drive.google.com/file/d/1lTw1V_slfTupWXCqfP2KZ7Z_u_Enidp7/view' },
-        { name: 'Perplexity Maio 2026 6.pdf', label: 'Perplexity — Subscrição (Mai 2026)', type: 'pdf', date: '2026-05', amount: 61.50, link: 'https://drive.google.com/file/d/1B0qWE2llal_LolOLQ5AcH_FuhSh_Zw9Y/view' },
-        { name: 'Tranquilidade_AvisoDebito_AcidTrab_Abr2026.pdf', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', amount: 364.44, link: 'https://drive.google.com/file/d/1lSnyRdQxdQXtWPohpDPYRgTZ6lagKhe-/view' },
-        { name: 'Via Verde Maio 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 31.96, link: 'https://drive.google.com/file/d/1uA-mvEF-DTWN3anO_NDceYd0q7mTgQBv/view' },
-        { name: 'Vodafone Maio 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-03', amount: 221.44, link: 'https://drive.google.com/file/d/1gMSsl2QbOz3KMCZdA7eT-n9yqm_TFn2r/view' },
-        { name: 'Zurich_Negocio_Seguro_CPC_Maio_2026.pdf', label: 'Zurich — Aviso Débito Negócio Seguro CPC Apol. 009096102 (Mai 2026)', type: 'pdf', date: '2026-05-24', amount: 343.69, link: 'https://drive.google.com/file/d/1l3O1fHl05MZr54YYTRcpzLhQbrWTq41b/view' }
-      ],
-      5: [ // Junho
-        { name: 'Ageas Multiplic Junho 2026.pdf', label: 'Ageas — Aviso Débito (Jun 2026)', type: 'pdf', date: '2026-06', amount: 250.94, link: 'https://drive.google.com/file/d/1oNnbuCZvSS4SW2VXWULaTtBSzPU0ADhH/view' },
-        { name: 'Ageas Vida Junho 2026.PDF', label: 'Ageas — Aviso Débito (Jun 2026)', type: 'pdf', date: '2026-06', amount: 119.44, link: 'https://drive.google.com/file/d/1NfjEGz77QOdUkHdcRvN-ayIsGynIBtEP/view' },
-        { name: 'Aguas do Norte Junho 2026', label: 'Águas do Norte — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 12.25, link: 'https://drive.google.com/file/d/1l8jqNSr3TBISyeCaY9eHbgWTNWCDX8o6/view' },
-        { name: 'Condomínio Base Junho 2026.pdf', label: 'Condomínio — Cobrança (Jun 2026)', type: 'pdf', date: '2026-06', amount: 36.12, link: 'https://drive.google.com/file/d/1-6xsPqxUvyuTCdXXWECpfFe8ZIdjDhRz/view' },
-        { name: 'Condomínio Extra Junho 2026.pdf', label: 'Condomínio — Cobrança (Jun 2026)', type: 'pdf', date: '2026-06', amount: 36.12, link: 'https://drive.google.com/file/d/1UUrFya0HqhO7PZUyqTqyy7ie2hENraKe/view' },
-        { name: 'CPC Generali Tranquilidade.pdf', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', amount: 364.44, link: 'https://drive.google.com/file/d/1-cgw6j8ByURSoR1Tu4XC4gwAXUIJwFe0/view' },
-        { name: 'CSTech Worten Fatura Junho 2026.pdf', label: 'CSTech (Marketplace Worten) — Comando PS5 DualSense Astro Bot ZC FT 01P2026/2632 €169,99 (Jun 2026)', type: 'pdf', date: '2026-06-02', amount: 169.99, link: 'https://drive.google.com/file/d/1_4TlqViJSxbI1xXbhIF3B23-gRSBFiUF/view' },
-        { name: 'EDP Maia Junho 2026.pdf', label: 'EDP — Fatura Eletricidade Maia (Jun 2026)', type: 'pdf', date: '2026-06', amount: 105.93, link: 'https://drive.google.com/file/d/1Q1zHBRQDBt2YQ15D41_Smxr-DQ-FGrwj/view' },
-        { name: 'Endesa Junho 2026 Eletricidade .PDF', label: 'Endesa — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 33.67, link: 'https://drive.google.com/file/d/1lMS4PiVojvyzgPsVqNZF2CVJTxPJ8jZM/view' },
-        { name: 'Endesa Junho 2026.PDF', label: 'Endesa — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 15.06, link: 'https://drive.google.com/file/d/1NfqxcEvOcC6Mv1yPMgSX_lToJ82fWyX9/view' },
-        { name: 'Gas SU Junho 2026.PDF', label: 'Gás SU — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: -102.65, link: 'https://drive.google.com/file/d/1UUcOW4gMqcvVjC9IizKV6wg0sXHPahEa/view' },
-        { name: 'Jani King Junho 2026 1ª semana.pdf', label: 'Jani-King — Limpeza (Jun 2026)', type: 'pdf', date: '2026-06', amount: 101.93, link: 'https://drive.google.com/file/d/1i682D0h_t7AFbYTnAH8kxZA2tCmcn4Fy/view' },
-        { name: 'Jani King Junho 2026 2ª e 3ª semana.pdf', label: 'Jani-King — Limpeza (Jun 2026)', type: 'pdf', date: '2026-06', amount: 169.84, link: 'https://drive.google.com/file/d/1OLs_KDFS_iq3xF-4C_Lg-IYiXLkMESCf/view' },
-        { name: 'Jani King Junho 2026 3 e 4.pdf', label: 'Jani-King — Limpeza (Jun 2026)', type: 'pdf', date: '2026-06', amount: 169.84, link: 'https://drive.google.com/file/d/1q3_aK61QJq2yajCfAHOfOaogtto3jJtq/view' },
-        { name: 'PPR Lusitania Junho 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.00, link: 'https://drive.google.com/file/d/19evGWj0EjmAvn5xjgf04Xpew6VnHox5b/view' },
-        { name: 'Via Verde Junho 2026.pdf', label: 'Via Verde — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 31.19, link: 'https://drive.google.com/file/d/1P5iVsOaFkH5A8sgP6DlVhvoH5ayAtI4I/view' },
-        { name: 'Vodafone Junho 2026', label: 'Vodafone — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 183.10, link: 'https://drive.google.com/file/d/1_oVsoQPM5cSXje53wV5aS2EhOD19tZua/view' }
-      ],
-      6: [ // Julho
-        { name: 'Ageas Multiplic Mais Julho 2026.pdf', label: 'Ageas — Aviso Débito Multiplic Mais ZC (Jul 2026)', type: 'pdf', date: '2026-07-06', amount: 250.94, link: 'https://drive.google.com/file/d/1ubDKjcSLU0YEW7arDO1KMzrcqU-GSUj2/view' },
-        { name: 'Ageas Ritmo V Profissional Julho 2026.pdf', label: 'Ageas — Aviso Débito Ritmo V Profissional ZC (Jul 2026)', type: 'pdf', date: '2026-07-20', amount: 121.92, link: 'https://drive.google.com/file/d/1haKkocOTyoFOhPrn8NrjG5Kxz5CkeXj3/view' },
-        { name: 'Ageas Vida Julho 2026.PDF', label: 'Ageas — Aviso Débito Seguro Vida ZC (Jul 2026)', type: 'pdf', date: '2026-07', amount: 121.92, link: 'https://drive.google.com/file/d/1HfQCL8HlomM2EDuep2tuysftx5kk5kKD/view' },
-        { name: 'Biofluidos Manutenção AC CPC Julho 2026.pdf', label: 'Biofluidos — Manutenção Ar Condicionado CPC (Jul 2026)', type: 'pdf', date: '2026-07-21', amount: 166.05, link: 'https://drive.google.com/file/d/19l4083YZmavm2ZWzF-0FcJ5_b1U1Eas9/view' },
-        { name: 'Cartão Continente Fatura Julho 2026.pdf', label: 'Cartão Continente — Fatura Alimentação/Consumo Zebra Curiosa NIF PT514199920 (Jul 2026)', type: 'pdf', date: '2026-07-13', amount: 47.15, link: 'https://drive.google.com/file/d/12SjnmajKSkYrgVqpp43bg-s_tDJDvpFS/view' },
-        { name: 'Condomínio Edifício Solar CPC Julho 2026.pdf', label: 'Condomínio Edifício Solar CPC — Carta de Cobrança (Jul 2026)', type: 'pdf', date: '2026-07', amount: 48.00, link: 'https://drive.google.com/file/d/1JW_n7hXBWpyb7MYgnyikniJNsW2AaYkx/view' },
-        { name: 'EDP CPC Julho 2026.pdf', label: 'EDP — Fatura Eletricidade CPC (Jul 2026)', type: 'pdf', date: '2026-07', amount: 31.94, link: 'https://drive.google.com/file/d/1LC5Ggjn1Y6pJ3qgEEynUMyeIpQ-I-d4Q/view' },
-        { name: 'Endesa Maia Julho 2026 .PDF', label: 'Endesa — Fatura Eletricidade Zebra Curiosa Maia NIF PT514199920 (Jul 2026)', type: 'pdf', date: '2026-07', amount: 126.73, link: 'https://drive.google.com/file/d/1Xd55UK6h1pra1buWb5oHufLE7SNGaDDM/view' },
-        { name: 'Gas SU Julho 2026.PDF', label: 'Gás SU — Fatura Gás Natural Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 55.48, link: 'https://drive.google.com/file/d/1wTsRuvVlfNfJ5B-E5KX7ch5gP5y7YE6u/view' },
-        { name: 'Gas SU Nota Crédito Julho 2026.pdf', label: 'Gás SU — Nota Crédito ZC (Jul 2026)', type: 'pdf', date: '2026-07-18', amount: -28.08, link: 'https://drive.google.com/file/d/1tU3nm8kW8_TQ_hqTKN7Ts3HebxKzkcIX/view' },
-        { name: 'Indaqua Julho 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 51.60, link: 'https://drive.google.com/file/d/1HTB-rB5i2YZjXotFeAMHQUloy5r2D5kd/view' },
-        { name: 'Jani King 2026 Julho 3', label: 'Jani-King — Limpeza (Jul 2026)', type: 'pdf', date: '2026-07', amount: 84.92, link: 'https://drive.google.com/file/d/13TmyFgmRcjj_iLyWFi2UUmjCj8JvwlPA/view' },
-        { name: 'Jani King Julho 2026 2', label: 'Jani-King — Limpeza (Jul 2026)', type: 'pdf', date: '2026-07', amount: 169.84, link: 'https://drive.google.com/file/d/1LyU9LHTk2WGGcIMoBOnoMCZLHQGFk8do/view' },
-        { name: 'PPR Lusitânia 2026 Julho.pdf', label: 'Lusitânia — PPR Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 250.00, link: 'https://drive.google.com/file/d/1Prt2HHRRyqbUzsGfzDGv-OMJUMxatg9h/view' },
-        { name: 'Vodafone Julho 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 188.95, link: 'https://drive.google.com/file/d/1A6Qr-dBa2sRy7jhp-17xtRXD89ODukCt/view' },
-        { name: 'Águas do Norte 2 CPC Julho 2026.pdf', label: 'Águas do Norte — Fatura 2 Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07-15', amount: 10.47, link: 'https://drive.google.com/file/d/1L4_9H5Kc9m6XKDYCrOxLVbEeYEsrRCrF/view' },
-        { name: 'Águas do Norte Julho 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 10.76, link: 'https://drive.google.com/file/d/1MlzXH0bgw5O5iig2KlrKrtNB2U-IFRFU/view' }
-      ],
-      7: [ // Agosto
-        { name: 'Ageas Multiplic Agosto 2026.PDF', label: 'Ageas — Aviso Débito (Ago 2026)', type: 'pdf', date: '2026-08', amount: 250.94, link: 'https://drive.google.com/file/d/1xtIvZ9kwBO8UEe0iuw5pF2BNYqr_TbVC/view' },
-        { name: 'GasSU Agosto 2026', label: 'Gás SU — Nota Crédito ZC (Jul 2026)', type: 'pdf', date: '2026-07-18', amount: -28.08, link: 'https://drive.google.com/file/d/1w0HdgOEIVnRVyK3MNd1l_okTGMODayyp/view' },
-        { name: 'Águas do Norte Agosto 2026', label: 'Águas do Norte — Fatura 2 Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07-15', amount: 10.47, link: 'https://drive.google.com/file/d/1wxINw0Hq8EBsy5_ZuExq35XFHIdKOK4Q/view' }
-      ],
-      8: [],  // Setembro
-      9: [],  // Outubro
-      10: [],  // Novembro
-      11: []  // Dezembro
-    }
+          0: [],  // Janeiro,
+          1: [],  // Fevereiro,
+          2: [ // Março
+            { name: 'Ageas Seguro de Vida Março 2026.pdf', label: 'Ageas — Seguro de Vida Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1dxBhgAMS4bCe1KII3FkdUARJtzPm0H74/view' },
+            { name: 'Aviso de Débito Fidelidade Hyundai Ioniq 2026.pdf', label: 'Fidelidade — Aviso Débito Hyundai Ioniq 5 (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1LUy1aYh3PvWlu0KWX8zGzi75myHsYyNL/view' },
+            { name: 'Aviso Débito VW Beetle Seguro.pdf', label: 'Tranquilidade — Aviso Débito VW New Beetle 76-44-NJ (Mar 2026)', type: 'pdf', date: '2026-03-04', link: 'https://drive.google.com/file/d/1wUtt1P0geB7oEg-ZHXOH0n1ynX_8jv8z/view' },
+            { name: 'Condomínio Solar Carta Cobrança Março 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Mar 2026)', type: 'pdf', date: '2026-03-09', link: 'https://drive.google.com/file/d/11DnBWGBCX-5PBT_kOq1l7FtMU36e2iV5/view' },
+            { name: 'Endesa Fatura Eletricidade Zebra Curiosa Março 2026.pdf', label: 'Endesa — Fatura Eletricidade Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', link: 'https://drive.google.com/file/d/1S32ioQJLDJX4sxlLdm2qkXz01-hL-Q3D/view' },
+            { name: 'Gassu Março 2026.PDF', label: 'Gás SU — Fatura (Mar 2026)', type: 'pdf', date: '2026-03', amount: 304.63, link: 'https://drive.google.com/file/d/1sr-hAmDmCN_mh4bD-PsUyN-hPB5VTXHA/view' },
+            { name: 'Indaqua.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-12', link: 'https://drive.google.com/file/d/1NEpYSuh1AUqGZ8EeBjQ6HT91Qxe2xJDn/view' },
+            { name: 'Jani-King — Serviço de Limpeza Zebra Curiosa Mar 2026.pdf', label: 'Jani-King — Limpeza (Mar 2026)', type: 'pdf', date: '2026-03', amount: 203.86, link: 'https://drive.google.com/file/d/1u0lCYgO0kcuZ7RDBBofFmWDtlZKgCziP/view' },
+            { name: 'Pagamento Antecipado Ticket Educação 2026.pdf', label: 'Ticket Educação — Pagamento Antecipado ZC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 4942.8, link: 'https://drive.google.com/file/d/1yrSPlb-ePB0ggCnhdpwo5iPvnSxsd3jW/view' },
+            { name: 'Vodafone Março 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-05', link: 'https://drive.google.com/file/d/1qK7rRh4yCI79EK9a8jJ0LRnufklmCcqI/view' }
+          ],
+          3: [ // Abril
+            { name: 'Abreu Advogados.pdf', label: 'Abreu Advogados — Fatura (Abr 2026)', type: 'pdf', date: '2026-04', amount: 452.03, link: 'https://drive.google.com/file/d/1ezNCcwVnWSgJ0jgdhgdBiKEcblznFmGD/view' },
+            { name: 'Ageas Poupança Multiplic Simão Abril 2026.PDF', label: 'Ageas — Aviso Débito Poupança Multiplic Simão (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1ot5SK6AUZEF54DwV1nq-5uGMNSao4ePl/view' },
+            { name: 'Ageas Seguro de Vida B.PDF', label: 'Ageas — Aviso Débito Seguro Vida B ZC (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 121.92, link: 'https://drive.google.com/file/d/1b4wWGWX2bnAaa3V3ti88_bfiMu0xY0Sa/view' },
+            { name: 'AntonioVieira_FA_A26_22_Abr2026.pdf', label: 'António Vieira & Filhos — Fatura FA A26/22 Obras Gabinete Psicologia CPC (Abr 2026)', type: 'pdf', date: '2026-04-29', amount: 1383.75, link: 'https://drive.google.com/file/d/1YFj4AfY8kZTX60B07VysWvx2jSR5LOEK/view' },
+            { name: 'Anuidade Kaspersky Anti-Vírus 2026 Abril.pdf', label: 'Kaspersky — Premium 1 Dispositivo 1 Ano ZC (Abr 2026)', type: 'pdf', date: '2026-04-19', amount: 84.99, link: 'https://drive.google.com/file/d/1ca4k28NnRSGCKOXvp4KZiJdtO6cHhhcF/view' },
+            { name: 'Condomínio Abril 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança 2 (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1nmbkgDmrxcIfW1EfofIeQDViKMSPsMg7/view' },
+            { name: 'Condomínio Solar Abril 2026.pdf', label: 'Condomínio Solar — Carta de Cobrança (Abr 2026)', type: 'pdf', date: '2026-04', amount: 24.99, link: 'https://drive.google.com/file/d/1yiKOdRTPtVUIm-__1RghRTcebF2BuBxx/view' },
+            { name: 'EDP — Fatura Eletricidade Zebra Curiosa Abr 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-08', link: 'https://drive.google.com/file/d/1FCBv2fAWhJyPoTLDqOjSSKQdlo5HMWxQ/view' },
+            { name: 'GasSU Abril 2026.PDF', label: 'GasSU — Gás Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 5.5, link: 'https://drive.google.com/file/d/1CFKpKguOdG4AqhZeDvst6CfiF1-JG7d4/view' },
+            { name: 'Jani King Abril 2026 5.pdf', label: 'Jani-King — Limpeza Extra 29/04 ZC (Abr 2026)', type: 'pdf', date: '2026-04-30', amount: 101.93, link: 'https://drive.google.com/file/d/1YTem3e6Tex-6NOCliQdxNPwJfVjFVToi/view' },
+            { name: 'Jani-King Limpeza Extra 21-04 Abr 2026 (6768).pdf', label: 'Jani-King — Limpeza Extra 21/04 (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 101.93, link: 'https://drive.google.com/file/d/1iztGlb8BQwnkqg3UZGfaT2FJPc4nT1vE/view' },
+            { name: 'Jani-King Limpeza Extra Abril 2026 (6685).pdf', label: 'Jani-King — Limpeza Extra 14/04 (Abr 2026)', type: 'pdf', date: '2026-04-16', amount: 101.93, link: 'https://drive.google.com/file/d/1jmSlbtEcwpNLpPp7tgd5wBAyR8Bb2H-7/view' },
+            { name: 'Jani-King Limpeza Extra Mar-Abr 2026 (6595).pdf', label: 'Jani-King — Limpeza Extra 24/03, 31/03, 07/04 (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 305.79, link: 'https://drive.google.com/file/d/1HKkFHBd9_15o4d-hiQJcj4y-cfb8swwr/view' },
+            { name: 'JaniKing_6885_LD_Habitacao_Abr2026.pdf', label: 'Jani-King — Limpeza Extra 29/04 ZC (Abr 2026)', type: 'pdf', date: '2026-04-30', amount: 101.93, link: 'https://drive.google.com/file/d/1AQKrsfUH5tDZE2dy1JOm4Cohim_H7ZTj/view' },
+            { name: 'Lusitania PPR Abril 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 250.0, link: 'https://drive.google.com/file/d/10gKVNAfUyLDmuHvrAZfFem-yv5lm8e7-/view' },
+            { name: 'My Hyundai Abril 2026.pdf', label: 'Hyundai — Serviço (Abr 2026)', type: 'pdf', date: '2026-04', amount: 99.0, link: 'https://drive.google.com/file/d/1T3rSeAlRJThZ8uxWYquz3m_XpeT_X_A4/view' },
+            { name: 'Via Verde Abril 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 36.7, link: 'https://drive.google.com/file/d/1xx8zeRALSQ3DS8HO1TjCs4hsSW7AUoax/view' },
+            { name: 'Vodafone Abril 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 221.26, link: 'https://drive.google.com/file/d/1pYlJEZ1ES26AtUdvgOfdpYFLmNQb9_ES/view' },
+            { name: 'Workview Abril 2026.pdf', label: 'Workview — Fatura (Abr 2026)', type: 'pdf', date: '2026-04', amount: 80.0, link: 'https://drive.google.com/file/d/1ZKJ3UGiXpqSKIpkPaqsC3LmJ5fk4QYss/view' },
+            { name: 'Workview Anual 2026 Janeiro.pdf', label: 'Workview — Fatura (Abr 2026)', type: 'pdf', date: '2026-04', amount: 166.1, link: 'https://drive.google.com/file/d/1u675xsufexjQ6gAPOyJdFl3HJ8ih0MrS/view' },
+            { name: 'Águas do Norte — Fatura Água Zebra Curiosa Abril 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-16', link: 'https://drive.google.com/file/d/1rGQaVpObKko6v3B-DIwjJuBsVRQ1dm6A/view' }
+          ],
+          4: [ // Maio
+            { name: 'Acidentes de Trabalho 2026 Maio Anual.pdf', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', amount: 364.44, link: 'https://drive.google.com/file/d/1RGcTRDhDIB57tieW8PPYIKnFBuo3Kz6A/view' },
+            { name: 'Ageas Multiplic Maio 2026.PDF', label: 'Ageas — Poupança Multiplic Simão Ferreira (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.94, link: 'https://drive.google.com/file/d/1C14iRTKFJL7oTZyPygTTLgWoGF2R1UJc/view' },
+            { name: 'Ageas RC Profissional Zebra Curiosa Maio 2026.PDF', label: 'Ageas — Aviso Débito RC Profissional/Exploração ZC Apólice 00841024520400000 €330,00 (Mai 2026)', type: 'pdf', date: '2026-05-15', amount: 330.0, link: 'https://drive.google.com/file/d/1wY2Y_wkXrF26YL6zUkprx2iYyFdY0pEE/view' },
+            { name: 'Aguas do Norte - Fatura Agua Zebra Curiosa Mai 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-19', amount: 11.45, link: 'https://drive.google.com/file/d/1NZqLRBHZFHaG9QKGsfsJ_bsldXrKPEtV/view' },
+            { name: 'Condomínio CPC Maio 2026.pdf', label: 'Condomínio CPC — Carta de Cobrança (Mai 2026)', type: 'pdf', date: '2026-05', amount: 24.99, link: 'https://drive.google.com/file/d/1d8SpAVZT-4avE3kWqh9uaYmDO9jI0pKt/view' },
+            { name: 'EDP Fatura Eletricidade ZC Maio 2026.pdf', label: 'EDP — Fatura Eletricidade Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 109.01, link: 'https://drive.google.com/file/d/1vo_Wq92lZBpOtcHAAx5scERwQHNFxIwx/view' },
+            { name: 'Endesa Fatura Eletricidade CPC Maio 2026.pdf', label: 'Endesa — Fatura Eletricidade CPC (Mai 2026)', type: 'pdf', date: '2026-05-04', amount: 39.13, link: 'https://drive.google.com/file/d/1IYpVv6DrbAF7G2TUtyNtc32QYDKwbD12/view' },
+            { name: 'Gas SU - Fatura Gas Natural Zebra Curiosa Mai 2026.pdf', label: 'Gás SU — Fatura Gás Natural Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 389.37, link: 'https://drive.google.com/file/d/1_Ofi9csYyrvp-BaDL77Gn5HAJp5BZlH-/view' },
+            { name: 'iMed Anuidade Maio 2026.pdf', label: 'iMed — Anuidade Plataforma Médica ZC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 597.78, link: 'https://drive.google.com/file/d/1hEIrb9V8cX02stbLbtp6y3bpIuJ1lP95/view' },
+            { name: 'Indaqua Maio 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa K2026FA/10122119 (Jun 2026)', type: 'pdf', date: '2026-06-01', amount: 59.09, link: 'https://drive.google.com/file/d/1mm6pd-HxT7lOxl6wjwUzev4kBPlQ8_tG/view' },
+            { name: 'Jani King 4 Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 4 (Mai 2026)', type: 'pdf', date: '2026-05-26', amount: 101.93, link: 'https://drive.google.com/file/d/1s057fZHtqaTRXe-iUc6xpvB1SDiVDwJ5/view' },
+            { name: 'Jani King Maio 2026 1ª.pdf', label: 'Jani-King — Limpeza Extra 05/05 FA.2026/8295 (Mai 2026)', type: 'pdf', date: '2026-05-06', amount: 101.93, link: 'https://drive.google.com/file/d/1VMaOzkw2H-_4y34M7ol1fyStBaDDrjXU/view' },
+            { name: 'Jani King Maio 2026 2ª.pdf', label: 'Jani-King — Limpeza Extra 2 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 101.93, link: 'https://drive.google.com/file/d/1wjnLR1glYPnx23o_823hmvxsDKvV8f6e/view' },
+            { name: 'Jani-King Fatura Maio 2026.pdf', label: 'Jani-King — Limpeza Extra 2 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 101.93, link: 'https://drive.google.com/file/d/1cIolFUDdSClr0BXz-AD7Tf-blymHcF3t/view' },
+            { name: 'Lusitania PPR Maio 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.0, link: 'https://drive.google.com/file/d/1y0_HDoE3tEYwUIhUgfynRsw38Id9kOea/view' },
+            { name: 'Perplexity Maio 2026 6.pdf', label: 'Perplexity — Subscrição (Mai 2026)', type: 'pdf', date: '2026-05', amount: 61.5, link: 'https://drive.google.com/file/d/10SQVqgIvCv-2KXOjm1gsKALhxf0GYq8s/view' },
+            { name: 'Tranquilidade_AvisoDebito_AcidTrab_Abr2026.pdf', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', amount: 364.44, link: 'https://drive.google.com/file/d/1IkPKqzVgWKb5gEbYH-GcxoRJ2_hzKDu-/view' },
+            { name: 'Via Verde Maio 2026.pdf', label: 'Via Verde — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 31.96, link: 'https://drive.google.com/file/d/1R8KS8t-gBdB9o2aaYgSD7SU0SOOlvwRg/view' },
+            { name: 'Vodafone Maio 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05-03', amount: 221.44, link: 'https://drive.google.com/file/d/1d1pYvuRIlsZDAR-MwrnlG4s22A1KkBJi/view' },
+            { name: 'Zurich_Negocio_Seguro_CPC_Maio_2026.pdf', label: 'Zurich — Aviso Débito Negócio Seguro CPC Apol. 009096102 (Mai 2026)', type: 'pdf', date: '2026-05-24', amount: 343.69, link: 'https://drive.google.com/file/d/11Nir70SV2xnBlvpBLut9gR4Lea_LUVpJ/view' }
+          ],
+          5: [ // Junho
+            { name: 'Ageas Multiplic Junho 2026.pdf', label: 'Ageas — Aviso Débito (Jun 2026)', type: 'pdf', date: '2026-06', amount: 250.94, link: 'https://drive.google.com/file/d/1_ItxAVNKIUD7CPKg2NIsPeHS6Vv-IOxg/view' },
+            { name: 'Ageas Vida Junho 2026.PDF', label: 'Ageas — Aviso Débito (Jun 2026)', type: 'pdf', date: '2026-06', amount: 119.44, link: 'https://drive.google.com/file/d/1HjWL_PWa_cxqPSB3gMIU0qZtN2LhCuah/view' },
+            { name: 'Aguas do Norte Junho 2026.pdf', label: 'Águas do Norte — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 12.25, link: 'https://drive.google.com/file/d/1IjzB3nBY-U7NcpuVr1oXZ3P0AccINxKL/view' },
+            { name: 'Condomínio Base Junho 2026.pdf', label: 'Condomínio — Cobrança (Jun 2026)', type: 'pdf', date: '2026-06', amount: 36.12, link: 'https://drive.google.com/file/d/1mUSoVzSbHdYaYbQrdiOzgtVFyTXSnPU-/view' },
+            { name: 'Condomínio Extra Junho 2026.pdf', label: 'Condomínio — Cobrança (Jun 2026)', type: 'pdf', date: '2026-06', amount: 36.12, link: 'https://drive.google.com/file/d/1B8obYT6xPq0VpZwVzpZFJxH4aw18_erz/view' },
+            { name: 'CPC Generali Tranquilidade.pdf', label: 'Acidentes Trabalho — Apólice Anual (Mai 2026)', type: 'pdf', date: '2026-05', amount: 364.44, link: 'https://drive.google.com/file/d/1AKokxdGJCuJbLHI6J6S1NPZHpltPgwvD/view' },
+            { name: 'CSTech Worten Fatura Junho 2026.pdf', label: 'CSTech (Marketplace Worten) — Comando PS5 DualSense Astro Bot ZC FT 01P2026/2632 €169,99 (Jun 2026)', type: 'pdf', date: '2026-06-02', amount: 169.99, link: 'https://drive.google.com/file/d/1q-yHn9BsUe-c7lXyCVL3jEvzieQoPStu/view' },
+            { name: 'EDP Maia Junho 2026.pdf', label: 'EDP — Fatura Eletricidade Maia (Jun 2026)', type: 'pdf', date: '2026-06', amount: 105.93, link: 'https://drive.google.com/file/d/1I_PB9vi3bCmiTXmEE_D3ZRQAHLDvATeb/view' },
+            { name: 'Endesa Junho 2026 Eletricidade .PDF', label: 'Endesa — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 33.67, link: 'https://drive.google.com/file/d/1qobuSd2R3RF9zYWK4RS1gC2jigtaCsU7/view' },
+            { name: 'Endesa Junho 2026.PDF', label: 'Endesa — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 15.06, link: 'https://drive.google.com/file/d/16ZUBtch4CqsQ5-2Y4IYHPzCfYeC2ytIA/view' },
+            { name: 'Gas SU Junho 2026.PDF', label: 'Gás SU — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', link: 'https://drive.google.com/file/d/18xW2l6FJ4AIziFCNZ_EYzSGXwaE5GVoj/view' },
+            { name: 'Jani King Junho 2026 1ª semana.pdf', label: 'Jani-King — Limpeza (Jun 2026)', type: 'pdf', date: '2026-06', amount: 101.93, link: 'https://drive.google.com/file/d/1hdrAjCOUH6rHuepiyCMAjXSCUrNYrC_Y/view' },
+            { name: 'Jani King Junho 2026 2ª e 3ª semana.pdf', label: 'Jani-King — Limpeza (Jun 2026)', type: 'pdf', date: '2026-06', amount: 169.84, link: 'https://drive.google.com/file/d/1PQPDdDDZ6pqfsp83YODlYRT-Q55TmYxI/view' },
+            { name: 'Jani King Junho 2026 3 e 4.pdf', label: 'Jani-King — Limpeza (Jun 2026)', type: 'pdf', date: '2026-06', amount: 169.84, link: 'https://drive.google.com/file/d/1I5jjMTePpfdFp84NONAkUEgC7BqEj7Je/view' },
+            { name: 'PPR Lusitania Junho 2026.pdf', label: 'Lusitania — PPR Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 250.0, link: 'https://drive.google.com/file/d/1f7U--Yh0nTHxG2iKfsBI-u8ZB_1cTpPl/view' },
+            { name: 'Via Verde Junho 2026.pdf', label: 'Via Verde — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 31.19, link: 'https://drive.google.com/file/d/15s21WaS3zycO2Euo9oossiUrOWMVOY4f/view' },
+            { name: 'Vodafone Junho 2026.pdf', label: 'Vodafone — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 183.1, link: 'https://drive.google.com/file/d/1jlmZN8uqfmt7DDNmhO_JD1tAq5qZXOSh/view' }
+          ],
+          6: [ // Julho
+            { name: 'Ageas Multiplic Mais Julho 2026.pdf', label: 'Ageas — Aviso Débito Multiplic Mais ZC (Jul 2026)', type: 'pdf', date: '2026-07-06', amount: 250.94, link: 'https://drive.google.com/file/d/1i4sFzt6203vjuQvab1GTON1eA6myhUIe/view' },
+            { name: 'Ageas Ritmo V Profissional Julho 2026.pdf', label: 'Ageas — Aviso Débito Ritmo V Profissional ZC (Jul 2026)', type: 'pdf', date: '2026-07-20', amount: 121.92, link: 'https://drive.google.com/file/d/1mRIZ0WSPoQ0zZ5dJ3IuasWrgXrqGV8xA/view' },
+            { name: 'Ageas Vida Julho 2026.PDF', label: 'Ageas — Aviso Débito Seguro Vida ZC (Jul 2026)', type: 'pdf', date: '2026-07', amount: 121.92, link: 'https://drive.google.com/file/d/142KuorFoUL-Y86FX-SAaM1M8AUCUbjq9/view' },
+            { name: 'Águas do Norte 2 CPC Julho 2026.pdf', label: 'Águas do Norte — Fatura 2 Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07-15', amount: 10.47, link: 'https://drive.google.com/file/d/1wBW0meDtyDxtd2fIoUemgU3TES7AM8bS/view' },
+            { name: 'Águas do Norte Julho 2026.pdf', label: 'Águas do Norte — Fatura Água Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 10.76, link: 'https://drive.google.com/file/d/1CrsAVjZ1LL5iXyzs4tGdfxq8MSHPo-CA/view' },
+            { name: 'Biofluidos Manutenção AC CPC Julho 2026.pdf', label: 'Biofluidos — Manutenção Ar Condicionado CPC (Jul 2026)', type: 'pdf', date: '2026-07-21', amount: 166.05, link: 'https://drive.google.com/file/d/1j41NKlDbu9DMta9dEaPJY5JHXXRUDUAC/view' },
+            { name: 'Cartão Continente Fatura Julho 2026.pdf', label: 'Cartão Continente — Fatura Alimentação/Consumo Zebra Curiosa NIF PT514199920 (Jul 2026)', type: 'pdf', date: '2026-07-13', amount: 47.15, link: 'https://drive.google.com/file/d/1WEHMFyXPRzOpkuT_5TACqxo8tm5LxLCE/view' },
+            { name: 'Condomínio Edifício Solar CPC Julho 2026.pdf', label: 'Condomínio Edifício Solar CPC — Carta de Cobrança (Jul 2026)', type: 'pdf', date: '2026-07', amount: 48.0, link: 'https://drive.google.com/file/d/1x2UukkeHNLI5pTLso7kr3FM9KobIfBtW/view' },
+            { name: 'EDP CPC Julho 2026.pdf', label: 'EDP — Fatura Eletricidade CPC (Jul 2026)', type: 'pdf', date: '2026-07', amount: 31.94, link: 'https://drive.google.com/file/d/1JaV_VAeqIKVei1J04KiNasOjmAvtvJlz/view' },
+            { name: 'Endesa Maia Julho 2026 .PDF', label: 'Endesa — Fatura Eletricidade Zebra Curiosa Maia NIF PT514199920 (Jul 2026)', type: 'pdf', date: '2026-07', amount: 126.73, link: 'https://drive.google.com/file/d/10i0R5sD7dJQX6aiWECcKJdlpT5mf-hRw/view' },
+            { name: 'Gas SU Julho 2026.PDF', label: 'Gás SU — Fatura Gás Natural Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 55.48, link: 'https://drive.google.com/file/d/1_yCWMOG7R1dX_nbxPRhJ2v0mThEykw7Y/view' },
+            { name: 'Gas SU Nota Crédito Julho 2026.pdf', label: 'Gás SU — Nota Crédito ZC (Jul 2026)', type: 'pdf', date: '2026-07-18', link: 'https://drive.google.com/file/d/1z6qvgD-h51dJ-9832g70IiSYdG9PEzqH/view' },
+            { name: 'Indaqua Julho 2026.pdf', label: 'INDAQUA — Fatura Água Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 51.6, link: 'https://drive.google.com/file/d/1C2nRdubA5wsGG0_4Cgdeer5RQHi-CCSI/view' },
+            { name: 'Jani King 2026 Julho 3.pdf', label: 'Jani-King — Limpeza (Jul 2026)', type: 'pdf', date: '2026-07', amount: 84.92, link: 'https://drive.google.com/file/d/1XfVJaPW_RD-bR1blc5YtrL7gJIwn-Y6u/view' },
+            { name: 'Jani King Julho 2026 2.pdf', label: 'Jani-King — Limpeza (Jul 2026)', type: 'pdf', date: '2026-07', amount: 169.84, link: 'https://drive.google.com/file/d/13h_O2nWqt9eWa82xZq36AYjcb59LwTkm/view' },
+            { name: 'PPR Lusitânia 2026 Julho.pdf', label: 'Lusitânia — PPR Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 250.0, link: 'https://drive.google.com/file/d/19KvqmQrjPaGd1Wn0qsiKD4IIHU2me5wh/view' },
+            { name: 'Vodafone Julho 2026.pdf', label: 'Vodafone — Fatura Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07', amount: 188.95, link: 'https://drive.google.com/file/d/1UrDkbVMrU9Vivvk4U1y4O8JEgjtaXeSB/view' }
+          ],
+          7: [ // Agosto
+            { name: 'Ageas Multiplic Agosto 2026.PDF', label: 'Ageas — Aviso Débito (Ago 2026)', type: 'pdf', date: '2026-08', amount: 250.94, link: 'https://drive.google.com/file/d/1VtajakmkS4Bzf5nBWPQaPwj1lObrSBK7/view' },
+            { name: 'EDP CPC Agosto 2026.pdf', label: 'EDP CPC Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1amwF3dFcw1iXBQSLY4IAZCOApBVu150k/view' },
+            { name: 'Endesa Agosto 2026 Maia', label: 'Endesa Agosto 2026 Maia (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1WF0IbNtNaukKHwBxYMpOi4FDiInAzU6w/view' },
+            { name: 'GasSU Agosto 2026.pdf', label: 'Gás SU — Nota Crédito ZC (Jul 2026)', type: 'pdf', date: '2026-07-18', link: 'https://drive.google.com/file/d/1yGPCG2QeE4UrV9AScnnkQf1ruXQ-6ot6/view' },
+            { name: 'Jani King Agosto 2026 1.pdf', label: 'Jani King Agosto 2026 1 (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/138g2f1N4mHeeGL6t9JLJ_IC8RcN9H6KB/view' },
+            { name: 'Recibo Agosto Condomínio CPC', label: 'Recibo Agosto Condomínio CPC (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1-tiHYW4TwkdxAe_M8fkE8dFrTxiSdHc9/view' },
+            { name: 'Via Verde Agosto 2026.pdf', label: 'Via Verde Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1Lf9maSsIoDsgFo8s5iWRKtRxd0RqmjAe/view' },
+            { name: 'Vodafone Agosto 2026', label: 'Vodafone Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1ab78O8ChmPnAJzg4clDPrWCIYHwu3YZV/view' },
+            { name: 'Águas do Norte Agosto 2026.pdf', label: 'Águas do Norte — Fatura 2 Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07-15', amount: 10.47, link: 'https://drive.google.com/file/d/1hlGtUJdTK08ig7oxtNcp-ouz01CyjyUd/view' }
+          ],
+          8: [ // Setembro
+            { name: 'Ageas Multiplic Setembro 2026', label: 'Ageas Multiplic Setembro (Set 2026)', type: 'pdf', date: '2026-09-01', link: 'https://drive.google.com/file/d/1oFbepEAymSckd8L6SamyEqNrKgLsL9Ui/view' },
+            { name: 'Ageas Vida Setembro 2026', label: 'Ageas Vida Setembro (Set 2026)', type: 'pdf', date: '2026-09-01', link: 'https://drive.google.com/file/d/1k2Cr92_2LMQBsvw8VukOs86qEH4jEnr6/view' }
+          ],
+          9: [],  // Outubro,
+          10: [],  // Novembro,
+          11: [],  // Dezembro
+        }
       },
       {
         name: 'Subscrições Mensais',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>`,
         gdPath: GD_PATHS.subscricoesZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 7, 3: 9, 4: 4, 5: 4, 6: 10, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 7, 3: 9, 4: 4, 5: 4, 6: 11, 7: 11, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
-      0: [],  // Janeiro
-      1: [],  // Fevereiro
-      2: [ // Março
-        { name: 'Claude Pro Março 2026.pdf', label: 'Claude Pro — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', amount: 22.00, link: 'https://drive.google.com/file/d/1KQ1NtvQBb-LilhhZqGYr1hH5e-sqSAZr/view' },
-        { name: 'Fabric Pro Plan ZC Marco 2026.pdf', label: 'Fabric Pro Plan — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-28', amount: 13.03, link: 'https://drive.google.com/file/d/1PGG59SnEMHOJQgjFrIq3btFTYhmG3JoS/view' },
-        { name: 'Manus Pro Março 2026.pdf', label: 'Manus Pro — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-02', amount: 600.00, link: 'https://drive.google.com/file/d/1OOdCsfrL36Fb_KEakus5m_P294UAVsyi/view' },
-        { name: 'Perplexity Auto Topup Zebra Curiosa 18 Mar 2026.pdf', label: 'Perplexity — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', amount: 75.99, link: 'https://drive.google.com/file/d/1d29x41533aje1lC3ZX4QbmVhqbtpQIda/view' },
-        { name: 'Perplexity Março 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-09', amount: 84.70, link: 'https://drive.google.com/file/d/1m3LLfLXPZmbaeYpOMRSMV2Q2piB6fAcG/view' },
-        { name: 'Perplexity Plus.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (13 Mar 2026)', type: 'pdf', date: '2026-03-13', amount: 107.74, link: 'https://drive.google.com/file/d/1XbqnoJMTRiaVaCdoA2nFJv9vnD7b-A6J/view' },
-        { name: 'Spotify Premium Familia ZC Marco 2026.pdf', label: 'Spotify — Premium Família ZC (Mar 2026)', type: 'pdf', date: '2026-03-23', amount: 16.99, link: 'https://drive.google.com/file/d/1WHVnj1Rou_kLJQdD-ypbi55HeNoaO_Nj/view' }
-      ],
-      3: [ // Abril
-        { name: 'Claude AI Abril 2026', label: 'Claude Pro — Subscrição Mensal Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-15', amount: 22.00, link: 'https://drive.google.com/file/d/14cMKmL2oWnPzKYrOs5P4_85FCqzXgbWy/view' },
-        { name: 'Kaspersky Premium Subscricao Abr 2026.pdf', label: 'Kaspersky — Premium 1 Dispositivo 1 Ano ZC (Abr 2026)', type: 'pdf', date: '2026-04-19', amount: 84.99, link: 'https://drive.google.com/file/d/1gkvYZYtyGr47FYdRR-aSOExww1GSGVGY/view' },
-        { name: 'Manus AI Abril 2026.pdf', label: 'Manus AI — Subscrição Mensal Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 225.00, link: 'https://drive.google.com/file/d/1fUYNZ-Hs6HpxQ2B8LsYunnuUEOcYeZX_/view' },
-        { name: 'Perplexity Abril Plus 2026.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1ayJsmsJ0auczBnK_IXiNk_D23xGIiy_v/view' },
-        { name: 'Perplexity AI Plus 3 Abril 2026.pdf', label: 'Perplexity — Subscrição (Abr 2026)', type: 'pdf', date: '2026-04', amount: 241.07, link: 'https://drive.google.com/file/d/1J8as0N7Vta7ZG4cFGiSTd8UTn5Kd__Wk/view' },
-        { name: 'Perplexity AI Plus 4 Abril 2026.pdf', label: 'Perplexity — Subscrição (Abr 2026)', type: 'pdf', date: '2026-04', amount: 123.00, link: 'https://drive.google.com/file/d/1a3fZb74OZ5K1xRUwuJMfRR2kPFdxt-4J/view' },
-        { name: 'Spotify Abril 2026.pdf', label: 'Spotify — Premium Família ZC (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 16.99, link: 'https://drive.google.com/file/d/1wNm_e-dOFbKxEL5nzHGmeFZbgGBRmWS3/view' },
-        { name: 'Spotify_Premium_Familia_ZC_Abril_2026.pdf', label: 'Spotify — Premium Família ZC (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 16.99, link: 'https://drive.google.com/file/d/1bImTv8PfREci2wumI71SUYqZmgruR4LY/view' },
-        { name: 'Subscrição Perplexity Abril 2026.pdf', label: 'Perplexity — Subscrição Enterprise Max Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 349.00, link: 'https://drive.google.com/file/d/1v2ra7s1i6lG2XmMfFAFk5Pp98sz-rFOj/view' }
-      ],
-      4: [ // Maio
-        { name: 'Manus AI Maio 2026.pdf', label: 'Manus AI — Subscrição Mensal Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 100.00, link: 'https://drive.google.com/file/d/1uLw_PVZYson5ocsyS-lH0kvs9nkezgeB/view' },
-        { name: 'Perplexity Maio 2026 2.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Mai 2026) — $61,50 USD', type: 'pdf', date: '2026-05', amount: 50.43, link: 'https://drive.google.com/file/d/10SljImfPq2NQqotGL7ObxP9mOLhCtZYY/view' },
-        { name: 'Perplexity Maio 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mai 2026) — $123,00 USD', type: 'pdf', date: '2026-05', amount: 100.85, link: 'https://drive.google.com/file/d/1vKpZbxp0odVjLGYW4Le0sGK8wx1tdtQc/view' },
-        { name: 'Spotify Maio 2026.pdf', label: 'Spotify — Premium Família ZC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 16.99, link: 'https://drive.google.com/file/d/1nh09u2qzjqRijyOFvJ7ifhu-Yv9ysa3N/view' }
-      ],
-      5: [ // Junho
-        { name: 'Manus_AI_Apple_Junho_2026.pdf', label: 'Manus AI — Manus Pro Mensal via Apple Pay €100,00 (Jun 2026)', type: 'pdf', date: '2026-06-14', amount: 100.00, link: 'https://drive.google.com/file/d/1BfJlgvpAjXWjt7yZjCDNbcpzwU44RDXL/view' },
-        { name: 'Perplexity Junho 2026 6.pdf', label: 'Perplexity — Subscrição (Jun 2026)', type: 'pdf', date: '2026-06', amount: 123.00, link: 'https://drive.google.com/file/d/19cp83zhNqcCTwbMVzTcLrYqeg2gDQQd1/view' },
-        { name: 'Perplexity Junho 2026.pdf', label: 'Perplexity — Subscrição (Jun 2026)', type: 'pdf', date: '2026-06', amount: 49.20, link: 'https://drive.google.com/file/d/14vw0XWikKwV-CM8AUgrnqO5JZedXgkKC/view' },
-        { name: 'Spotify Julho 2026.pdf', label: 'Spotify — Premium Família (Jun 2026)', type: 'pdf', date: '2026-06', amount: 16.99, link: 'https://drive.google.com/file/d/1MepEU1z-JBUokMP4or6YtKjk_YoWygiv/view' }
-      ],
-      6: [ // Julho
-        { name: 'Manus Julho 2026 Plus 1.pdf', label: 'Manus AI — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 81.30, link: 'https://drive.google.com/file/d/1eSdFPP4ksTTj2SVZoJwNk4Cy1T0AdAhI/view' },
-        { name: 'Manus Julho 2026.pdf', label: 'Manus AI — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 70.00, link: 'https://drive.google.com/file/d/1MzMOul2jUNkFeNa4kdsqYfPJCY4hlWNt/view' },
-        { name: 'Manus Julho Plus 2.pdf', label: 'Manus AI — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 42.82, link: 'https://drive.google.com/file/d/1nB94MCZZEEirlolIVEtbaBXRBDt3tq7x/view' },
-        { name: 'Perplexity 2026 Julho Plus 1.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Jul 2026) — $123,00 USD', type: 'pdf', date: '2026-07-11', amount: 100.85, link: 'https://drive.google.com/file/d/1vZfe1SaZT-hQmuKk5niMS4YmaTZNQDiE/view' },
-        { name: 'Perplexity 2026 Julho Plus 3.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 123.00, link: 'https://drive.google.com/file/d/1X8Bs60AE13NiTVkouhi98M15NWFupoFO/view' },
-        { name: 'Perplexity Julho 2026 4.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 123.00, link: 'https://drive.google.com/file/d/1t4awrJbGBKzLDRAHVMU0hROPTD8OvU0v/view' },
-        { name: 'Perplexity Julho 2026 Plus 2.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 61.50, link: 'https://drive.google.com/file/d/1N9Ucto2D9talAZXfkOiwFQSYrSgHvCoh/view' },
-        { name: 'Perplexity Julho 2026 Pro.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Jul 2026) — $49,20 USD', type: 'pdf', date: '2026-07-09', amount: 40.34, link: 'https://drive.google.com/file/d/1KxrpyYDvZeYH5LJ7VEje6cDL16EaBAN3/view' },
-        { name: 'Perplexity Plus 5 Julho 2026.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 61.50, link: 'https://drive.google.com/file/d/1A0u2z9T5qoThxmQYgX5ZibZ26U-i5ZaO/view' },
-        { name: 'Perplexity Plus 6 Julho 2026.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 61.50, link: 'https://drive.google.com/file/d/1fC7GKE1e0yZeMf2dISfYSpJ_W2Uy5bqE/view' }
-      ],
-      7: [],  // Agosto
-      8: [],  // Setembro
-      9: [],  // Outubro
-      10: [],  // Novembro
-      11: []  // Dezembro
-    }
+          0: [],  // Janeiro,
+          1: [],  // Fevereiro,
+          2: [ // Março
+            { name: 'Claude Pro Março 2026.pdf', label: 'Claude Pro — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-15', amount: 22.0, link: 'https://drive.google.com/file/d/1aSN811N9saALMkcpsLZvYJFsBoFwzm_t/view' },
+            { name: 'Fabric Pro Plan ZC Marco 2026.pdf', label: 'Fabric Pro Plan — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-28', amount: 13.03, link: 'https://drive.google.com/file/d/1cLyQoLGqBdinCRjgVPhS_Xh7-UAV42Ho/view' },
+            { name: 'Manus Pro Março 2026.pdf', label: 'Manus Pro — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-02', amount: 600.0, link: 'https://drive.google.com/file/d/1Wd8dEUabfgdufUSomaa3zAAK4R26JySy/view' },
+            { name: 'Perplexity Auto Topup Zebra Curiosa 18 Mar 2026.pdf', label: 'Perplexity — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', amount: 75.99, link: 'https://drive.google.com/file/d/1K8nz1-ftgIGv-UoAS113AfWRkw_EqDnb/view' },
+            { name: 'Perplexity Março 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mar 2026)', type: 'pdf', date: '2026-03-09', amount: 84.7, link: 'https://drive.google.com/file/d/1Q94Ly5MMJqPFvN5KxrsXuYdcgSToFetf/view' },
+            { name: 'Perplexity Plus.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (13 Mar 2026)', type: 'pdf', date: '2026-03-13', amount: 107.74, link: 'https://drive.google.com/file/d/1R3cRNqdP8yRkVTctXfQ3aMQslNn9cSaA/view' },
+            { name: 'Spotify Premium Familia ZC Marco 2026.pdf', label: 'Spotify — Premium Família ZC (Mar 2026)', type: 'pdf', date: '2026-03-23', amount: 16.99, link: 'https://drive.google.com/file/d/1-Y8x9agjtrJBajYP29cdOB_KMBDRIEua/view' }
+          ],
+          3: [ // Abril
+            { name: 'Claude AI Abril 2026.pdf', label: 'Claude Pro — Subscrição Mensal Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04-15', amount: 22.0, link: 'https://drive.google.com/file/d/1cfYDcR9HNoQNwg3aCluMKbstSiACyIvx/view' },
+            { name: 'Kaspersky Premium Subscricao Abr 2026.pdf', label: 'Kaspersky — Premium 1 Dispositivo 1 Ano ZC (Abr 2026)', type: 'pdf', date: '2026-04-19', amount: 84.99, link: 'https://drive.google.com/file/d/15usX_zP7Ku4edVnSC0pUtQYqDLom14Fy/view' },
+            { name: 'Manus AI Abril 2026.pdf', label: 'Manus AI — Subscrição Mensal Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 225.0, link: 'https://drive.google.com/file/d/1T0XKV16LpgBkNqv_EtsV9fJPpIopFLXX/view' },
+            { name: 'Perplexity Abril Plus 2026.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/17-RDnqIEmjuckiMpX9yl5PihtJPtXNVW/view' },
+            { name: 'Perplexity AI Plus 3 Abril 2026.pdf', label: 'Perplexity — Subscrição (Abr 2026)', type: 'pdf', date: '2026-04', amount: 241.07, link: 'https://drive.google.com/file/d/1MmJ25ICrFicZNjHE7ec7gx0hMRSVJnL8/view' },
+            { name: 'Perplexity AI Plus 4 Abril 2026.pdf', label: 'Perplexity — Subscrição (Abr 2026)', type: 'pdf', date: '2026-04', amount: 123.0, link: 'https://drive.google.com/file/d/1IrtZIWp7Muh_VAjsXB40dLLAeGanfusd/view' },
+            { name: 'Spotify Abril 2026.pdf', label: 'Spotify — Premium Família ZC (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 16.99, link: 'https://drive.google.com/file/d/1MLTukpETRBRoDVo1hsh7IV30Slmv9fWA/view' },
+            { name: 'Spotify_Premium_Familia_ZC_Abril_2026.pdf', label: 'Spotify — Premium Família ZC (Abr 2026)', type: 'pdf', date: '2026-04-23', amount: 16.99, link: 'https://drive.google.com/file/d/11EWzpm3_Qp215EMozo7oPKOkhjCZxYVe/view' },
+            { name: 'Subscrição Perplexity Abril 2026.pdf', label: 'Perplexity — Subscrição Enterprise Max Zebra Curiosa (Abr 2026)', type: 'pdf', date: '2026-04', amount: 349.0, link: 'https://drive.google.com/file/d/1ybzK9TZ9HiS6oLJN7rtWsXc6koTCvsW1/view' }
+          ],
+          4: [ // Maio
+            { name: 'Manus AI Maio 2026.pdf', label: 'Manus AI — Subscrição Mensal Zebra Curiosa (Mai 2026)', type: 'pdf', date: '2026-05', amount: 100.0, link: 'https://drive.google.com/file/d/15LmriOMXmWs--_wWy8h7Rdz0ENTn1SA_/view' },
+            { name: 'Perplexity Maio 2026 2.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Mai 2026) — $61,50 USD', type: 'pdf', date: '2026-05', amount: 50.43, link: 'https://drive.google.com/file/d/1QDkNv7lr_ZiIt1O0Firom3iYuWZMrYD6/view' },
+            { name: 'Perplexity Maio 2026.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Mai 2026) — $123,00 USD', type: 'pdf', date: '2026-05', amount: 100.85, link: 'https://drive.google.com/file/d/18UNYROyZek54QLgc1VkJEUndNHRzHkF6/view' },
+            { name: 'Spotify Maio 2026.pdf', label: 'Spotify — Premium Família ZC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 16.99, link: 'https://drive.google.com/file/d/1uMnEyy_FgFaFpJNQbfQpXViZQiAvSDyS/view' }
+          ],
+          5: [ // Junho
+            { name: 'Manus_AI_Apple_Junho_2026.pdf', label: 'Manus AI — Manus Pro Mensal via Apple Pay €100,00 (Jun 2026)', type: 'pdf', date: '2026-06-14', amount: 100.0, link: 'https://drive.google.com/file/d/1V9zRl7KZjJXVAJC3AHk5bUdzu6Rw_o3o/view' },
+            { name: 'Perplexity Junho 2026 6.pdf', label: 'Perplexity — Subscrição (Jun 2026)', type: 'pdf', date: '2026-06', amount: 123.0, link: 'https://drive.google.com/file/d/1c6CefrAr2OG0KxSr7ipOHVb67PuV9q_0/view' },
+            { name: 'Perplexity Junho 2026.pdf', label: 'Perplexity — Subscrição (Jun 2026)', type: 'pdf', date: '2026-06', amount: 49.2, link: 'https://drive.google.com/file/d/1pQ7BSCHka2MyEBR7t1IXmjJ3qfMViqdZ/view' },
+            { name: 'Spotify Julho 2026.pdf', label: 'Spotify — Premium Família (Jun 2026)', type: 'pdf', date: '2026-06', amount: 16.99, link: 'https://drive.google.com/file/d/1yffwGWAj7t26kWizsaxF8ZaWCL6H327V/view' }
+          ],
+          6: [ // Julho
+            { name: 'Manus Julho 2026 Plus 1.pdf', label: 'Manus AI — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 81.3, link: 'https://drive.google.com/file/d/1O_skk1UC5SjvwoBVR_Iao230QPl9ai1u/view' },
+            { name: 'Manus Julho 2026.pdf', label: 'Manus AI — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 70.0, link: 'https://drive.google.com/file/d/11GCXnW4Wlw5_OMIOKJA5nKnGFihYaTHH/view' },
+            { name: 'Manus Julho Plus 2.pdf', label: 'Manus AI — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 42.82, link: 'https://drive.google.com/file/d/1l7H4H2qx2cUZ1AYDmJT74Cj9tAqgDu5w/view' },
+            { name: 'Perplexity 2026 Julho Plus 1.pdf', label: 'Perplexity — Créditos Auto Topup Zebra Curiosa (Jul 2026) — $123,00 USD', type: 'pdf', date: '2026-07-11', amount: 100.85, link: 'https://drive.google.com/file/d/1BpaDmmcsdsyCiTZ3Zc5oFimgP9SNc91B/view' },
+            { name: 'Perplexity 2026 Julho Plus 3.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 123.0, link: 'https://drive.google.com/file/d/1ivxOO7yucL4DUZjBavL_YejMZ1-H_hei/view' },
+            { name: 'Perplexity Julho 2026 4.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 123.0, link: 'https://drive.google.com/file/d/1e5OnaQUkG--6VYtrG8zRHZmEy51q4P4M/view' },
+            { name: 'Perplexity Julho 2026 Plus 2.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 61.5, link: 'https://drive.google.com/file/d/1iZKqmUBLVnKQOcXpYAPvR0LWKtBBw5UJ/view' },
+            { name: 'Perplexity Julho 2026 Pro.pdf', label: 'Perplexity — Subscrição Mensal Zebra Curiosa (Jul 2026) — $49,20 USD', type: 'pdf', date: '2026-07-09', amount: 40.34, link: 'https://drive.google.com/file/d/1UnthbUFWRlkc-wB2-1ihRu7iA1YYhNEj/view' },
+            { name: 'Perplexity Plus 5 Julho 2026.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 61.5, link: 'https://drive.google.com/file/d/1QqYWHWU-lXvGc9CdVWowYn8DXquezDFE/view' },
+            { name: 'Perplexity Plus 6 Julho 2026.pdf', label: 'Perplexity — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07', amount: 61.5, link: 'https://drive.google.com/file/d/15vFJJcDRpSq9jyoso5xWi2iB2vjoWhSV/view' },
+            { name: 'Perplexity Plus 9 Julho 2026.pdf', label: 'Perplexity Plus 9 Julho (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1n6msGsJu-3YaVYSD1kh7r6ow-MpKGmb7/view' }
+          ],
+          7: [ // Agosto
+            { name: 'Google Pay Agosto 1.pdf', label: 'Google Pay Agosto 1 (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1QZjBuLmeqcv1YYgIYFfCQjHhRFpUE5aC/view' },
+            { name: 'Google Pay Agosto 2.pdf', label: 'Google Pay Agosto 2 (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1H-NB_YkFf-D0CO6JhSn_kD7ITEMcsUT7/view' },
+            { name: 'Google Pay Agosto 3.pdf', label: 'Google Pay Agosto 3 (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1Ifuzqn05gRz8n7M3nxCBYub_q1AOM3JO/view' },
+            { name: 'Google Pay Agosto 4.html', label: 'Google Pay Agosto 4.html (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/18V1Cqyy3GH5nYugyJBLdrEpFY1p8uoF9/view' },
+            { name: 'Manie Agosto 2026', label: 'Manie Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/14HGFszwGOoBBYucuklecVpIJ1qpprEvY/view' },
+            { name: 'Manus Agosto Plus 2 2026.pdf', label: 'Manus Agosto Plus 2 (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1ufDfyuYKef1hcImK5_V2iDIeMnicMPDa/view' },
+            { name: 'Manus Credit Agosto 2026', label: 'Manus Credit Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1-NV0ttHry3ZDhrgZAoaPQ46_GRrA23Jk/view' },
+            { name: 'Manus Plus 3 Agosto.pdf', label: 'Manus Plus 3 Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1sndJQufh5hzDfKEJEubSoy8OwbfOZgxG/view' },
+            { name: 'Manus Plus 4 Agosto.pdf', label: 'Manus Plus 4 Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1_ulnQy2dcNjY8GNo0sIpZU4bJ6vOormH/view' },
+            { name: 'Perplexity Agosto 2026 Plus.pdf', label: 'Perplexity Agosto 2026 Plus (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1_lpLbYi_QtsQfhafc-_oNNuWI1HUDPio/view' },
+            { name: 'Perplexity Max Agosto 2026.pdf', label: 'Perplexity Max Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1BChtKTdlHxgX-ysefUWH9Iuw2l8AJRF0/view' }
+          ],
+          8: [],  // Setembro,
+          9: [],  // Outubro,
+          10: [],  // Novembro,
+          11: [],  // Dezembro
+        }
       }
     ]
   },
@@ -1139,56 +1161,65 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.pagamentosPessoais,
-    monthlyDocs: { 0: 0, 1: 0, 2: 6, 3: 7, 4: 5, 5: 4, 6: 7, 7: 1, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 9, 4: 5, 5: 6, 6: 8, 7: 1, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
-      0: [],  // Janeiro
-      1: [],  // Fevereiro
+      0: [],  // Janeiro,
+      1: [],  // Fevereiro,
       2: [ // Março
-        { name: 'G9 Viseu Gás Março 2026.pdf', label: 'G9 Viseu — Gás (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1W9dcnAm2P_CwCMjnLK23kjy5y12vaEpD/view' },
-        { name: 'Quotas Semestrais Ordem dos Medicos Mar 2026.pdf', label: 'Ordem dos Médicos — Quotas Semestrais Jan-Jun 2026 (Mar 2026)', type: 'pdf', date: '2026-03-25', amount: 97.80, link: 'https://drive.google.com/file/d/1n68mUOdwfstIuGeIRRih8vqoozPI6SQo/view' },
-        { name: 'Roblox Março 2026.pdf', label: 'Roblox — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1BQh023DYqabb419uU9CITvOziispZ8rZ/view' },
-        { name: 'Roblox Slap Battles Março 2026.pdf', label: 'Roblox Slap Battles — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1gs2N67GHNGzCVoJYKGt4unWLPLuc6zDj/view' },
-        { name: 'Seguro Responsabilidade Civil 2026.PDF', label: 'Seguro Responsabilidade Civil 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1lFg-hHBI-1yXRwdtt-Od9BVBAf8Vvx4A/view' },
-        { name: 'YouTube Premium Pagamento Pessoal Março 2026.pdf', label: 'YouTube Premium — Subscrição Mensal (Mar 2026)', type: 'pdf', date: '2026-03-10', link: 'https://drive.google.com/file/d/1OrxgxjPfCcTnUfs9_pMfcBiz_bmYfQIO/view' }
+        { name: 'G9 Viseu Gás Março 2026.pdf', label: 'G9 Viseu — Gás (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1taZOBoH8XWH8MMPcqG8q2Su_eUbZy9v0/view' },
+        { name: 'G9 Viseu Gás Março 2026.pdf', label: 'G9 Viseu Gás Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1xXIuY5vWtEjwWrTSxbgwdD2ZhdADpm07/view' },
+        { name: 'Quotas Semestrais Ordem dos Medicos Mar 2026.pdf', label: 'Ordem dos Médicos — Quotas Semestrais Jan-Jun 2026 (Mar 2026)', type: 'pdf', date: '2026-03-25', amount: 97.8, link: 'https://drive.google.com/file/d/1DNSB3f4bbSkGcIGhRgHR0PF1zzQ3wHhY/view' },
+        { name: 'Roblox Março 2026.pdf', label: 'Roblox — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1B1a1fD_jvnYWl3zgZbkT4ie2iGe_eY_f/view' },
+        { name: 'Roblox Março 2026.pdf', label: 'Roblox Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1CeLju4SKdlNYTsKVUqYfiJ2aBwQXF5CL/view' },
+        { name: 'Roblox Slap Battles Março 2026.pdf', label: 'Roblox Slap Battles Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1lZ4zva7IWfg-kkBcNB-1eIEAGcTdyYwh/view' },
+        { name: 'Roblox Slap Battles Março 2026.pdf', label: 'Roblox Slap Battles — Subscrição (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1KOZb5yvLLNYHqjH1A8aP-liDcqO5KuU5/view' },
+        { name: 'Seguro Responsabilidade Civil 2026.PDF', label: 'Seguro Responsabilidade Civil 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1Xrwe5GP4wV2tv-v2pA8mRiWpUvpx4L4r/view' },
+        { name: 'YouTube Premium Pagamento Pessoal Março 2026.pdf', label: 'YouTube Premium Pagamento Pessoal Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1_zYmIyWfK1mdDIJTPNXYQYOfFp1ilkOd/view' },
+        { name: 'YouTube Premium Pagamento Pessoal Março 2026.pdf', label: 'YouTube Premium — Subscrição Mensal (Mar 2026)', type: 'pdf', date: '2026-03-10', link: 'https://drive.google.com/file/d/1MetWafVg1n4VfjYZoB0Hlc06xuv3Fsa4/view' }
       ],
       3: [ // Abril
-        { name: 'Aviso Débito Allianz Casa Viseu Abril 2026.pdf', label: 'Allianz — Seguro Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04', amount: 250.00, link: 'https://drive.google.com/file/d/1I2HsGce7bZLlLopUe9xUKzpkGvtJcArH/view' },
-        { name: 'Fatura Gás G9 Viseu Abril 2026.pdf', label: 'G9 Viseu — Gás (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1D5-nWUQZwuRKgHyFS85s0ovscBVLxsu_/view' },
-        { name: 'Fatura Roblox Slap Battles.pdf', label: 'Apple SlapBattles-VIP! — Subscrição (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 4.99, link: 'https://drive.google.com/file/d/1875aDGnxE4KnvKDvaxUHfoTuD6oWNCM8/view' },
-        { name: 'Fatura Youtube Abril 2026.pdf', label: 'YouTube Premium — Subscrição Mensal (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1GBWMyrQ3S0t2bv2WkTpWDAA6C4c2lnJY/view' },
-        { name: 'Roblox Premium 1000 Abril 2026.pdf', label: 'Roblox — Premium 1000 (Abr 2026)', type: 'pdf', date: '2026-04-13', amount: 11.99, link: 'https://drive.google.com/file/d/1KZCR-HTQ-PRwuH2pf2nf4H6oRd9GF7Xy/view' },
-        { name: 'SMAS Viseu Fatura Agua Abr 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 11.47, link: 'https://drive.google.com/file/d/1urV-5Vusel671RG-45mb7hXNWL71cOUk/view' },
-        { name: 'SU Eletricidade — Fatura Casa Viseu Abr 2026.pdf', label: 'SU Eletricidade — Fatura Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/13_wRF1O1SmPvN-hk7a7UTFxYxSJRffFY/view' }
+        { name: 'Aviso Débito Allianz Casa Viseu Abril 2026.pdf', label: 'Allianz — Seguro Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04', amount: 250.0, link: 'https://drive.google.com/file/d/1H3aQhuQtP2j4aHAiJf2Hr73l9TfZe1Kk/view' },
+        { name: 'Aviso Débito Allianz Casa Viseu Abril 2026.pdf', label: 'Aviso Débito Allianz Casa Viseu Abril (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/1tDRPLwIqLwAC1eVZEfOcxmwMSTs6gunR/view' },
+        { name: 'Fatura Gás G9 Viseu Abril 2026.pdf', label: 'G9 Viseu — Gás (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/12otNGq8uXGrCBNJKzP65oAGSy2E3ThPT/view' },
+        { name: 'Fatura Gás G9 Viseu Abril 2026.pdf', label: 'Fatura Gás G9 Viseu Abril (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/1Nn4EAxpm2ydZFwfdWs_8V_8VqtH3aPgA/view' },
+        { name: 'Fatura Roblox Slap Battles.pdf', label: 'Apple SlapBattles-VIP! — Subscrição (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 4.99, link: 'https://drive.google.com/file/d/1_oF2WaeO1zsXebTZ2Nkh_DemmGQ9gFO3/view' },
+        { name: 'Fatura Youtube Abril 2026.pdf', label: 'YouTube Premium — Subscrição Mensal (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1kFq8-X9XEa9Rm5uHfaeDfn9tfP6ZKBuI/view' },
+        { name: 'Roblox Premium 1000 Abril 2026.pdf', label: 'Roblox — Premium 1000 (Abr 2026)', type: 'pdf', date: '2026-04-13', amount: 11.99, link: 'https://drive.google.com/file/d/1LMCGXRJspcwpUxYO6avySXuHjpUfvwsU/view' },
+        { name: 'SMAS Viseu Fatura Agua Abr 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-10', amount: 11.47, link: 'https://drive.google.com/file/d/1arPLh0nf-xzAm-5CuFuePFITe4xdOrxd/view' },
+        { name: 'SU Eletricidade — Fatura Casa Viseu Abr 2026.pdf', label: 'SU Eletricidade — Fatura Casa de Viseu (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/1MRk3bOf5nQZhgcv1qMuV1SyEkBMvGwJm/view' }
       ],
       4: [ // Maio
-        { name: 'Endesa Documento Pagamento Maio 2026.pdf', label: 'Endesa — Documento Pagamento Eletricidade Quinta Ramalhosa (Mai 2026)', type: 'pdf', date: '2026-05-14', amount: 19.07, link: 'https://drive.google.com/file/d/1xEyeISD0iwihLpKpcJ77M9-TJeAuYJg1/view' },
-        { name: 'Endesa Maio 2026.PDF', label: 'Endesa — Documento Pagamento Eletricidade Quinta Ramalhosa (Mai 2026)', type: 'pdf', date: '2026-05-14', amount: 19.07, link: 'https://drive.google.com/file/d/12OKchGfFEFzCixWbcXH1nGOFH9ZzmKRI/view' },
-        { name: 'InWatt_FT152_Maio2026.pdf', label: 'In-Watt — Manutenção Solar Térmico Casa de Viseu FT 152 (Mai 2026)', type: 'pdf', date: '2026-04-30', amount: 92.25, link: 'https://drive.google.com/file/d/1Ee4hUi7tuSvwpTKbIko4fXuPQxW5LjMV/view' },
-        { name: 'InWatt_RC179_Maio2026.pdf', label: 'In-Watt — Recibo RC 179 Manutenção Solar Térmico Casa de Viseu (Mai 2026)', type: 'pdf', date: '2026-04-30', amount: 92.25, link: 'https://drive.google.com/file/d/1uZ5sc5HrM-sV802oZgDoxfZRq9AcQNRh/view' },
-        { name: 'SMAS Viseu Fatura Agua Mai 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 9.95, link: 'https://drive.google.com/file/d/1MbWUw1yR-ftThBNCn9a0JzLaTs_NeEtH/view' }
+        { name: 'Endesa Documento Pagamento Maio 2026.pdf', label: 'Endesa — Documento Pagamento Eletricidade Quinta Ramalhosa (Mai 2026)', type: 'pdf', date: '2026-05-14', amount: 19.07, link: 'https://drive.google.com/file/d/1ffUhhAHGZw9_L58BgrLXhlAlzB4oFpng/view' },
+        { name: 'Endesa Maio 2026.PDF', label: 'Endesa — Documento Pagamento Eletricidade Quinta Ramalhosa (Mai 2026)', type: 'pdf', date: '2026-05-14', amount: 19.07, link: 'https://drive.google.com/file/d/1m-3TvwF9iHFkl20xjoq_zZ_7Mnq0ICic/view' },
+        { name: 'InWatt_FT152_Maio2026.pdf', label: 'In-Watt — Manutenção Solar Térmico Casa de Viseu FT 152 (Mai 2026)', type: 'pdf', date: '2026-04-30', amount: 92.25, link: 'https://drive.google.com/file/d/1RM12esImecJPvhcXn64luZS1RUJ9Pbcv/view' },
+        { name: 'InWatt_RC179_Maio2026.pdf', label: 'In-Watt — Recibo RC 179 Manutenção Solar Térmico Casa de Viseu (Mai 2026)', type: 'pdf', date: '2026-04-30', amount: 92.25, link: 'https://drive.google.com/file/d/1NdURqCxuNNE8xJNBisJ4euWLZ_UE45wX/view' },
+        { name: 'SMAS Viseu Fatura Agua Mai 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Mai 2026)', type: 'pdf', date: '2026-05-11', amount: 9.95, link: 'https://drive.google.com/file/d/1eNeNTp8UXDtNbzilMixNzJ_AAhNggt-e/view' }
       ],
       5: [ // Junho
-        { name: 'Endesa Gás Junho 2026', label: 'Endesa — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 19.07, link: 'https://drive.google.com/file/d/1kijrm1TAZodeg6sk605xCySk04Y9mBDv/view' },
-        { name: 'Speechify Junho 2026 Anual.pdf', label: 'Speechify — Subscrição (Jun 2026)', type: 'pdf', date: '2026-06', amount: 45.87, link: 'https://drive.google.com/file/d/1Xzteg5KnWmUXd2bzU-oJnqE28SgSDtAZ/view' },
-        { name: 'SU Electricidade Viseu Junho 2026.pdf', label: 'SU Eletricidade — Casa Viseu (Jun 2026)', type: 'pdf', date: '2026-06', amount: 10.01, link: 'https://drive.google.com/file/d/1yETRCkR6P_rLmFk88T8r6U_PmN8iOz_D/view' },
-        { name: 'Águas Viseu Junho 2026', label: 'SMAS Viseu — Fatura Água (Jun 2026)', type: 'pdf', date: '2026-06', amount: 11.47, link: 'https://drive.google.com/file/d/1bRiCVfc0fByao63qAdNgxosNZAD-AUUI/view' }
+        { name: 'Águas Viseu Junho 2026.pdf', label: 'SMAS Viseu — Fatura Água (Jun 2026)', type: 'pdf', date: '2026-06', amount: 11.47, link: 'https://drive.google.com/file/d/15IYArmwOa5SV0aORtRfvoSn7izpTANgd/view' },
+        { name: 'Endesa Gás Junho 2026.pdf', label: 'Endesa Gás Junho (Jun 2026)', type: 'pdf', date: '2026-06-01', link: 'https://drive.google.com/file/d/1hr_2rFC39y2eyhOFxbXiHt-16E398gB1/view' },
+        { name: 'Endesa Gás Junho 2026.pdf', label: 'Endesa — Fatura (Jun 2026)', type: 'pdf', date: '2026-06', amount: 19.07, link: 'https://drive.google.com/file/d/1F9GQd0Z4ntfeJx2zdIpGme0drQSu9eDq/view' },
+        { name: 'Speechify Junho 2026 Anual.pdf', label: 'Speechify — Subscrição (Jun 2026)', type: 'pdf', date: '2026-06', amount: 45.87, link: 'https://drive.google.com/file/d/1ZjGduOZw9hNN5OrouiFZ66dyXTTBX-e3/view' },
+        { name: 'SU Electricidade Viseu Junho 2026.pdf', label: 'SU Eletricidade — Casa Viseu (Jun 2026)', type: 'pdf', date: '2026-06', amount: 10.01, link: 'https://drive.google.com/file/d/1r5aLm8988ZhULCljRXEDdP7vYfHBzhYb/view' },
+        { name: 'Águas Viseu Junho 2026.pdf', label: 'Águas Viseu Junho (Jun 2026)', type: 'pdf', date: '2026-06-01', link: 'https://drive.google.com/file/d/1pkgB_XtQG2sJLqCQa0rTPBzK1FW5UhQN/view' }
       ],
       6: [ // Julho
-        { name: 'Endesa Gás Viseu Julho 2026.pdf', label: 'Endesa — Fatura Gás Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-27', amount: 18.48, link: 'https://drive.google.com/file/d/1jSharMv8JiaTT8ZFEFhBr_PRsvnwKD4q/view' },
-        { name: 'Manie Boost Julho 2026.pdf', label: 'Manie Boost — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 1.99, link: 'https://drive.google.com/file/d/1CjASkxKnFbCUdPAORyI0cmZ5ovQh5vM3/view' },
-        { name: 'Montebelo Aguieira Fatura Julho 2026.pdf', label: 'Montebelo Aguieira — Alojamento (Jul 2026)', type: 'pdf', date: '2026-07-14', amount: 498.00, link: 'https://drive.google.com/file/d/1d6OjXjJX8hmofpWtZMy6TOc0Z7rnVr_s/view' },
-        { name: 'Recibo Condomínio Casa Viseu Julho 2026.pdf', label: 'Condomínio Casa Viseu — Recibo Quotas Fev/Mar/Abr (Jul 2026)', type: 'pdf', date: '2026-07-20', amount: 83.91, link: 'https://drive.google.com/file/d/1V5RAU8xueFniRITTcfl0aeZnrX2lTB1p/view' },
-        { name: 'SMAS Viseu Fatura 2 Julho 2026.pdf', label: 'SMAS Viseu — Fatura 2 Água Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 11.47, link: 'https://drive.google.com/file/d/1-A65vuJIHhmOJeZgYJ4Bs-ptzogET6uB/view' },
-        { name: 'SU Electricidade Viseu Julho 2026', label: 'SU Eletricidade — Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07', amount: 33.35, link: 'https://drive.google.com/file/d/13GcTF4YGhmj-8ix-9Unj7lv9roODt9ex/view' },
-        { name: 'Águas Viseu Julho 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Jul 2026)', type: 'pdf', date: '2026-07', amount: 12.24, link: 'https://drive.google.com/file/d/1RmkOAgu6UY5mE7A3Hh2oiMhqHlEIPjk7/view' }
+        { name: 'Águas Viseu Julho 2026.pdf', label: 'SMAS Viseu — Fatura Água Casa de Viseu (Jul 2026)', type: 'pdf', date: '2026-07', amount: 12.24, link: 'https://drive.google.com/file/d/11p9-VKSJPkjqfmgHvXsNvm9IxgrlAfLD/view' },
+        { name: 'Endesa Gás Viseu Julho 2026.pdf', label: 'Endesa — Fatura Gás Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-27', amount: 18.48, link: 'https://drive.google.com/file/d/1TE04FFyB0lZ6r6CXcfhmd-fA5vL3RDp1/view' },
+        { name: 'Manie Boost Julho 2026.pdf', label: 'Manie Boost — Subscrição (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 1.99, link: 'https://drive.google.com/file/d/1PyRAWC2LdD2FsU8J6CEkUdLTbf-jKlFz/view' },
+        { name: 'Montebelo Aguieira Fatura Julho 2026.pdf', label: 'Montebelo Aguieira — Alojamento (Jul 2026)', type: 'pdf', date: '2026-07-14', amount: 498.0, link: 'https://drive.google.com/file/d/1XMKQXwxQuetNZy57xSdX9_l2MqJZ4wu7/view' },
+        { name: 'Recibo Condomínio Casa Viseu Fevereiro-Abril 2026.pdf', label: 'Recibo Condomínio Casa Viseu Fevereiro-Abril (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1Gct09bXOHHkxynPIxdQONpp0mUZa-qMG/view' },
+        { name: 'SMAS Viseu Fatura 2 Julho 2026.pdf', label: 'SMAS Viseu — Fatura 2 Água Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 11.47, link: 'https://drive.google.com/file/d/1eRcs83mvcPLFLK2bINshiN9gpZrnHlfD/view' },
+        { name: 'SU Electricidade Viseu Julho 2026.pdf', label: 'SU Eletricidade — Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07', amount: 33.35, link: 'https://drive.google.com/file/d/1NJOrPP_tV8gi6AKaGZK3Lr6VrhJLeswT/view' },
+        { name: 'Águas Viseu Julho 2026.pdf', label: 'Águas Viseu Julho (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1ZhJ6iAlNmB9S7z9cwH2a5G-7CV2-euNC/view' }
       ],
       7: [ // Agosto
-        { name: 'Águas de Viseu Agosto 2026', label: 'SMAS Viseu — Fatura 2 Água Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 11.47, link: 'https://drive.google.com/file/d/19VEgkWqlWVj_ffp7PpY9f3KTdDV8zoWt/view' }
+        { name: 'Águas de Viseu Agosto 2026.pdf', label: 'SMAS Viseu — Fatura 2 Água Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 11.47, link: 'https://drive.google.com/file/d/1O-O3ZmAHaFbkYAE4KAK1bUIzEMjHaIV_/view' }
       ],
-      8: [],  // Setembro
-      9: [],  // Outubro
-      10: [],  // Novembro
-      11: []  // Dezembro
+      8: [],  // Setembro,
+      9: [],  // Outubro,
+      10: [],  // Novembro,
+      11: [],  // Dezembro
     }
   },
   {
@@ -1199,49 +1230,62 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.acordoParental,
-    monthlyDocs: { 0: 0, 1: 0, 2: 5, 3: 6, 4: 6, 5: 2, 6: 5, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 8, 4: 8, 5: 3, 6: 8, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
-      0: [],  // Janeiro
-      1: [],  // Fevereiro
+      0: [],  // Janeiro,
+      1: [],  // Fevereiro,
       2: [ // Março
-        { name: 'Externato Santa Joana Escola Virtual 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Escola Virtual 2026/2027 Simão €39,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 39.00, link: 'https://drive.google.com/file/d/1QnCCnIGr6XO6M7WEvCSiO4zrRRVWXfoK/view' },
-        { name: 'Externato Santa Joana Matrícula 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Matrícula 2026/2027 Simão €260,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 260.00, link: 'https://drive.google.com/file/d/1vis2Tnayj7wQT75-KbioHHgGuinxiMB9/view' },
-        { name: 'Fatura Farmácia Março.pdf', label: 'Farmácia — Recibo €46,19 (Mar 2026)', type: 'pdf', date: '2026-03-02', amount: 46.19, link: 'https://drive.google.com/file/d/1WA3IqGtbDvtyxYQ6dxt9ivvxvuyIYoPo/view' },
-        { name: 'Mensalidade Março ESJ.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mar 2026)', type: 'pdf', date: '2026-03', amount: 533.60, link: 'https://drive.google.com/file/d/1W3BRG-aJeKCwVPqcD4WjPG7cGEazmRWg/view' },
-        { name: 'Sapatilhas Março 2026.pdf', label: 'Sapatilhas Predator Club — Simão €39,99 (Mar 2026)', type: 'pdf', date: '2026-03-26', amount: 39.99, link: 'https://drive.google.com/file/d/1w-_y7-CUvDHwzVxPGw-nY4ma7no4QLxE/view' }
+        { name: 'Externato Santa Joana Escola Virtual 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Escola Virtual 2026/2027 Simão €39,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 39.0, link: 'https://drive.google.com/file/d/19wpFhvuM8P5qnYoIgAhUF8c4VXadID_j/view' },
+        { name: 'Externato Santa Joana Escola Virtual 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana Escola Virtual 2026-2027 Simão Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1nVCTWkkw0baLFvJOLvOEalbN7In6S-hM/view' },
+        { name: 'Externato Santa Joana Matrícula 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana — Matrícula 2026/2027 Simão €260,00 (Mar 2026)', type: 'pdf', date: '2026-03-12', amount: 260.0, link: 'https://drive.google.com/file/d/1rYK5bkanwrdwq4IPlqkzMs2aY2zO0Vjw/view' },
+        { name: 'Externato Santa Joana Matrícula 2026-2027 Simão Março 2026.pdf', label: 'Externato Santa Joana Matrícula 2026-2027 Simão Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1yqiYCOMptDuKgSzhVfN3hFw4JGmjAgBn/view' },
+        { name: 'Fatura Farmácia Março.pdf', label: 'Farmácia — Recibo €46,19 (Mar 2026)', type: 'pdf', date: '2026-03-02', amount: 46.19, link: 'https://drive.google.com/file/d/1EZJFrpRDseBREM-eT5uc3mDu8YijEHwr/view' },
+        { name: 'Fatura Farmácia Março.pdf', label: 'Fatura Farmácia Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1YpwIrRiVRmZYGrEv2c2vQt7RXMyuL9Y8/view' },
+        { name: 'Mensalidade Março ESJ.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mar 2026)', type: 'pdf', date: '2026-03', amount: 533.6, link: 'https://drive.google.com/file/d/1Kw6FwBAdc52_tnrYy-5EOHcTj1gjGe9e/view' },
+        { name: 'Mensalidade Março ESJ.pdf', label: 'Mensalidade Março ESJ (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1X-jsyd1VXW_4Bf5PXwWIRDOXZu7Mi3HP/view' },
+        { name: 'Sapatilhas Março 2026.pdf', label: 'Sapatilhas Predator Club — Simão €39,99 (Mar 2026)', type: 'pdf', date: '2026-03-26', amount: 39.99, link: 'https://drive.google.com/file/d/1lLbee3Tge3Pp_SrrqH1dWTPy73bc2Y9N/view' },
+        { name: 'Sapatilhas Março 2026.pdf', label: 'Sapatilhas Março (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1t5S_H9KIOLgct_LoOGTDlHXXq7V8-534/view' }
       ],
       3: [ // Abril
-        { name: 'Creme Effaclar Duo Abril 2026.pdf', label: 'Farmácia Moreira Barros — Creme Effaclar Duo Simão €21,50 (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 21.50, link: 'https://drive.google.com/file/d/1vriG8OfwNn4De5Ok8IqG0SdYFBfmDg7f/view' },
-        { name: 'Creme_Effaclar_Duo_Simao_Acordo_Parental_Abril_2026.pdf', label: 'Farmácia Moreira Barros — Creme Effaclar Duo Simão €21,50 (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 21.50, link: 'https://drive.google.com/file/d/13xkfOjeOGuJSBk3pOqacTSHCrzzZbZ0D/view' },
-        { name: 'Curso Happy Code.pdf', label: 'Happy Code — Curso Simão (Abr 2026)', type: 'pdf', date: '2026-04-07', amount: 130.00, link: 'https://drive.google.com/file/d/1JrTQrvofY-Mzf39hwGRgCtcODt6IftoY/view' },
-        { name: 'ESJ Uniformes Simão Abril 2026.pdf', label: 'Externato Santa Joana — Uniformes Simão €38,00 (Abr 2026)', type: 'pdf', date: '2026-04-17', amount: 38.00, link: 'https://drive.google.com/file/d/1SAmb0un1a84NLf1fWEKe-xcB641_iLIT/view' },
-        { name: 'Farmácia Abril 2026, 46,19€.pdf', label: 'Farmácia — Recibo €46,19 (Abr 2026)', type: 'pdf', date: '2026-04', amount: 46.19, link: 'https://drive.google.com/file/d/1gw4QSbqm0lO4mAJoZOq1qyo6i6Bo_kCD/view' },
-        { name: 'Mensalidade Externato SJ Abril 2026.pdf', label: 'Externato Santa Joana — Mensalidade Simão (Abr 2026)', type: 'pdf', date: '2026-04-01', amount: 498.50, link: 'https://drive.google.com/file/d/1FF7s5n1m9_iYXmsq474e6SM1MJCVEp5Z/view' }
+        { name: 'Creme Effaclar Duo Abril 2026.pdf', label: 'Farmácia Moreira Barros — Creme Effaclar Duo Simão €21,50 (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 21.5, link: 'https://drive.google.com/file/d/14kZCkbE6BUE-yBtA3HRYkOE7bdTTX8H6/view' },
+        { name: 'Creme_Effaclar_Duo_Simao_Acordo_Parental_Abril_2026.pdf', label: 'Farmácia Moreira Barros — Creme Effaclar Duo Simão €21,50 (Abr 2026)', type: 'pdf', date: '2026-04-20', amount: 21.5, link: 'https://drive.google.com/file/d/1PWyK4A1OfaZtmoOc1qbK6o6wNDP3lLDg/view' },
+        { name: 'Curso Happy Code.pdf', label: 'Happy Code — Curso Simão (Abr 2026)', type: 'pdf', date: '2026-04-07', amount: 130.0, link: 'https://drive.google.com/file/d/1DWl05w2fuzyUzDf92UlPWk6Ng7uFc-Xk/view' },
+        { name: 'ESJ Uniformes Simão Abril 2026.pdf', label: 'ESJ Uniformes Simão Abril (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/1pWimL0MKvqeeYFs-okSf1odbwApmEaO0/view' },
+        { name: 'ESJ Uniformes Simão Abril 2026.pdf', label: 'Externato Santa Joana — Uniformes Simão €38,00 (Abr 2026)', type: 'pdf', date: '2026-04-17', amount: 38.0, link: 'https://drive.google.com/file/d/1itk55A2HCCaYQ0cOUpurZWn07vlLEBRj/view' },
+        { name: 'Farmácia Abril 2026, 46,19€.pdf', label: 'Farmácia — Recibo €46,19 (Abr 2026)', type: 'pdf', date: '2026-04', amount: 46.19, link: 'https://drive.google.com/file/d/1C8LJebLroWlluDSkrbhXk9y_Cp15dpme/view' },
+        { name: 'Farmácia Abril 2026, 46,19€.pdf', label: 'Farmácia Abril 2026, 46,19€ (Abr 2026)', type: 'pdf', date: '2026-04-01', link: 'https://drive.google.com/file/d/1LzQEVRIq0JcbSMleNEYPvgYJqUuCMVAa/view' },
+        { name: 'Mensalidade Externato SJ Abril 2026.pdf', label: 'Externato Santa Joana — Mensalidade Simão (Abr 2026)', type: 'pdf', date: '2026-04-01', amount: 498.5, link: 'https://drive.google.com/file/d/1P1SLW3Hp1sF3T3B6p1cYpl65o19lFc8S/view' }
       ],
       4: [ // Maio
-        { name: 'ESJ Mensalidade Maio.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mai 2026)', type: 'pdf', date: '2026-05-04', amount: 533.60, link: 'https://drive.google.com/file/d/1Qq4bp12cZX3AAHsfj4g300YgqxjLHVoH/view' },
-        { name: 'ESJ Viagem Finalistas.pdf', label: 'Externato Santa Joana — Mensalidade (Mai 2026)', type: 'pdf', date: '2026-05', amount: 32.50, link: 'https://drive.google.com/file/d/1KAoqKmnUpu9MH2vd2Dnf_o70M5Taoyn4/view' },
-        { name: 'Farmacia Elvanse Maio 2026.pdf', label: 'Farmácia — Elvanse Simão €46,19 (Mai 2026)', type: 'pdf', date: '2026-05-06', amount: 46.19, link: 'https://drive.google.com/file/d/1DCwkbnpON2tZIY7Qo3Ie4e7U8Cd2YD0x/view' },
-        { name: 'Pagamento Exame Karaté Maio 2026.pdf', label: 'Karaté — Exame Simão €30,00 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 30.00, link: 'https://drive.google.com/file/d/1k8jDuYImPVP6s5K3rmvn19ScSxHzJ1LD/view' },
-        { name: 'Pagamento Torneio de Karaté Maio 2026.pdf', label: 'Karaté — Torneio Simão €15,00 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 15.00, link: 'https://drive.google.com/file/d/1DMgTHs05s5k33lPa8ZBBorxcnFEuivEe/view' },
-        { name: 'Passeio Final do Ano 2026.pdf', label: 'Externato Santa Joana — Passeio Final do Ano Simão €32,50 (Mai 2026)', type: 'pdf', date: '2026-05-12', amount: 32.50, link: 'https://drive.google.com/file/d/1kPu0xWyV4KahkiYkR21Elei1vtahM6pA/view' }
+        { name: 'ESJ Mensalidade Maio.pdf', label: 'Externato Santa Joana — Mensalidade Simão €533,60 (Mai 2026)', type: 'pdf', date: '2026-05-04', amount: 533.6, link: 'https://drive.google.com/file/d/1uLDvpTQ2zMaHEH2fCD8xZo5Kjf8yQzfD/view' },
+        { name: 'ESJ Viagem Finalistas.pdf', label: 'Externato Santa Joana — Mensalidade (Mai 2026)', type: 'pdf', date: '2026-05', amount: 32.5, link: 'https://drive.google.com/file/d/1WF02F6sAJFvtL8ytC6-thmEvKjtc85-s/view' },
+        { name: 'Farmacia Elvanse Maio 2026.pdf', label: 'Farmácia — Elvanse Simão €46,19 (Mai 2026)', type: 'pdf', date: '2026-05-06', amount: 46.19, link: 'https://drive.google.com/file/d/1ahZiEpjzHoH4Y0DXrOQOvS0NLv0RI9A0/view' },
+        { name: 'Pagamento Exame Karaté Maio 2026.pdf', label: 'Pagamento Exame Karaté Maio (Mai 2026)', type: 'pdf', date: '2026-05-01', link: 'https://drive.google.com/file/d/1om334-MAMXbZOPGiigO9l2ESHpzEUlGS/view' },
+        { name: 'Pagamento Exame Karaté Maio 2026.pdf', label: 'Karaté — Exame Simão €30,00 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 30.0, link: 'https://drive.google.com/file/d/1Ji8cN_XYmUtjEy3tW-f1nXg1_g-DcqNc/view' },
+        { name: 'Pagamento Torneio de Karaté Maio 2026.pdf', label: 'Karaté — Torneio Simão €15,00 (Mai 2026)', type: 'pdf', date: '2026-05', amount: 15.0, link: 'https://drive.google.com/file/d/1S2erWBY-BVTxlej0E7r0aaGCwtbHXeaF/view' },
+        { name: 'Pagamento Torneio de Karaté Maio 2026.pdf', label: 'Pagamento Torneio de Karaté Maio (Mai 2026)', type: 'pdf', date: '2026-05-01', link: 'https://drive.google.com/file/d/1iNnuZzdYRioR9DKvCuryB5k81weZIEei/view' },
+        { name: 'Passeio Final do Ano 2026.pdf', label: 'Externato Santa Joana — Passeio Final do Ano Simão €32,50 (Mai 2026)', type: 'pdf', date: '2026-05-12', amount: 32.5, link: 'https://drive.google.com/file/d/1MKVTrmeVtb0n5NVNb1xDcWYUwnX_GW3V/view' }
       ],
       5: [ // Junho
-        { name: 'ESJ Junho 2026', label: 'Externato Santa Joana — Mensalidade (Jun 2026)', type: 'pdf', date: '2026-06', amount: 457.55, link: 'https://drive.google.com/file/d/1nlHTl62BBlH3Oc_EDlBzBDfbgPTJGNGV/view' },
-        { name: 'Farmácia Junho 2026 46,19€.pdf', label: 'Documento (Jun 2026)', type: 'pdf', date: '2026-06', amount: 46.19, link: 'https://drive.google.com/file/d/1-H24CyMmZ9int5BZtlMa3B90r7BvKCQ1/view' }
+        { name: 'ESJ Junho 2026.pdf', label: 'Externato Santa Joana — Mensalidade (Jun 2026)', type: 'pdf', date: '2026-06', amount: 457.55, link: 'https://drive.google.com/file/d/1qtGc5mRXb0CbRLqi0VOw62ljEQWRXw11/view' },
+        { name: 'Farmácia Junho 2026 46,19€.pdf', label: 'Farmácia Junho 2026 46,19€ (Jun 2026)', type: 'pdf', date: '2026-06-01', link: 'https://drive.google.com/file/d/1pVxp3ZhVak2tLO0nKr79IJq3O7pEDKBM/view' },
+        { name: 'Farmácia Junho 2026 46,19€.pdf', label: 'Documento (Jun 2026)', type: 'pdf', date: '2026-06', amount: 46.19, link: 'https://drive.google.com/file/d/1CddbP2ZDVBLUBZn34hL2qtk6tR6ZQtu4/view' }
       ],
       6: [ // Julho
-        { name: 'Barbeiro - 15 euros do Simão.pdf', label: 'Barbeiro — Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 15.00, link: 'https://drive.google.com/file/d/1Lpffav0t2CQsqcLZMHniXXd1s93Xcsgn/view' },
-        { name: 'Farmácia Julho 2026.pdf', label: 'Farmácia — Elvanse 50mg Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 46.85, link: 'https://drive.google.com/file/d/17UTL_vdino_UoLH_Nue220UTNDFHFC_p/view' },
-        { name: 'Fatura Ulisses 2026', label: 'FNAC — Livro Ulisses Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 10.98, link: 'https://drive.google.com/file/d/1bzGQqJHvh3poPgZjF6cLp0Ki0yzoAIYO/view' },
-        { name: 'Livro Gulliver 2026', label: 'FNAC — Livro Gulliver Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 9.99, link: 'https://drive.google.com/file/d/1YKPmSqjwfF0jO26kp1yo3peKu3S0XAbo/view' },
-        { name: 'Livros 6º Ano Julho 2026', label: 'Olmar — Manuais Escolares 6º Ano Simão €217,55 (Jul 2026)', type: 'pdf', date: '2026-07', amount: 217.55, link: 'https://drive.google.com/file/d/1Z0BC5mYWNXS_fd7v1ILeSALQbgXykL_P/view' }
+        { name: 'Barbeiro - 15 euros do Simão.pdf', label: 'Barbeiro - 15 euros do Simão (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1ssQhN14jmjS_zn4epz7me1LQ5-vgHD2w/view' },
+        { name: 'Barbeiro - 15 euros do Simão.pdf', label: 'Barbeiro — Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 15.0, link: 'https://drive.google.com/file/d/18z2sVHquHs0EaK_-1Mnw6HVqfZ20P2ul/view' },
+        { name: 'Comprovativo.pdf', label: 'Comprovativo (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/15fQYYqYk_wrmQGBVPMMjPfmp8GlsiR7T/view' },
+        { name: 'Farmácia Julho 2026.pdf', label: 'Farmácia Julho (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1bMYcBCk5bSDZy4SzB0xr4rJTRbDMJBrV/view' },
+        { name: 'Farmácia Julho 2026.pdf', label: 'Farmácia — Elvanse 50mg Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 46.85, link: 'https://drive.google.com/file/d/13lXAXhAwRm-6Jwr-Ub8NHqYNzFxmolFT/view' },
+        { name: 'Fatura Ulisses 2026.pdf', label: 'FNAC — Livro Ulisses Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 10.98, link: 'https://drive.google.com/file/d/1uU3P079p1NNGMMfwJYdO9iLpZjGgW05J/view' },
+        { name: 'Livro Gulliver 2026.pdf', label: 'FNAC — Livro Gulliver Simão (Jul 2026)', type: 'pdf', date: '2026-07', amount: 9.99, link: 'https://drive.google.com/file/d/1Aks3z5AlXen1H-qZ62RSNrVYD6vj7VFp/view' },
+        { name: 'Livros 6º Ano Julho 2026.pdf', label: 'Olmar — Manuais Escolares 6º Ano Simão €217,55 (Jul 2026)', type: 'pdf', date: '2026-07', amount: 217.55, link: 'https://drive.google.com/file/d/18IJUmDeKxJ8MA9ue9OlifAZjsauPAOKy/view' }
       ],
-      7: [],  // Agosto
-      8: [],  // Setembro
-      9: [],  // Outubro
-      10: [],  // Novembro
-      11: []  // Dezembro
+      7: [],  // Agosto,
+      8: [],  // Setembro,
+      9: [],  // Outubro,
+      10: [],  // Novembro,
+      11: [],  // Dezembro
     }
   },
   {
@@ -1255,40 +1299,55 @@ const CATEGORIES = [
         name: 'Escalas Médicas HLPV',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>`,
         gdPath: GD_PATHS.escalasHLPV,
-        monthlyDocs: { 0: 0, 1: 0, 2: 2, 3: 2, 4: 2, 5: 2, 6: 2, 7: 2, 8: 0, 9: 1, 10: 2, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 4, 3: 2, 4: 2, 5: 2, 6: 2, 7: 3, 8: 2, 9: 2, 10: 4, 11: 2 },
         hasMonthFolders: true,
         knownFiles: {
-          0: [], // Janeiro
+          0: [],  // Janeiro,
+          1: [],  // Fevereiro,
           2: [ // Março
-            { name: 'escala março 2026.docx', label: 'Escala HLPV — Março 2026', type: 'docx', date: '2026-03', link: gdLink(GD_PATHS.escalasHLPV, 3) },
-            { name: 'escala partos março 2026.docx', label: 'Escala Partos HLPV — Março 2026', type: 'docx', date: '2026-03', link: 'https://docs.google.com/document/d/160AZ16YnojAFXgz4x6EjINqmYjhgHWGI/edit' }
+            { name: 'escala  março 2026.docx', label: 'Escala HLPV — Março 2026', type: 'docx', date: '2026-03', link: 'https://drive.google.com/file/d/14-m92PXprdZxdRcgaiLMrM90zPqleb6L/view' },
+            { name: 'escala  partos março  2026.docx', label: 'Escala Partos HLPV — Março 2026', type: 'docx', date: '2026-03', link: 'https://drive.google.com/file/d/1HFamcts8-7gV0Lxe6HK6fPWUQShR2u8E/view' },
+            { name: 'Vencimento HLPV Fevereiro Março 2026 Detalhe.pdf', label: 'Vencimento HLPV Fevereiro Março 2026 Detalhe (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1K_rtXZ_JGoRT_QsTcegV7Y2V9g_c26-U/view' },
+            { name: 'Vencimento HLPV Fevereiro Março 2026 Resumo.pdf', label: 'Vencimento HLPV Fevereiro Março 2026 Resumo (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1TU5wJUN1hql_2A0sr-DnjBLgh3gtOdNO/view' }
           ],
           3: [ // Abril
-            { name: 'Escala HLPV Abril 2026.docx', label: 'Escala HLPV — Abril 2026', type: 'docx', date: '2026-04', link: 'https://drive.google.com/file/d/10PkiICn_Bt0OblNZd_oFNiuuWSShZIIq/view' },
-            { name: 'Escala HLPV Partos Abril 2026.docx', label: 'Escala Partos HLPV — Abril 2026', type: 'docx', date: '2026-04', link: 'https://drive.google.com/file/d/1B6PIeehsQutGQdNyqu0O3ca3FlFRs8XO/view' }
+            { name: 'Escala HLPV Abril 2026.docx', label: 'Escala HLPV — Abril 2026', type: 'docx', date: '2026-04', link: 'https://drive.google.com/file/d/1VWQrLRuoARbMJmvFMUxiLAZ-rrNKiNjP/view' },
+            { name: 'Escala HLPV Partos Abril 2026.docx', label: 'Escala Partos HLPV — Abril 2026', type: 'docx', date: '2026-04', link: 'https://drive.google.com/file/d/1YGdjVF3Pf4lP2Euf2CrFkSCtST_8ZY75/view' }
           ],
           4: [ // Maio
-            { name: 'Escala Maio 2026.docx', label: 'Escala HLPV — Maio 2026', type: 'docx', date: '2026-05', protected: true, link: 'https://drive.google.com/file/d/1uc7Jvj4paj3fGivifSrxKv9cHV0K_zMo/view' },
-            { name: 'HLPV Escala Partos Maio 2026.docx', label: 'Escala Partos HLPV — Maio 2026', type: 'docx', date: '2026-05', protected: true, link: 'https://docs.google.com/document/d/1bkYHoFGjdRZ7Sz4I4kmjXRm9g9PS9Ar5/edit' }
+            { name: 'Escala  Maio 2026.docx', label: 'Escala HLPV — Maio 2026', type: 'docx', date: '2026-05', link: 'https://drive.google.com/file/d/1byPxVgrnakBXC__2nCuleF-uKJDsQIK4/view' },
+            { name: 'HLPV Escala Partos Maio  2026.docx', label: 'Escala Partos HLPV — Maio 2026', type: 'docx', date: '2026-05', link: 'https://drive.google.com/file/d/1GIPI0bqzuiEdAV0u7-x7PRccnQRC6aR3/view' }
           ],
           5: [ // Junho
-            { name: 'Escala  Junho 2026 HLP.docx', label: 'Escala HLPV — Junho 2026', type: 'docx', date: '2026-06', protected: true, link: 'https://drive.google.com/drive/folders/1KpaGm5SiNWFFRrcjPgMV8s8ZLxwkFHGD' },
-            { name: 'partos junho 2026.doc', label: 'Escala Partos HLPV — Junho 2026', type: 'docx', date: '2026-06', protected: true, link: 'https://drive.google.com/drive/folders/1KpaGm5SiNWFFRrcjPgMV8s8ZLxwkFHGD' }
+            { name: 'Escala  Junho 2026 HLP.docx', label: 'Escala HLPV — Junho 2026', type: 'docx', date: '2026-06', link: 'https://drive.google.com/file/d/1k4fPr14xieJCt8emUZWv3vEKzpilisIq/view' },
+            { name: 'partos junho 2026.doc', label: 'Escala Partos HLPV — Junho 2026', type: 'docx', date: '2026-06', link: 'https://drive.google.com/file/d/14JEPTUrQU73SfFUQ6vLRfPac4_QWgLk4/view' }
           ],
           6: [ // Julho
-            { name: 'Escala julho 2026.docx', label: 'Escala HLPV — Julho 2026', type: 'docx', date: '2026-07', protected: true, link: 'https://drive.google.com/file/d/1SYSRnEj-jlASIct5eERgf8Pfd4zvCRos/view' },
-            { name: 'HLPV Escala Partos julho 2026.docx', label: 'Escala Partos HLPV — Julho 2026', type: 'docx', date: '2026-07', protected: true, link: 'https://drive.google.com/file/d/1neV-Zh3cDvarmepD489S5Rm1vGU94O9p/view' }
+            { name: 'Escala julho 2026.docx', label: 'Escala HLPV — Julho 2026', type: 'docx', date: '2026-07', link: 'https://drive.google.com/file/d/10IMB2nPoHhmZC2juhGBKPOLN96FwBzeZ/view' },
+            { name: 'HLPV Escala Partos  julho 2026.docx', label: 'Escala Partos HLPV — Julho 2026', type: 'docx', date: '2026-07', link: 'https://drive.google.com/file/d/1MKLDV5YMlMLkOg2H2yko5wanEqi2f3pr/view' }
           ],
           7: [ // Agosto
-            { name: 'HLPV Escala Partos Agosto 2025.docx', label: 'Escala Partos HLPV — Agosto 2025', type: 'docx', date: '2025-08', link: GD_ROOT },
-            { name: 'HLPV 2025 Agosto Escala de AU.docx', label: 'Escala AU HLPV — Agosto 2025', type: 'docx', date: '2025-08', link: GD_ROOT }
+            { name: 'Escala  Agosto 2026.docx', label: 'Escala  Agosto (Ago 2026)', type: 'docx', date: '2026-08-01', link: 'https://drive.google.com/file/d/18h3kA9mtwD5-UCcagw_nIwe7ZZUbMfF2/view' },
+            { name: 'Escala Agosto 2026.docx', label: 'Escala Agosto (Ago 2026)', type: 'docx', date: '2026-08-01', link: 'https://drive.google.com/file/d/1pY6geLZyfFriycCL5uu3UC0jAhW3Q3Cd/view' },
+            { name: 'HLPV Escala Partos Agosto 2026.docx', label: 'HLPV Escala Partos Agosto (Ago 2026)', type: 'docx', date: '2026-08-01', link: 'https://drive.google.com/file/d/1h_UjGhZIUSUSYSAVATXbPEkZb1XmOGl3/view' }
+          ],
+          8: [ // Setembro
+            { name: 'Escala  Setembro 2025  HLP.docx', label: 'Escala  Setembro 2025  HLP (Set 2026)', type: 'docx', date: '2026-09-01', link: 'https://drive.google.com/file/d/1hD947YvB4CDqMtQs7GtpPoNVz8dNlEcs/view' },
+            { name: 'partos setembro 2025.doc', label: 'partos setembro 2025.doc (Set 2026)', type: 'pdf', date: '2026-09-01', link: 'https://drive.google.com/file/d/1qfMh2XWS5A9J9xTsG61xGlQOoXR6lE_s/view' }
           ],
           9: [ // Outubro
-            { name: 'HLPV Escala Partos Outubro 2025.docx', label: 'Escala Partos HLPV — Outubro 2025', type: 'docx', date: '2025-09-25', link: GD_ESCALAS_HLPV }
+            { name: 'Escala  outubro 2025 HLP (1).docx', label: 'Escala  outubro 2025 HLP (1) (Out 2026)', type: 'docx', date: '2026-10-01', link: 'https://drive.google.com/file/d/1pe06MxPhf039IOOTJ023D65q3AMKQAdC/view' },
+            { name: 'HLPV Escala Partos Outubro  2025.docx', label: 'Escala Partos HLPV — Outubro 2025', type: 'docx', date: '2025-09-25', link: 'https://drive.google.com/file/d/1ORhNW54xPZFU07PSjGfLHUVnklHhBSSX/view' }
           ],
           10: [ // Novembro
-            { name: 'HLPV Escala Partos Novembro 2025.docx', label: 'Escala Partos HLPV — Novembro 2025', type: 'docx', date: '2025-10-25', link: GD_ESCALAS_HLPV },
-            { name: 'HLPV Escala Partos Novembro 2025 (2).docx', label: 'Escala Partos HLPV — Novembro 2025 (rev.2)', type: 'docx', date: '2025-11-03', link: GD_ESCALAS_HLPV }
+            { name: '1818A4FF-1DBA-47C3-8982-70CDA963668D.heic', label: '1818A4FF-1DBA-47C3-8982-70CDA963668D.heic (Nov 2026)', type: 'pdf', date: '2026-11-01', link: 'https://drive.google.com/file/d/1Z5rK5g9GpF74GpcPTi8pm7X0UPMQmI-U/view' },
+            { name: 'Escala  novembro 2025.docx', label: 'Escala  novembro (Nov 2026)', type: 'docx', date: '2026-11-01', link: 'https://drive.google.com/file/d/1FiRCZv9eW_yfzYG3lR11VfGF-aYjaSqZ/view' },
+            { name: 'HLPV Escala Partos Novembro 2025.docx', label: 'Escala Partos HLPV — Novembro 2025 (rev.2)', type: 'docx', date: '2025-11-03', link: 'https://drive.google.com/file/d/1aprngvCsGdKFNvVhWSBa0kJb6EAb81Vc/view' },
+            { name: 'Horas de Prevenção .fabric', label: 'Horas de Prevenção .fabric (Nov 2026)', type: 'pdf', date: '2026-11-01', link: 'https://drive.google.com/file/d/1gHSZInwP109a13yWEWl-Y4Npkm5jpqqU/view' }
+          ],
+          11: [ // Dezembro
+            { name: 'Dezembro 2025  HLPV AU.docx', label: 'Dezembro 2025  HLPV AU (Dez 2026)', type: 'docx', date: '2026-12-01', link: 'https://drive.google.com/file/d/1fq9uwuoeToaeR_NDBhD4ffJ1BYuTO_Al/view' },
+            { name: 'Escala Partos Dezembro 2025.doc', label: 'Escala Partos Dezembro 2025.doc (Dez 2026)', type: 'pdf', date: '2026-12-01', link: 'https://drive.google.com/file/d/1CfMdVxcfDUvu3NCp7uMw37H6d80H2B4t/view' }
           ]
         }
       },
@@ -1296,59 +1355,85 @@ const CATEGORIES = [
         name: 'Recibos Vencimento CPC',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
         gdPath: GD_PATHS.recibosVencCPC,
-        monthlyDocs: { 0: 0, 1: 0, 2: 2, 3: 6, 4: 5, 5: 4, 6: 3, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 2, 3: 5, 4: 6, 5: 4, 6: 4, 7: 4, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
+          0: [],  // Janeiro,
+          1: [],  // Fevereiro,
           2: [ // Março
-            { name: '514199920_RC_2026_M02P1_F.PDF', label: 'Recibo Vencimento CPC — Março 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1YWqZBqnXDyKOZu4rLK7Hqb9aXbXuczJv/view' },
-            { name: 'Recibo Março 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1kkrio1bkJwOOAM5dqYa7wZydCV9HFQP7/view' }
+            { name: '514199920_RC_2026_M02P1_F.PDF', label: 'Recibo Vencimento CPC — Março 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1hksCkYYFf0KX5pNFLSWHOFE7ewDuB9AW/view' },
+            { name: 'Recibo Março 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mar 2026)', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/10Z7b6_KHiFAD2R31eWgw_iEuEMP8rg5W/view' }
           ],
           3: [ // Abril
-            { name: 'T. Ocupacional Março Abril 2026.pdf', label: 'Susana Ferreira — Recibo Vencimento TO CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 637.50, link: 'https://drive.google.com/file/d/1AQylcyLvJzxpqbuFOZuBA6Hp8Q79nsP1/view' },
-            { name: 'Psicologia Março Abril 2026.pdf', label: 'Rute Ferreira — Recibo Vencimento Psicologia CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 3997.77, link: 'https://drive.google.com/file/d/1pwOMQnstOhe67ZrIuxpwNJvJ6LisnKxc/view' },
-            { name: 'TF Bianca Sousa Março Abril 2026.pdf', label: 'Bianca Sousa — Recibo Vencimento TF CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 742.50, link: 'https://drive.google.com/file/d/1359PBtIqfxSqzQ_-tRXr6pS3GHBqwDVF/view' },
-            { name: 'Recibo Março Abril 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1gTJ35a2vFxUW6k5M1u8V-BZ6yZnepjt6/view' },
-            { name: '514199920 Salarios Março Abril.PDF', label: 'CPC — Salários Março/Abril 2026 (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1TmVLg-hIHoeU0L_E33_BEKNUYCiO22lL/view' },
-            { name: 'Psicologia Março Abril 2026 (2).pdf', label: 'Rute Ferreira — Recibo Vencimento Psicologia CPC Alt. (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1TtpHjxPtP56t-AtB-QZjw7KdLkxZXfVN/view' }
+            { name: '514199920 Salarios Março Abril.PDF', label: 'CPC — Salários Março/Abril 2026 (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1mIQ0rtLtoQTg_QhhSDki2cuz1AVIkbTq/view' },
+            { name: 'Psicologia Março Abril 2026.pdf', label: 'Rute Ferreira — Recibo Vencimento Psicologia CPC Alt. (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/16A0CkDqFd-i7_mNIk3ieV-H57Ney0OKS/view' },
+            { name: 'Recibo Março Abril 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Abr 2026)', type: 'pdf', date: '2026-04', link: 'https://drive.google.com/file/d/1sPMZxJdOGMFlPi8XrfKrqxUUvXkhx0vO/view' },
+            { name: 'T. Ocupacional Março Abril 2026.pdf', label: 'Susana Ferreira — Recibo Vencimento TO CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 637.5, link: 'https://drive.google.com/file/d/1RYxzLVzUeX_xdLuUc9ccSA1m9cL9Ycxr/view' },
+            { name: 'TF Bianca Sousa Março Abril 2026.pdf', label: 'Bianca Sousa — Recibo Vencimento TF CPC (Abr 2026)', type: 'pdf', date: '2026-04', amount: 742.5, link: 'https://drive.google.com/file/d/1RwmRRauqI0zRZ3plbjtTMdXJ5rqrJb63/view' }
           ],
           4: [ // Maio
-            { name: 'Abril Maio 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 472.50, link: 'https://drive.google.com/file/d/1UlS16qyTnS3J-5PyT57Xz237e_TSAHFp/view' },
-            { name: 'Recibos Sílvia & Hélder Abril Maio 2026.PDF', label: 'Sílvia & Hélder — Recibos Vencimento CPC (Abril/Maio 2026)', type: 'pdf', date: '2026-05', protected: true, link: 'https://drive.google.com/file/d/1NDEfXdnZrsOpBU2IOwj90oI-Z9RCQJ3i/view' },
-            { name: 'Recibo TF Abril Maio 2026 Bianca Sousa.pdf', label: 'Bianca Sousa — Recibo Verde TF CPC (Mai 2026)', type: 'pdf', date: '2026-04-30', amount: 783.75, link: 'https://drive.google.com/file/d/19yGExiqxgKiNDYrq8qDEvcJloXSeken_/view' },
-            { name: 'RV Psicologia Abril Maio 2026.pdf', label: 'Rute Ferreira — Recibo Verde Psicologia CPC (Mai 2026)', type: 'pdf', date: '2026-05-07', amount: 2344.55, link: 'https://drive.google.com/file/d/1Qvk7t_0aYOL6F74EjfCE0vOdwtrfPdP2/view' },
-            { name: 'Susana Lucas Ferreira RV Abril Maio 2026.pdf', label: 'Susana Lucas Ferreira — Recibo Verde TO CPC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 456.22, link: 'https://drive.google.com/file/d/1yss3BqTdlC82GSNi5kAbKKMKJ0wR5s2g/view' }
+            { name: 'Abril Maio 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 472.5, link: 'https://drive.google.com/file/d/1k03NOMNquUXmYlbjwkPcwNEZ7vNBPtKg/view' },
+            { name: 'Recibo TF Abril Maio 2026 Bianca Sousa.pdf', label: 'Bianca Sousa — Recibo Verde TF CPC (Mai 2026)', type: 'pdf', date: '2026-04-30', amount: 783.75, link: 'https://drive.google.com/file/d/16Gm6qtXDUqckStgFLwL1ngjna4_71MM8/view' },
+            { name: 'Recibos de Vencimento Abril - Maio 2026.PDF', label: 'Recibos de Vencimento Abril - Maio (Mai 2026)', type: 'pdf', date: '2026-05-01', link: 'https://drive.google.com/file/d/1TAt9m8HqHTIYCYCO08HoAFZ_wL7SNprD/view' },
+            { name: 'Recibos Sílvia & Hélder Abril Maio 2026.PDF', label: 'Sílvia & Hélder — Recibos Vencimento CPC (Abril/Maio 2026)', type: 'pdf', date: '2026-05', link: 'https://drive.google.com/file/d/1AZwubHsBP3mwtt30lOXxIEOscbC5m4aM/view' },
+            { name: 'RV Psicologia Abril Maio 2026.pdf', label: 'Rute Ferreira — Recibo Verde Psicologia CPC (Mai 2026)', type: 'pdf', date: '2026-05-07', amount: 2344.55, link: 'https://drive.google.com/file/d/1OQqvisqwI_R9jf84AcvICqcVDT8Vg8sb/view' },
+            { name: 'Susana Lucas Ferreira RV Abril Maio 2026.pdf', label: 'Susana Lucas Ferreira — Recibo Verde TO CPC (Mai 2026)', type: 'pdf', date: '2026-05', amount: 456.22, link: 'https://drive.google.com/file/d/1T-s62Vsm55u0vyGvSycj4DtVgRao1Sq-/view' }
           ],
           5: [ // Junho
-            { name: '514199920_RC_2026_M05P1_F.PDF', label: 'CPC — Recibo Vencimento M05P1 (Jun 2026)', type: 'pdf', date: '2026-06', protected: true, link: 'https://drive.google.com/drive/folders/1Yi_ppIrijgdzlSC0iLGqBxywGQJyo9n1' },
-            { name: 'Recibo Maio  Junho 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mai/Jun 2026)', type: 'pdf', date: '2026-06', amount: 540.00, link: 'https://drive.google.com/drive/folders/1Yi_ppIrijgdzlSC0iLGqBxywGQJyo9n1' },
-            { name: 'Terapia Ocupacional Maio Junho 2026', label: 'Susana Lucas Ferreira — Recibo Vencimento TO CPC (Mai/Jun 2026)', type: 'pdf', date: '2026-06', amount: 430.24, link: 'https://drive.google.com/drive/folders/1Yi_ppIrijgdzlSC0iLGqBxywGQJyo9n1' },
-            { name: 'Vencimento Psicologia Maio Junho 2026', label: 'Rute Ferreira — Recibo Vencimento Psicologia CPC (Mai/Jun 2026)', type: 'pdf', date: '2026-06', amount: 2757.56, link: 'https://drive.google.com/drive/folders/1Yi_ppIrijgdzlSC0iLGqBxywGQJyo9n1' }
+            { name: '514199920_RC_2026_M05P1_F.PDF', label: 'CPC — Recibo Vencimento M05P1 (Jun 2026)', type: 'pdf', date: '2026-06', link: 'https://drive.google.com/file/d/1d1jnp8_O1T5A5GW3qAs4Z-fHdfoLon-E/view' },
+            { name: 'Recibo Maio  Junho 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Mai/Jun 2026)', type: 'pdf', date: '2026-06', amount: 540.0, link: 'https://drive.google.com/file/d/1f1-PL9nM4hsiMf1pdQYumm5Yrt65eF71/view' },
+            { name: 'Terapia Ocupacional Maio Junho 2026.pdf', label: 'Susana Lucas Ferreira — Recibo Vencimento TO CPC (Mai/Jun 2026)', type: 'pdf', date: '2026-06', amount: 430.24, link: 'https://drive.google.com/file/d/1rRjKaNLwW7Qg8LhEKv96ET1uCUiaO5Ix/view' },
+            { name: 'Vencimento Psicologia Maio Junho 2026.pdf', label: 'Rute Ferreira — Recibo Vencimento Psicologia CPC (Mai/Jun 2026)', type: 'pdf', date: '2026-06', amount: 2757.56, link: 'https://drive.google.com/file/d/1SY6sOpl_xme9oaYvhJNLsiYt9LRxVzAv/view' }
           ],
           6: [ // Julho
-            { name: 'Susana Lucas Ferreira RV Jun’26.pdf', label: 'Susana Lucas Ferreira — Recibo Verde TO CPC (Jun/Jul 2026)', type: 'pdf', date: '2026-07', amount: 412.91, link: 'https://drive.google.com/file/d/1TsNtHivGNq-X824CtCw2gwQMS1RwzShr/view' },
-            { name: 'Recibo Junho 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Jun/Jul 2026)', type: 'pdf', date: '2026-07', amount: 408.75, link: 'https://drive.google.com/file/d/168G-A5dRMZXTDB4nedQAbGIDeQh02GNW/view' },
-            { name: '514199920_RC_2026_M06P1_F.PDF', label: 'CPC — Recibo Vencimento M06P1 (Jul 2026)', type: 'pdf', date: '2026-07', protected: true, link: 'https://drive.google.com/file/d/1KXRXN9k9Xh8XGxKpFla93tbL886tk5f3/view' }
-          ]
+            { name: '514199920_RC_2026_M06P1_F.PDF', label: 'CPC — Recibo Vencimento M06P1 (Jul 2026)', type: 'pdf', date: '2026-07', link: 'https://drive.google.com/file/d/1di5O_tiNRSXqkZz7WlGpRvo9ZF3kFp5W/view' },
+            { name: 'Fatura Psicologia Julho 2026.pdf', label: 'Fatura Psicologia Julho (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1I-uPzouKDpo9QJYrjkvX9DcpzE2hrPy6/view' },
+            { name: 'Recibo Junho 26 - TF Cristiana Barbosa.pdf', label: 'Cristiana Barbosa — Recibo Vencimento TF CPC (Jun/Jul 2026)', type: 'pdf', date: '2026-07', amount: 408.75, link: 'https://drive.google.com/file/d/11Bw0DO5IocgfL_oSIpScjfLoKSpWFO-2/view' },
+            { name: 'Susana Lucas Ferreira RV Jun_26.pdf', label: 'Susana Lucas Ferreira — Recibo Verde TO CPC (Jun/Jul 2026)', type: 'pdf', date: '2026-07', amount: 412.91, link: 'https://drive.google.com/file/d/1SOcNy_7Taf-Yi3Vwz-YBueycRi4EMLR4/view' }
+          ],
+          7: [ // Agosto
+            { name: '514199920_RC_2026_M07P1_F.PDF', label: '514199920_RC_2026_M07P1_F (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1gT8YK1HTYwBna6zsIhoOMYRzwhMP3tMg/view' },
+            { name: 'Fatura Julho Rute 2026', label: 'Fatura Julho Rute (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1aJQO6fWT-F3aCjgol81mv-iG5FUr2ljh/view' },
+            { name: 'Recibo Julho 26 - TF Cristiana Barbosa.pdf', label: 'Recibo Julho 26 - TF Cristiana Barbosa (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1hvjYndeGVHgPoxkq94uBWZ4R_QZg3BDz/view' },
+            { name: 'Susana Lucas Ferreira RV Jul\'26.pdf', label: 'Susana Lucas Ferreira RV Jul\'26 (Ago 2026)', type: 'pdf', date: '2026-08-01', link: 'https://drive.google.com/file/d/1E-QtYtxWBS86VZJJnWxCpEbSuG7xjuPk/view' }
+          ],
+          8: [],  // Setembro,
+          9: [],  // Outubro,
+          10: [],  // Novembro,
+          11: [],  // Dezembro
         }
       },
       {
         name: 'Recibos Vencimento HLPV',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="12" y1="17" x2="8" y2="17"/></svg>`,
         gdPath: GD_PATHS.recibosVencHLPV,
-        monthlyDocs: { 0: 0, 1: 1, 2: 2, 3: 2, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 1, 1: 2, 2: 2, 3: 0, 4: 0, 5: 1, 6: 1, 7: 0, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
+          0: [ // Janeiro
+            { name: 'Janeiro 2026.pdf', label: 'Janeiro (Jan 2026)', type: 'pdf', date: '2026-01-01', link: 'https://drive.google.com/file/d/1rPfQPVziPNhi9HS8l5o8MBAL-vBB3lya/view' }
+          ],
           1: [ // Fevereiro
-            { name: 'HLPV Vencimento Fevereiro 2026.pdf', label: 'Recibo Vencimento HLPV — Fevereiro 2026', type: 'pdf', date: '2026-02', link: 'https://drive.google.com/file/d/1rhnG5LS-M2QOb6rup76qIgzYJ-gPkDdu/view' }
+            { name: 'Vencimento Detalhado HLPV Março 2026.pdf', label: 'Vencimento Detalhado HLPV Março (Fev 2026)', type: 'pdf', date: '2026-02-01', link: 'https://drive.google.com/file/d/1fdDSs7h5UuJAZ2ahcef0OVxVLtjS1Rwf/view' },
+            { name: 'Vencimento Resumido HLPV Março 2026.pdf', label: 'Vencimento Resumido HLPV Março (Fev 2026)', type: 'pdf', date: '2026-02-01', link: 'https://drive.google.com/file/d/1gG687JQGsG27JfG_VcmrgyDNfCDKpEom/view' }
           ],
           2: [ // Março
-            { name: 'Vencimento Detalhado HLPV Março 2026.pdf', label: 'Vencimento Detalhado HLPV — Março 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1mWKwBFnRbjiCm5C3j2S1UVtYq8MnqYuf/view' },
-            { name: 'Vencimento Resumido HLPV Março 2026.pdf', label: 'Vencimento Resumido HLPV — Março 2026', type: 'pdf', date: '2026-03', link: 'https://drive.google.com/file/d/1IkdbDwEF9NNYgs-qqapZuZG-7s8QVMO3/view' }
+            { name: 'HLPV-Recibo-Detalhado-de-Abril-2026.pdf', label: 'HLPV-Recibo-Detalhado-de-Abril-2026 (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/1sOS1Qc6HT3k5jB7Mv-yg0YFwZ3nDGpWg/view' },
+            { name: 'HLPV-Recibo-Resumo-de-Abril-2026.pdf', label: 'HLPV-Recibo-Resumo-de-Abril-2026 (Mar 2026)', type: 'pdf', date: '2026-03-01', link: 'https://drive.google.com/file/d/17q5uahVBE_Tc-cR-SGEYSqJSMoPAkjGm/view' }
           ],
-          3: [ // Abril
-            { name: 'Vencimento Detalhado HLPV Abril 2026.pdf', label: 'Vencimento Detalhado HLPV — Abril 2026', type: 'pdf', date: '2026-04', amount: 4070.67, link: 'https://drive.google.com/file/d/1TwqkCTll44KWBGaFHe6gb9elNZsrgEv4/view' },
-            { name: 'Vencimento Resumido HLPV Abril 2026.pdf', label: 'Vencimento Resumido HLPV — Abril 2026', type: 'pdf', date: '2026-04', amount: 4070.67, link: 'https://drive.google.com/file/d/1q81m3RN7RfHv1tFMWty9nDs0dpPX7YUT/view' }
-          ]
+          3: [],  // Abril,
+          4: [],  // Maio,
+          5: [ // Junho
+            { name: 'Vencimento HLPV Junho 2026.pdf', label: 'Vencimento HLPV Junho (Jun 2026)', type: 'pdf', date: '2026-06-01', link: 'https://drive.google.com/file/d/1pnUeLDm3yzy90W2HyBHMlfYM8X8Fqw7Y/view' }
+          ],
+          6: [ // Julho
+            { name: 'Fatura Vencimento.pdf', label: 'Fatura Vencimento (Jul 2026)', type: 'pdf', date: '2026-07-01', link: 'https://drive.google.com/file/d/1_2dMMEebDdc6IhyqlmWpC2PHMs1_y5GO/view' }
+          ],
+          7: [],  // Agosto,
+          8: [],  // Setembro,
+          9: [],  // Outubro,
+          10: [],  // Novembro,
+          11: [],  // Dezembro
         }
       }
     ]
@@ -1698,7 +1783,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '04 Ago 2026, 14:45';
+  const LAST_UPDATE = '14 Ago 2026, 21:50';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/computer/tasks/pisa-papeis-aN4uMdm_Ti.jGZT.SNjK4g';
 
   // Estado inicial
