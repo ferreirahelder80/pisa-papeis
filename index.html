@@ -962,7 +962,7 @@ const CATEGORIES = [
         name: 'Faturas da Zebra Curiosa',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>`,
         gdPath: GD_PATHS.faturasZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 21, 4: 20, 5: 17, 6: 17, 7: 11, 8: 2, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 21, 4: 20, 5: 17, 6: 17, 7: 13, 8: 2, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           0: [],  // Janeiro,
@@ -1068,16 +1068,18 @@ const CATEGORIES = [
             { name: 'Electricidade Agosto 2026 CPC.PDF', label: 'Endesa Luz CPC — Fatura 2 (Ago 2026)', type: 'pdf', date: '2026-08-11', amount: 44.68, link: 'https://drive.google.com/file/d/1AGDUrkq-v1FUZH7UeBTzarJG4Bq6z41s/view' },
             { name: 'Endesa Agosto 2026 Maia', label: 'Endesa Agosto 2026 Maia (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 95.63, link: 'https://drive.google.com/file/d/1WF0IbNtNaukKHwBxYMpOi4FDiInAzU6w/view' },
             { name: 'GasSU Agosto 2026.pdf', label: 'Gás SU — Nota Crédito ZC (Jul 2026)', type: 'pdf', date: '2026-07-18', link: 'https://drive.google.com/file/d/1yGPCG2QeE4UrV9AScnnkQf1ruXQ-6ot6/view' },
-            { name: 'Jani King Agosto 2026 1.pdf', label: 'Jani King Agosto 2026 1 (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 84.92, link: 'https://drive.google.com/file/d/138g2f1N4mHeeGL6t9JLJ_IC8RcN9H6KB/view' },
-            { name: 'Jani King Agosto 2 2026.pdf', label: 'Jani King Agosto 2 (Ago 2026)', type: 'pdf', date: '2026-08-14', amount: 169.84, link: 'https://drive.google.com/file/d/1JN1FHpi0r5_eTt7y6CAtS2FUKEUfofmM/view' },
+            { name: 'Jani-King — Fatura FT 12428 Ago 2026.pdf', label: 'Jani-King — Fatura FT 12428 (Ago 2026)', type: 'pdf', date: '2026-08-04', amount: 84.92, link: 'https://drive.google.com/file/d/138g2f1N4mHeeGL6t9JLJ_IC8RcN9H6KB/view' },
+            { name: 'Jani-King — Fatura FT 13945 Ago 2026.pdf', label: 'Jani-King — Fatura FT 13945 (Ago 2026)', type: 'pdf', date: '2026-08-14', amount: 169.84, link: 'https://drive.google.com/file/d/1JN1FHpi0r5_eTt7y6CAtS2FUKEUfofmM/view' },
+            { name: 'Jani-King — Fatura FT 14058 Ago 2026.pdf', label: 'Jani-King — Fatura FT 14058 (Ago 2026)', type: 'pdf', date: '2026-08-19', amount: 101.95, link: 'https://drive.google.com/file/d/10AZV3g_ekLF8XT9VgeuxwME-OJEJwDjn/view' },
+            { name: 'Lusitânia — PPR ZC Ago 2026.pdf', label: 'Lusitânia — PPR Zebra Curiosa (Ago 2026)', type: 'pdf', date: '2026-07-01', amount: 249.75, link: 'https://drive.google.com/file/d/1FDNdRRUWu3bHJZ4vqR5KDQk8U5JTqS_i/view' },
             { name: 'Recibo Agosto Condomínio CPC', label: 'Recibo Agosto Condomínio CPC (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 48.0, link: 'https://drive.google.com/file/d/1-tiHYW4TwkdxAe_M8fkE8dFrTxiSdHc9/view' },
             { name: 'Via Verde Agosto 2026.pdf', label: 'Via Verde Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 39.78, link: 'https://drive.google.com/file/d/1Lf9maSsIoDsgFo8s5iWRKtRxd0RqmjAe/view' },
             { name: 'Vodafone Agosto 2026', label: 'Vodafone Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 188.95, link: 'https://drive.google.com/file/d/1ab78O8ChmPnAJzg4clDPrWCIYHwu3YZV/view' },
             { name: 'Águas do Norte Agosto 2026.pdf', label: 'Águas do Norte — Fatura 2 Zebra Curiosa (Jul 2026)', type: 'pdf', date: '2026-07-15', amount: 10.47, link: 'https://drive.google.com/file/d/1hlGtUJdTK08ig7oxtNcp-ouz01CyjyUd/view' }
           ],
           8: [ // Setembro
-            { name: 'Ageas Multiplic Setembro 2026', label: 'Ageas Multiplic Setembro (Set 2026)', type: 'pdf', date: '2026-09-01', link: 'https://drive.google.com/file/d/1oFbepEAymSckd8L6SamyEqNrKgLsL9Ui/view' },
-            { name: 'Ageas Vida Setembro 2026', label: 'Ageas Vida Setembro (Set 2026)', type: 'pdf', date: '2026-09-01', link: 'https://drive.google.com/file/d/1k2Cr92_2LMQBsvw8VukOs86qEH4jEnr6/view' }
+            { name: 'Ageas Multiplic Setembro 2026', label: 'Ageas Multiplic — Débito 05-09 (Set 2026)', type: 'pdf', date: '2026-09-05', amount: 250.94, link: 'https://drive.google.com/file/d/1oFbepEAymSckd8L6SamyEqNrKgLsL9Ui/view' },
+            { name: 'Ageas Vida Setembro 2026', label: 'Ageas Vida Ordem dos Médicos — Débito 29-09 (Set 2026)', type: 'pdf', date: '2026-09-29', amount: 142.22, link: 'https://drive.google.com/file/d/1k2Cr92_2LMQBsvw8VukOs86qEH4jEnr6/view' }
           ],
           9: [],  // Outubro,
           10: [],  // Novembro,
@@ -1088,7 +1090,7 @@ const CATEGORIES = [
         name: 'Subscrições Mensais',
         icon: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>`,
         gdPath: GD_PATHS.subscricoesZebra,
-        monthlyDocs: { 0: 0, 1: 0, 2: 7, 3: 9, 4: 4, 5: 4, 6: 11, 7: 12, 8: 0, 9: 0, 10: 0, 11: 0 },
+        monthlyDocs: { 0: 0, 1: 0, 2: 7, 3: 9, 4: 4, 5: 4, 6: 11, 7: 13, 8: 0, 9: 0, 10: 0, 11: 0 },
         hasMonthFolders: true,
         knownFiles: {
           0: [],  // Janeiro,
@@ -1144,6 +1146,7 @@ const CATEGORIES = [
             { name: 'Google Pay Agosto 3.pdf', label: 'Google Pay Agosto 3 (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 0.49, link: 'https://drive.google.com/file/d/1Ifuzqn05gRz8n7M3nxCBYub_q1AOM3JO/view' },
             { name: 'Google Pay Agosto 4.html', label: 'Google Pay Agosto 4.html (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 26.25, link: 'https://drive.google.com/file/d/18V1Cqyy3GH5nYugyJBLdrEpFY1p8uoF9/view' },
             { name: 'Manie Agosto 2026', label: 'Manie Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 12.99, link: 'https://drive.google.com/file/d/14HGFszwGOoBBYucuklecVpIJ1qpprEvY/view' },
+            { name: 'Manus AI — Subscrição Manus Pro Ago 2026', label: 'Manus AI — Manus Pro via Apple Pay (Ago 2026)', type: 'pdf', date: '2026-08-18', amount: 100.0, link: 'https://drive.google.com/file/d/1CZF1mK61tFV9XaGHwn7H9ycCoAi0dMIpanmr4osLaoE/view' },
             { name: 'Manus Agosto Plus 2 2026.pdf', label: 'Manus Agosto Plus 2 (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 16.0, link: 'https://drive.google.com/file/d/1ufDfyuYKef1hcImK5_V2iDIeMnicMPDa/view' },
             { name: 'Manus Credit Agosto 2026', label: 'Manus Credit Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 10.66, link: 'https://drive.google.com/file/d/1-NV0ttHry3ZDhrgZAoaPQ46_GRrA23Jk/view' },
             { name: 'Manus Plus 3 Agosto.pdf', label: 'Manus Plus 3 Agosto (Ago 2026)', type: 'pdf', date: '2026-08-01', amount: 21.33, link: 'https://drive.google.com/file/d/1sndJQufh5hzDfKEJEubSoy8OwbfOZgxG/view' },
@@ -1168,7 +1171,7 @@ const CATEGORIES = [
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>`,
     hasMonthFolders: true,
     gdPath: GD_PATHS.pagamentosPessoais,
-    monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 9, 4: 5, 5: 6, 6: 8, 7: 2, 8: 0, 9: 0, 10: 0, 11: 0 },
+    monthlyDocs: { 0: 0, 1: 0, 2: 10, 3: 9, 4: 5, 5: 6, 6: 8, 7: 4, 8: 1, 9: 0, 10: 0, 11: 0 },
     knownFiles: {
       0: [],  // Janeiro,
       1: [],  // Fevereiro,
@@ -1222,9 +1225,13 @@ const CATEGORIES = [
       ],
       7: [ // Agosto
         { name: 'Gás Endesa Viseu Agosto 2026.pdf', label: 'Endesa Gás — Casa Viseu (Ago 2026)', type: 'pdf', date: '2026-08-14', amount: 21.31, link: 'https://drive.google.com/file/d/1J_0jKMYKdYCfSJZCED-nk9hcnQJmKnl8/view' },
-        { name: 'Águas de Viseu Agosto 2026.pdf', label: 'SMAS Viseu — Fatura 2 Água Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 11.47, link: 'https://drive.google.com/file/d/1O-O3ZmAHaFbkYAE4KAK1bUIzEMjHaIV_/view' }
+        { name: 'Águas de Viseu Agosto 2026.pdf', label: 'SMAS Viseu — Fatura 2 Água Casa Viseu (Jul 2026)', type: 'pdf', date: '2026-07-17', amount: 11.47, link: 'https://drive.google.com/file/d/1O-O3ZmAHaFbkYAE4KAK1bUIzEMjHaIV_/view' },
+        { name: 'Manie Agosto 2026', label: 'Manie — Boost Hélder (Ago 2026)', type: 'pdf', date: '2026-08-17', amount: 1.99, link: 'https://drive.google.com/file/d/1qdOBWND8RRZloY8tf2OyiFRC_5C48Q7Q/view' },
+        { name: 'SU Eletricidade Viseu Agosto 2026.pdf', label: 'SU Eletricidade — Casa Viseu (Ago 2026)', type: 'pdf', date: '2026-08-31', amount: 19.86, link: 'https://drive.google.com/file/d/1p0YSsfcVn0yNpKQA__y6jQnzB_HK2Dj9/view' }
       ],
-      8: [],  // Setembro,
+      8: [ // Setembro
+        { name: 'SMAS Viseu — Água/Saneamento Set 2026.pdf', label: 'SMAS Viseu — Água/Saneamento Casa Viseu (Set 2026)', type: 'pdf', date: '2026-09-10', amount: 12.24, link: 'https://drive.google.com/file/d/1l9FpdZX5hMwvV31-h4IuffXoywWFjkZ5/view' }
+      ],
       9: [],  // Outubro,
       10: [],  // Novembro,
       11: [],  // Dezembro
@@ -1791,7 +1798,7 @@ renderCategories();
   const btn = document.getElementById('sync-btn');
   const icon = document.getElementById('sync-icon');
   const label = document.getElementById('sync-label');
-  const LAST_UPDATE = '15 Ago 2026, 01:35';
+  const LAST_UPDATE = '19 Ago 2026, 23:00';
   const PERPLEXITY_URL = 'https://www.perplexity.ai/projects/pisa-papeis-syncs-7dgfT4HMRD29l5Km3nzhWQ';
 
   // Estado inicial
